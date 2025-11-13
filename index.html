@@ -235,10 +235,14 @@
     }
 
     .about img {
-      flex: 1;
-      max-width: 420px;
-      width: 100%;
-      border-radius: 10px
+  flex: 1;
+  max-width: 300px;  /* 📌 tamaño más pequeño */
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
       @media (min-width: 769px) {
   .about img {
     max-height: 350px;
