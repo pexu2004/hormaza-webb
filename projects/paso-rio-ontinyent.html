@@ -1,90 +1,333 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Paso sobre el río — Hor-Maza</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pasarela sobre el Clariano — Hor-Maza</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+
   <style>
-    :root{ --rojo:#d32f2f; --rojo2:#b71c1c; --txt:#0d0d0d; }
-    *{ box-sizing:border-box; }
-    body{ margin:0; font-family:Montserrat,sans-serif; color:var(--txt); background:#fff; line-height:1.6; }
-    .wrap{ max-width:1100px; margin:0 auto; padding:22px; }
-    .crumbs{ font-size:.95rem; margin:8px 0 16px; }
-    .crumbs a{ color:var(--rojo); text-decoration:none; } .crumbs a:hover{ text-decoration:underline; }
-    h1{ margin:.2em 0 .1em; font-size:2rem; }
-    .meta{ color:#666; margin-bottom:18px; }
-    .timeline{ list-style:none; padding:0; margin:18px 0 30px; border-left:4px solid var(--rojo); }
-    .timeline li{ position:relative; padding:0 0 26px 16px; }
-    .timeline li::before{ content:""; position:absolute; left:-9px; top:2px; width:14px; height:14px; background:var(--rojo); border-radius:50%; box-shadow:0 0 0 4px #fff; }
-    .timeline h3{ margin:.1em 0 .35em; font-size:1.12rem; color:var(--rojo2); }
-    .grid{ display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); }
-    .card{ border-radius:10px; overflow:hidden; background:#eee; cursor:zoom-in; }
-    .card img{ width:100%; height:220px; object-fit:cover; display:block; transition:transform .3s ease; }
-    .card:hover img{ transform:scale(1.04); }
-    .lb{ position:fixed; inset:0; background:rgba(0,0,0,.85); display:none; align-items:center; justify-content:center; z-index:9999; }
-    .lb.open{ display:flex; }
-    .lb img{ max-width:92vw; max-height:86vh; border-radius:8px; }
-    .lb .close{ position:absolute; top:18px; right:22px; font-size:28px; color:#fff; cursor:pointer; }
-    .lb .caption{ position:absolute; left:0; right:0; bottom:0; color:#fff; padding:10px 16px; background:linear-gradient(180deg,transparent,rgba(0,0,0,.6)); }
-    .back{ display:inline-block; margin:8px 0 18px; background:#000; color:#fff; padding:10px 14px; border-radius:8px; text-decoration:none; transition:.2s; }
-    .back:hover{ background:var(--rojo); }
-    footer{ margin:36px 0 14px; text-align:center; color:#777; font-size:.95rem; }
+    :root {
+      --rojo: #d32f2f;
+      --rojo-oscuro: #b71c1c;
+      --texto: #111;
+      --gris-fondo: #f8f8f8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: var(--gris-fondo);
+      color: var(--texto);
+      line-height: 1.7;
+    }
+
+    a { color: var(--rojo); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background: #000;
+      color: #fff;
+      padding: 14px 18px;
+    }
+
+    header .top-bar {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    header .logo {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    header .back-link {
+      background: #fff;
+      color: #000;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+
+    header .back-link span.icon {
+      font-size: 1.1rem;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 26px auto 40px;
+      padding: 0 16px 40px;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0,0,0,.06);
+      border-left: 5px solid var(--rojo);
+    }
+
+    .breadcrumb {
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      color: #666;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin: 8px 0 6px;
+    }
+
+    .meta {
+      font-size: 0.95rem;
+      color: #777;
+      margin-bottom: 18px;
+    }
+
+    .intro {
+      font-size: 1rem;
+      margin-bottom: 26px;
+    }
+
+    /* Línea de fases */
+    .timeline {
+      border-left: 3px solid var(--rojo);
+      padding-left: 18px;
+      margin-bottom: 32px;
+    }
+
+    .phase {
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .phase::before {
+      content: "";
+      position: absolute;
+      left: -22px;
+      top: 6px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #fff;
+      border: 3px solid var(--rojo);
+    }
+
+    .phase-title {
+      font-weight: 700;
+      color: var(--rojo);
+    }
+
+    .phase-desc {
+      margin: 3px 0 0;
+      font-size: 0.96rem;
+    }
+
+    /* Galería */
+    h2 {
+      margin-top: 10px;
+      font-size: 1.5rem;
+    }
+
+    .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .project-gallery figure {
+      margin: 0;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #eee;
+      cursor: zoom-in;
+      position: relative;
+    }
+
+    .project-gallery img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+      transition: transform .35s ease, filter .35s ease;
+    }
+
+    .project-gallery figure:hover img {
+      transform: scale(1.05);
+      filter: brightness(1.03);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .lightbox img {
+      max-width: 92vw;
+      max-height: 92vh;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.6);
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 14px;
+      right: 18px;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+      font-weight: 300;
+    }
+
+    .lightbox-counter {
+      position: fixed;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 700px) {
+      main {
+        margin: 16px auto 26px;
+        padding: 10px 14px 26px;
+      }
+      h1 { font-size: 1.6rem; }
+    }
   </style>
 </head>
+
 <body>
-  <div class="wrap">
-    <div class="crumbs"><a href="../index.html">Inicio</a> · <a href="../index.html#proyectos">Proyectos</a></div>
-    <a class="back" href="../index.html#proyectos">← Volver a proyectos</a>
+  <header>
+    <div class="top-bar">
+      <div class="logo">Hor-Maza</div>
+      <a class="back-link" href="../index.html#proyectos">
+        <span class="icon">←</span>
+        <span>Volver a proyectos</span>
+      </a>
+    </div>
+  </header>
 
-    <h1>Paso provisional sobre el río (Ontinyent)</h1>
-    <div class="meta">Proyecto civil · Junio 2025 · Duración: 2 semanas</div>
-
-    <ol class="timeline">
-      <li><h3>Fase 1 — Preparación del terreno</h3><p>Limpieza, replanteo y accesos provisionales.</p></li>
-      <li><h3>Fase 2 — Encofrado y armaduras</h3><p>Encofrados y mallazo para estabilidad.</p></li>
-      <li><h3>Fase 3 — Vertido y curado</h3><p>Hormigonado y impreso controlado.</p></li>
-      <li><h3>Fase 4 — Acabados y seguridad</h3><p>Resinado y verificación de paso seguro.</p></li>
-    </ol>
-
-    <div class="grid" id="gallery">
-      <figure class="card" data-caption="Inicio de obra"><img src="imgs/paso-rio-ontinyent/01-inicio.jpg" alt="Inicio de obra"></figure>
-      <figure class="card" data-caption="Encofrado y armaduras"><img src="imgs/paso-rio-ontinyent/02-encofrado.jpg" alt="Encofrado y armaduras"></figure>
-      <figure class="card" data-caption="Hormigonado"><img src="imgs/paso-rio-ontinyent/03-hormigon.jpg" alt="Vertido de hormigón"></figure>
-      <figure class="card" data-caption="Resultado final"><img src="imgs/paso-rio-ontinyent/04-final.jpg" alt="Resultado final"></figure>
+  <main>
+    <div class="breadcrumb">
+      <a href="../index.html">Inicio</a> · <a href="../index.html#proyectos">Proyectos</a>
     </div>
 
-    <div class="lb" id="lightbox">
-      <span class="close" id="lbClose">✕</span>
-      <img id="lbImg" src="" alt="">
-      <div class="caption" id="lbCap"></div>
-    </div>
+    <h1>Pasarela sobre el Clariano (Ontinyent)</h1>
+    <div class="meta">Proyecto civil · 2025 · Duración: 3 semanas</div>
 
-    <footer>© <span id="y"></span> Hor-Maza · <a href="../index.html#contacto">Contacto</a></footer>
+    <p class="intro">
+      Pasarela peatonal de hormigón impreso que conecta el parque junto al río
+      con el barrio de San José, mejorando la seguridad y el acceso entre ambas zonas.
+    </p>
+
+    <section class="timeline">
+      <div class="phase">
+        <div class="phase-title">Fase 1 — Preparación del terreno</div>
+        <p class="phase-desc">Limpieza del cauce, replanteo y accesos provisionales para la obra.</p>
+      </div>
+      <div class="phase">
+        <div class="phase-title">Fase 2 — Encofrado y armaduras</div>
+        <p class="phase-desc">Encofrados y mallazo sobre apoyos existentes para garantizar estabilidad.</p>
+      </div>
+      <div class="phase">
+        <div class="phase-title">Fase 3 — Vertido y curado</div>
+        <p class="phase-desc">Hormigonado de la pasarela, acabado impreso y curado controlado.</p>
+      </div>
+      <div class="phase">
+        <div class="phase-title">Fase 4 — Acabados y seguridad</div>
+        <p class="phase-desc">Detalle del pavimento, barandillas y verificación del paso peatonal seguro.</p>
+      </div>
+    </section>
+
+    <h2>Evolución de la obra</h2>
+    <div class="project-gallery">
+      <figure>
+        <img src="../IMG_6406.JPG" alt="Vista general de la pasarela en obra" data-full="../IMG_6406.JPG">
+      </figure>
+      <figure>
+        <img src="../IMG_6404.JPG" alt="Pasarela sobre el río Clariano durante la ejecución" data-full="../IMG_6404.JPG">
+      </figure>
+      <figure>
+        <img src="../IMG_6421.JPG" alt="Equipos trabajando sobre el tablero de hormigón" data-full="../IMG_6421.JPG">
+      </figure>
+      <figure>
+        <img src="../IMG_6416.JPG" alt="Acceso a la pasarela recién hormigonado" data-full="../IMG_6416.JPG">
+      </figure>
+      <figure>
+        <img src="../IMG_6577.JPG" alt="Pasarela terminada con hormigón impreso" data-full="../IMG_6577.JPG">
+      </figure>
+      <figure>
+        <img src="../IMG_6583.JPG" alt="Detalle del pavimento impreso de la pasarela" data-full="../IMG_6583.JPG">
+      </figure>
+      <figure>
+        <img src="../pasarela-detalle.png" alt="Detalle en primer plano del hormigón impreso" data-full="../pasarela-detalle.png">
+      </figure>
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Foto de la obra">
+    <div class="lightbox-counter" id="lightbox-counter"></div>
   </div>
 
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    const lb = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lbImg');
-    const lbCap = document.getElementById('lbCap');
-    const lbClose = document.getElementById('lbClose');
+    // Lightbox sencillo
+    const galleryImages = Array.from(document.querySelectorAll('.project-gallery img'));
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const counter = document.getElementById('lightbox-counter');
+    let currentIndex = 0;
 
-    document.getElementById('gallery').addEventListener('click', (e) => {
-      const fig = e.target.closest('.card');
-      if(!fig) return;
-      const img = fig.querySelector('img');
-      lbImg.src = img.src;
-      lbImg.alt = img.alt || '';
-      lbCap.textContent = fig.dataset.caption || img.alt || '';
-      lb.classList.add('open');
+    function openLightbox(index) {
+      const img = galleryImages[index];
+      currentIndex = index;
+      lightboxImg.src = img.dataset.full || img.src;
+      counter.textContent = (index + 1) + ' / ' + galleryImages.length;
+      lightbox.style.display = 'flex';
+    }
+
+    galleryImages.forEach((img, index) => {
+      img.addEventListener('click', () => openLightbox(index));
     });
 
-    lb.addEventListener('click', (e) => {
-      if (e.target === lb || e.target === lbClose) lb.classList.remove('open');
+    function closeLightbox() {
+      lightbox.style.display = 'none';
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
     });
 
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lb.classList.remove('open'); });
+    // Navegar con flechas
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.style.display !== 'flex') return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') openLightbox((currentIndex + 1) % galleryImages.length);
+      if (e.key === 'ArrowLeft') openLightbox((currentIndex - 1 + galleryImages.length) % galleryImages.length);
+    });
   </script>
 </body>
 </html>
