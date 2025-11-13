@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Paso sobre el río — Hor-Maza</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{ --rojo:#d32f2f; --rojo2:#b71c1c; --txt:#0d0d0d; }
+    *{ box-sizing:border-box; }
+    body{ margin:0; font-family:Montserrat,sans-serif; color:var(--txt); background:#fff; line-height:1.6; }
+    .wrap{ max-width:1100px; margin:0 auto; padding:22px; }
+    .crumbs{ font-size:.95rem; margin:8px 0 16px; }
+    .crumbs a{ color:var(--rojo); text-decoration:none; } .crumbs a:hover{ text-decoration:underline; }
+    h1{ margin:.2em 0 .1em; font-size:2rem; }
+    .meta{ color:#666; margin-bottom:18px; }
+    .timeline{ list-style:none; padding:0; margin:18px 0 30px; border-left:4px solid var(--rojo); }
+    .timeline li{ position:relative; padding:0 0 26px 16px; }
+    .timeline li::before{ content:""; position:absolute; left:-9px; top:2px; width:14px; height:14px; background:var(--rojo); border-radius:50%; box-shadow:0 0 0 4px #fff; }
+    .timeline h3{ margin:.1em 0 .35em; font-size:1.12rem; color:var(--rojo2); }
+    .grid{ display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); }
+    .card{ border-radius:10px; overflow:hidden; background:#eee; cursor:zoom-in; }
+    .card img{ width:100%; height:220px; object-fit:cover; display:block; transition:transform .3s ease; }
+    .card:hover img{ transform:scale(1.04); }
+    .lb{ position:fixed; inset:0; background:rgba(0,0,0,.85); display:none; align-items:center; justify-content:center; z-index:9999; }
+    .lb.open{ display:flex; }
+    .lb img{ max-width:92vw; max-height:86vh; border-radius:8px; }
+    .lb .close{ position:absolute; top:18px; right:22px; font-size:28px; color:#fff; cursor:pointer; }
+    .lb .caption{ position:absolute; left:0; right:0; bottom:0; color:#fff; padding:10px 16px; background:linear-gradient(180deg,transparent,rgba(0,0,0,.6)); }
+    .back{ display:inline-block; margin:8px 0 18px; background:#000; color:#fff; padding:10px 14px; border-radius:8px; text-decoration:none; transition:.2s; }
+    .back:hover{ background:var(--rojo); }
+    footer{ margin:36px 0 14px; text-align:center; color:#777; font-size:.95rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="crumbs"><a href="../index.html">Inicio</a> · <a href="../index.html#proyectos">Proyectos</a></div>
+    <a class="back" href="../index.html#proyectos">← Volver a proyectos</a>
+
+    <h1>Paso provisional sobre el río (Ontinyent)</h1>
+    <div class="meta">Proyecto civil · 2025 · Duración: 3 semanas</div>
+
+    <ol class="timeline">
+      <li><h3>Fase 1 — Preparación del terreno</h3><p>Limpieza, replanteo y accesos provisionales.</p></li>
+      <li><h3>Fase 2 — Encofrado y armaduras</h3><p>Encofrados y mallazo para estabilidad.</p></li>
+      <li><h3>Fase 3 — Vertido y curado</h3><p>Hormigonado y curado controlado.</p></li>
+      <li><h3>Fase 4 — Acabados y seguridad</h3><p>Remates y verificación de paso seguro.</p></li>
+    </ol>
+
+    <div class="grid" id="gallery">
+      <figure class="card" data-caption="Inicio de obra"><img src="imgs/paso-rio-ontinyent/01-inicio.jpg" alt="Inicio de obra"></figure>
+      <figure class="card" data-caption="Encofrado y armaduras"><img src="imgs/paso-rio-ontinyent/02-encofrado.jpg" alt="Encofrado y armaduras"></figure>
+      <figure class="card" data-caption="Hormigonado"><img src="imgs/paso-rio-ontinyent/03-hormigon.jpg" alt="Vertido de hormigón"></figure>
+      <figure class="card" data-caption="Resultado final"><img src="imgs/paso-rio-ontinyent/04-final.jpg" alt="Resultado final"></figure>
+    </div>
+
+    <div class="lb" id="lightbox">
+      <span class="close" id="lbClose">✕</span>
+      <img id="lbImg" src="" alt="">
+      <div class="caption" id="lbCap"></div>
+    </div>
+
+    <footer>© <span id="y"></span> Hor-Maza · <a href="../index.html#contacto">Contacto</a></footer>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const lbCap = document.getElementById('lbCap');
+    const lbClose = document.getElementById('lbClose');
+
+    document.getElementById('gallery').addEventListener('click', (e) => {
+      const fig = e.target.closest('.card');
+      if(!fig) return;
+      const img = fig.querySelector('img');
+      lbImg.src = img.src;
+      lbImg.alt = img.alt || '';
+      lbCap.textContent = fig.dataset.caption || img.alt || '';
+      lb.classList.add('open');
+    });
+
+    lb.addEventListener('click', (e) => {
+      if (e.target === lb || e.target === lbClose) lb.classList.remove('open');
+    });
+
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lb.classList.remove('open'); });
+  </script>
+</body>
+</html>
