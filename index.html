@@ -228,11 +228,19 @@
 
     /* About */
     .about {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap
-    }
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: nowrap; /* 📌 así NO baja el texto debajo */
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .about {
+    flex-wrap: wrap; /* 📌 en móvil sí permite que el texto baje */
+    text-align: center;
+  }
+}
+
 
     .about img {
   flex: 1;
