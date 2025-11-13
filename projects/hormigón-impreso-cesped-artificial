@@ -216,125 +216,108 @@
 </head>
 
 <body>
-  <header>
-    <div class="top-bar">
-      <div class="logo">Hor-Maza</div>
-      <a class="back-link" href="../index.html#proyectos">
-        <span class="icon">←</span>
-        <span>Volver a proyectos</span>
-      </a>
-    </div>
-  </header>
 
-  <main>
-    <div class="breadcrumb">
-      <a href="../index.html">Inicio</a> · <a href="../index.html#proyectos">Proyectos</a>
-    </div>
+<header>
+  <div class="top-bar">
+    <div class="logo">Hor-Maza</div>
+    <a class="back-link" href="../index.html#proyectos">
+      <span class="icon">←</span>
+      <span>Volver a proyectos</span>
+    </a>
+  </div>
+</header>
 
-    <h1>Proyecto hormigón impreso + césped artificial</h1>
-    <div class="meta">Pavimento exterior · 2024 · Duración: 5 días</div>
+<main>
 
-    <p class="intro">
-      Acondicionamiento de la entrada de una vivienda con hormigón impreso gris y franjas de césped artificial.
-      Un diseño limpio y moderno que combina la resistencia del hormigón con el aspecto verde y decorativo del césped.
-    </p>
-
-    <section class="timeline">
-      <div class="phase">
-        <div class="phase-title">Fase 1 — Preparación del terreno</div>
-        <p class="phase-desc">
-          Limpieza de la zona, retirada de pavimento antiguo y excavación hasta la cota necesaria.
-          Compactación de la base y formación de pendientes para el desagüe.
-        </p>
-      </div>
-      <div class="phase">
-        <div class="phase-title">Fase 2 — Encofrado y armaduras</div>
-        <p class="phase-desc">
-          Colocación del encofrado perimetral y del mallazo para reforzar la losa de hormigón,
-          dejando definidas las franjas donde irá el césped artificial.
-        </p>
-      </div>
-      <div class="phase">
-        <div class="phase-title">Fase 3 — Vertido y acabado impreso</div>
-        <p class="phase-desc">
-          Vertido del hormigón, nivelado y fratasado. Aplicación del color y texturado con moldes
-          para conseguir el acabado impreso antideslizante.
-        </p>
-      </div>
-      <div class="phase">
-        <div class="phase-title">Fase 4 — Colocación del césped y remates</div>
-        <p class="phase-desc">
-          Relleno de las franjas con césped artificial, recortes a medida y fijación.
-          Sellado y limpieza final del pavimento para dejar la entrada lista para su uso.
-        </p>
-      </div>
-    </section>
-
-    <h2>Evolución de la obra</h2>
-    <div class="project-gallery">
-      <!-- Usa estas fotos y luego puedes cambiarlas por otras del mismo proyecto -->
-      <figure>
-        <img src="../6e49f6d1-fa4f-45a0-a787-476ce6431e88.jpg"
-             alt="Vista general del acceso con hormigón impreso"
-             data-full="../6e49f6d1-fa4f-45a0-a787-476ce6431e88.jpg">
-      </figure>
-      <figure>
-        <img src="../IMG_1324.jpeg"
-             alt="Detalle de losas de hormigón y césped artificial"
-             data-full="../IMG_1324.jpeg">
-      </figure>
-      <figure>
-        <img src="../6e49f6d1-fa4f-45a0-a787-476ce6431e88.jpg"
-             alt="Zona de entrada terminada con hormigón impreso y césped"
-             data-full="../6e49f6d1-fa4f-45a0-a787-476ce6431e88.jpg">
-      </figure>
-    </div>
-  </main>
-
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox">
-    <span class="lightbox-close" id="lightbox-close">&times;</span>
-    <img id="lightbox-img" src="" alt="Foto de la obra">
-    <div class="lightbox-counter" id="lightbox-counter"></div>
+  <div class="breadcrumb">
+    <a href="../index.html">Inicio</a> · <a href="../index.html#proyectos">Proyectos</a>
   </div>
 
-  <script>
-    // Lightbox sencillo
-    const galleryImages = Array.from(document.querySelectorAll('.project-gallery img'));
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxClose = document.getElementById('lightbox-close');
-    const counter = document.getElementById('lightbox-counter');
-    let currentIndex = 0;
+  <h1>Proyecto hormigón impreso + césped artificial</h1>
+  <div class="meta">Exterior · 2024 · Duración: 6 días</div>
 
-    function openLightbox(index) {
-      const img = galleryImages[index];
-      currentIndex = index;
-      lightboxImg.src = img.dataset.full || img.src;
-      counter.textContent = (index + 1) + ' / ' + galleryImages.length;
-      lightbox.style.display = 'flex';
-    }
+  <p class="intro">
+    Ejecución de un diseño exterior combinando hormigón impreso con césped
+    artificial, logrando un acabado moderno, decorativo y funcional.
+  </p>
 
-    galleryImages.forEach((img, index) => {
-      img.addEventListener('click', () => openLightbox(index));
-    });
+  <!-- FASES -->
+  <section class="timeline">
 
-    function closeLightbox() {
-      lightbox.style.display = 'none';
-    }
+    <div class="phase">
+      <div class="phase-title">Fase 1 — Preparación del terreno</div>
+      <p class="phase-desc">Limpieza, replanteo y retirada del pavimento existente.</p>
+    </div>
 
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) closeLightbox();
-    });
+    <div class="phase">
+      <div class="phase-title">Fase 2 — Encofrado y mallazo</div>
+      <p class="phase-desc">Colocación de juntas, mallazo y encofrado para reforzar el futuro hormigón.</p>
+    </div>
 
-    // Navegar con flechas
-    document.addEventListener('keydown', (e) => {
-      if (lightbox.style.display !== 'flex') return;
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowRight') openLightbox((currentIndex + 1) % galleryImages.length);
-      if (e.key === 'ArrowLeft') openLightbox((currentIndex - 1 + galleryImages.length) % galleryImages.length);
-    });
-  </script>
+    <div class="phase">
+      <div class="phase-title">Fase 3 — Vertido y estampado</div>
+      <p class="phase-desc">Vertido del hormigón, nivelado, texturizado y preparación de zonas para césped.</p>
+    </div>
+
+    <div class="phase">
+      <div class="phase-title">Fase 4 — Instalación del césped artificial</div>
+      <p class="phase-desc">Colocación de césped entre las juntas creando el diseño decorativo final.</p>
+    </div>
+
+  </section>
+
+  <h2>Evolución de la obra</h2>
+  <div class="project-gallery">
+    <figure><img src="../IMG_1324.jpeg" data-full="../IMG_1324.jpeg" alt=""></figure>
+    <figure><img src="../IMG_1324.jpeg" data-full="../IMG_1324.jpeg" alt=""></figure>
+    <figure><img src="../IMG_1324.jpeg" data-full="../IMG_1324.jpeg" alt=""></figure>
+  </div>
+
+</main>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+  <div class="lightbox-counter" id="lightbox-counter"></div>
+</div>
+
+<script>
+  const galleryImages = Array.from(document.querySelectorAll('.project-gallery img'));
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxClose = document.getElementById('lightbox-close');
+  const counter = document.getElementById('lightbox-counter');
+  let currentIndex = 0;
+
+  function openLightbox(index) {
+    const img = galleryImages[index];
+    currentIndex = index;
+    lightboxImg.src = img.dataset.full || img.src;
+    counter.textContent = (index + 1) + ' / ' + galleryImages.length;
+    lightbox.style.display = 'flex';
+  }
+
+  galleryImages.forEach((img, index) => {
+    img.addEventListener('click', () => openLightbox(index));
+  });
+
+  function closeLightbox() {
+    lightbox.style.display = 'none';
+  }
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.style.display !== 'flex') return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') openLightbox((currentIndex + 1) % galleryImages.length);
+    if (e.key === 'ArrowLeft') openLightbox((currentIndex - 1 + galleryImages.length) % galleryImages.length);
+  });
+</script>
+
 </body>
 </html>
