@@ -1,112 +1,400 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hormigón Impreso Acabado Piedra — Hor-Maza</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hormigón impreso acabado piedra — Hor-Maza</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --rojo: #d32f2f;
+      --rojo-hover: #b71c1c;
+      --gris-fondo: #f5f5f5;
+      --texto: #222;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      font-family: 'Montserrat', sans-serif;
       margin: 0;
-      padding: 20px;
-      background: #f8f8f8;
-      color: #333;
+      font-family: 'Montserrat', sans-serif;
+      background: var(--gris-fondo);
+      color: var(--texto);
       line-height: 1.7;
     }
 
-    h1, h2 { color: #d32f2f; }
+    a { color: inherit; }
+
+    .page {
+      min-height: 100vh;
+      background: #111827;              /* franja superior oscura como la otra */
+      padding: 24px 0 48px;
+    }
+
+    .project-shell {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 26px 26px 36px;
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.18);
+      position: relative;
+    }
+
+    /* Breadcrumb + botón volver */
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .breadcrumb {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    .breadcrumb a {
+      text-decoration: none;
+      color: #777;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--rojo);
+    }
 
     .back-btn {
-      display: inline-block;
-      margin-bottom: 20px;
-      background: #000;
-      color: #fff;
-      padding: 10px 18px;
-      border-radius: 6px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      font-size: 0.9rem;
+      cursor: pointer;
       text-decoration: none;
-      transition: 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #111827;
+      transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    }
+
+    .back-btn span {
+      font-size: 1.1rem;
+      line-height: 1;
     }
 
     .back-btn:hover {
-      background: #d32f2f;
+      background: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
     }
 
-    .fase {
-      margin-bottom: 30px;
-      border-left: 4px solid #d32f2f;
-      padding-left: 15px;
+    /* Cabecera del proyecto */
+    h1 {
+      margin: 0 0 6px;
+      font-size: 2rem;
+      color: #111827;
     }
 
-    .gallery {
+    .meta {
+      font-size: 0.95rem;
+      color: #6b7280;
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      margin: 0 0 24px;
+      max-width: 800px;
+    }
+
+    /* Layout columnas (fases + galería) */
+    .project-layout {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 15px;
-      margin-top: 25px;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.4fr);
+      gap: 28px;
+      align-items: flex-start;
     }
 
-    .gallery img {
+    /* Columna fases */
+    .phases-card {
+      border-radius: 12px;
+      border-left: 5px solid var(--rojo);
+      background: #fdf2f2;
+      padding: 18px 20px 18px 22px;
+    }
+
+    .phases-card h2 {
+      margin: 0 0 14px;
+      font-size: 1.1rem;
+      color: #b91c1c;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .phase {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 12px;
+    }
+
+    .phase:last-child { margin-bottom: 0; }
+
+    .phase::before {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 2px;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #fff;
+      border: 2px solid var(--rojo);
+    }
+
+    .phase-title {
+      font-weight: 700;
+      color: #b91c1c;
+      margin-bottom: 2px;
+    }
+
+    .phase p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #374151;
+    }
+
+    /* Columna galería */
+    .gallery-block h2 {
+      margin: 0 0 12px;
+      font-size: 1.1rem;
+      color: #111827;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+    }
+
+    .gallery-grid figure {
+      margin: 0;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #e5e7eb;
+      cursor: pointer;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.14);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .gallery-grid figure:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.22);
+    }
+
+    .gallery-grid img {
       width: 100%;
-      height: 250px;
+      height: 160px;
       object-fit: cover;
-      border-radius: 8px;
+      display: block;
+    }
+
+    .gallery-grid figcaption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 6px 10px;
+      font-size: 0.78rem;
+      color: #f9fafb;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 20px;
+    }
+
+    .lightbox.open { display: flex; }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 20px;
+      right: 26px;
+      font-size: 2rem;
+      color: #f9fafb;
+      cursor: pointer;
+      font-weight: 300;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .project-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .project-shell {
+        margin: 0 12px;
+        padding: 20px 16px 30px;
+      }
+
+      .project-top {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
     }
   </style>
 </head>
-
 <body>
+  <div class="page">
+    <article class="project-shell">
 
-  <a href="../index.html#proyectos" class="back-btn">← Volver a proyectos</a>
+      <div class="project-top">
+        <div class="breadcrumb">
+          <a href="../index.html#inicio">Inicio</a> ·
+          <a href="../index.html#proyectos">Proyectos</a>
+        </div>
 
-  <h1>Hormigón Impreso Acabado Piedra</h1>
-  <p><strong>Proyecto residencial · 2025</strong> — Duración: 4 días</p>
+        <a href="../index.html#proyectos" class="back-btn">
+          <span>←</span> Volver a proyectos
+        </a>
+      </div>
 
-  <!-- FASE 1 -->
-  <div class="fase">
-    <h2>Fase 1 — Preparación del terreno</h2>
-    <p>
-      Se realizó la limpieza, nivelación y compactado del terreno, asegurando una base estable para recibir el hormigón impreso.
-    </p>
+      <header>
+        <h1>Hormigón impreso acabado piedra</h1>
+        <p class="meta">Pavimento exterior · 2024 · Duración: 4 días</p>
+        <p class="intro">
+          Ejecución de un acceso de hormigón impreso con acabado piedra, pensado para el paso de vehículos y
+          personas. Un pavimento continuo, resistente y decorativo que facilita el mantenimiento y mejora la
+          estética de la vivienda.
+        </p>
+      </header>
 
-    <!-- Aquí añades fotos -->
-    <!-- <img src="../d9ffa681-6cf7-4601-8d57-7ce1f99cb350.jpg"> -->
+      <div class="project-layout">
+        <!-- Columna izquierda: Fases -->
+        <section class="phases-card" aria-label="Fases de ejecución">
+          <h2>Fases de la obra</h2>
+
+          <div class="phase">
+            <div class="phase-title">Fase 1 — Preparación del terreno</div>
+            <p>
+              Limpieza de la zona, demolición del pavimento antiguo y nivelación del terreno para conseguir
+              pendientes correctas y un buen drenaje.
+            </p>
+          </div>
+
+          <div class="phase">
+            <div class="phase-title">Fase 2 — Encofrado y armaduras</div>
+            <p>
+              Colocación de encofrados perimetrales, base de zahorra compactada y mallazo de acero para reforzar
+              la losa de hormigón.
+            </p>
+          </div>
+
+          <div class="phase">
+            <div class="phase-title">Fase 3 — Vertido y estampado</div>
+            <p>
+              Vertido del hormigón, nivelado y fratasado. Aplicación de color endurecedor en superficie y
+              estampado con molde de piedra para conseguir el dibujo decorativo.
+            </p>
+          </div>
+
+          <div class="phase">
+            <div class="phase-title">Fase 4 — Lavado, juntas y sellado</div>
+            <p>
+              Lavado de la superficie, realización de juntas de dilatación y aplicación de resina selladora para
+              proteger el pavimento y realzar el color.
+            </p>
+          </div>
+        </section>
+
+        <!-- Columna derecha: Galería -->
+        <section class="gallery-block" aria-label="Galería de fotos del proyecto">
+          <h2>Evolución de la obra</h2>
+          <div class="gallery-grid">
+            <figure data-full="d9ffa681-6cf7-4601-8d57-7ce1f99cb350.jpg">
+              <img src="d9ffa681-6cf7-4601-8d57-7ce1f99cb350.jpg" alt="Vista general del hormigón impreso acabado piedra">
+              <figcaption>Vista general del acceso terminado</figcaption>
+            </figure>
+
+            <!-- Cambia estos nombres por otras fotos del mismo proyecto cuando las subas -->
+            <figure data-full="d9ffa681-6cf7-4601-8d57-7ce1f99cb350.jpg">
+              <img src="d9ffa681-6cf7-4601-8d57-7ce1f99cb350.jpg" alt="Detalle del acabado piedra del hormigón impreso">
+              <figcaption>Detalle del acabado piedra</figcaption>
+            </figure>
+
+            <figure data-full="d9ffa681-6cf7-4601-8d57-7ce1f99cb350.jpg">
+              <img src="d9ffa681-6cf7-4601-8d57-7ce1f99cb350.jpg" alt="Zona de acceso y giro para vehículos">
+              <figcaption>Zona de acceso y giro para vehículos</figcaption>
+            </figure>
+          </div>
+        </section>
+      </div>
+    </article>
   </div>
 
-  <!-- FASE 2 -->
-  <div class="fase">
-    <h2>Fase 2 — Encofrado y mallazo</h2>
-    <p>
-      Instalación del encofrado perimetral y malla electrosoldada para reforzar toda la superficie y garantizar durabilidad.
-    </p>
-
-    <!-- Aquí añades fotos -->
+  <!-- Lightbox sencillo para ver las fotos en grande -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightboxClose">&times;</span>
+    <img src="" alt="" id="lightboxImg">
   </div>
 
-  <!-- FASE 3 -->
-  <div class="fase">
-    <h2>Fase 3 — Vertido y estampado</h2>
-    <p>
-      Se vertió el hormigón, se aplicó el color endurecedor y se estampó con el molde tipo piedra seleccionado por el cliente.
-    </p>
+  <script>
+    const lightbox   = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
 
-    <!-- Aquí añades fotos -->
-  </div>
+    document.querySelectorAll('.gallery-grid figure').forEach(fig => {
+      fig.addEventListener('click', () => {
+        const full = fig.getAttribute('data-full') || fig.querySelector('img').src;
+        lightboxImg.src = full;
+        lightbox.classList.add('open');
+      });
+    });
 
-  <!-- FASE 4 -->
-  <div class="fase">
-    <h2>Fase 4 — Sellado y acabado final</h2>
-    <p>
-      Aplicación de resina protectora para resaltar el color y garantizar protección frente al clima y el desgaste.
-    </p>
+    lightboxClose.addEventListener('click', () => {
+      lightbox.classList.remove('open');
+      lightboxImg.src = '';
+    });
 
-    <!-- Aquí añades fotos -->
-  </div>
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('open');
+        lightboxImg.src = '';
+      }
+    });
 
-  <!-- GALERÍA FINAL -->
-  <h2>Galería del proyecto</h2>
-  <div class="gallery">
-    <!-- Aquí fotos finales -->
-  </div>
-
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        lightbox.classList.remove('open');
+        lightboxImg.src = '';
+      }
+    });
+  </script>
 </body>
 </html>
