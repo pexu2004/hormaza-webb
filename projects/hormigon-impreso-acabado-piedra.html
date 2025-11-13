@@ -1,115 +1,112 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hormigón Impreso Acabado Piedra — Hor-Maza</title>
 
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
       margin: 0;
-      padding: 0;
+      padding: 20px;
       background: #f8f8f8;
-      color: #000;
+      color: #333;
       line-height: 1.7;
     }
 
-    header {
-      background: #d32f2f;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-    }
+    h1, h2 { color: #d32f2f; }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    h1 {
-      color: #d32f2f;
-      text-align: center;
+    .back-btn {
+      display: inline-block;
       margin-bottom: 20px;
+      background: #000;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: 0.3s;
     }
 
-    .steps {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
+    .back-btn:hover {
+      background: #d32f2f;
+    }
+
+    .fase {
       margin-bottom: 30px;
-      border-left: 6px solid #d32f2f;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      border-left: 4px solid #d32f2f;
+      padding-left: 15px;
     }
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 15px;
+      margin-top: 25px;
     }
 
     .gallery img {
       width: 100%;
-      height: 240px;
+      height: 250px;
       object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-      transition: transform .3s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.04);
-    }
-
-    a.back {
-      display: inline-block;
-      margin-top: 20px;
-      color: #d32f2f;
-      font-weight: bold;
-      text-decoration: none;
+      border-radius: 8px;
     }
   </style>
-
 </head>
 
 <body>
 
-  <header>
-    <h2>Hormigón Impreso Acabado Piedra</h2>
-  </header>
+  <a href="../index.html#proyectos" class="back-btn">← Volver a proyectos</a>
 
-  <div class="container">
+  <h1>Hormigón Impreso Acabado Piedra</h1>
+  <p><strong>Proyecto residencial · 2025</strong> — Duración: 4 días</p>
 
-    <h1>Proceso de construcción</h1>
+  <!-- FASE 1 -->
+  <div class="fase">
+    <h2>Fase 1 — Preparación del terreno</h2>
+    <p>
+      Se realizó la limpieza, nivelación y compactado del terreno, asegurando una base estable para recibir el hormigón impreso.
+    </p>
 
-    <div class="steps">
-      <h3>Fases del proyecto</h3>
-      <ul>
-        <li>Preparación del terreno</li>
-        <li>Encofrado y niveles</li>
-        <li>Colocación del mallazo</li>
-        <li>Vertido del hormigón</li>
-        <li>Aplicación del color</li>
-        <li>Impresión con moldes de piedra</li>
-        <li>Lavado y resina final</li>
-      </ul>
-    </div>
+    <!-- Aquí añades fotos -->
+    <!-- <img src="../d9ffa681-6cf7-4601-8d57-7ce1f99cb350.jpg"> -->
+  </div>
 
-    <h2>Galería del proyecto</h2>
-    <div class="gallery">
-      <img src="../d9ffa681-6cf7-4601-8d57-7ce1f99cb350.jpg" alt="Hormigón impreso fase 1">
-      <img src="../6e49f6d1-fa4f-45a0-a787-476ce6431e88.jpg" alt="Hormigón impreso fase 2">
-      <img src="../A96B93BB-0125-4EA6-A2F6-A38609337505.jpeg" alt="Hormigón impreso fase 3">
-      <img src="../9FF758EB-8DAE-4071-A90A-F9AB756B8822.jpeg" alt="Hormigón impreso fase 4">
-      <img src="../DBB50291-286A-447C-9B6E-C5D4A0B5E0E9.jpeg" alt="Hormigón impreso fase 5">
-    </div>
+  <!-- FASE 2 -->
+  <div class="fase">
+    <h2>Fase 2 — Encofrado y mallazo</h2>
+    <p>
+      Instalación del encofrado perimetral y malla electrosoldada para reforzar toda la superficie y garantizar durabilidad.
+    </p>
 
-    <a class="back" href="../index.html">← Volver a Proyectos</a>
+    <!-- Aquí añades fotos -->
+  </div>
 
+  <!-- FASE 3 -->
+  <div class="fase">
+    <h2>Fase 3 — Vertido y estampado</h2>
+    <p>
+      Se vertió el hormigón, se aplicó el color endurecedor y se estampó con el molde tipo piedra seleccionado por el cliente.
+    </p>
+
+    <!-- Aquí añades fotos -->
+  </div>
+
+  <!-- FASE 4 -->
+  <div class="fase">
+    <h2>Fase 4 — Sellado y acabado final</h2>
+    <p>
+      Aplicación de resina protectora para resaltar el color y garantizar protección frente al clima y el desgaste.
+    </p>
+
+    <!-- Aquí añades fotos -->
+  </div>
+
+  <!-- GALERÍA FINAL -->
+  <h2>Galería del proyecto</h2>
+  <div class="gallery">
+    <!-- Aquí fotos finales -->
   </div>
 
 </body>
-
 </html>
