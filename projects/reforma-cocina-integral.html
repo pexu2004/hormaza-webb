@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reforma de cocina integral — Hor-Maza</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --rojo: #d32f2f;
+      --rojo-oscuro: #b71c1c;
+      --texto: #111;
+      --gris-fondo: #f8f8f8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: var(--gris-fondo);
+      color: var(--texto);
+      line-height: 1.7;
+    }
+
+    a { color: var(--rojo); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background: #000;
+      color: #fff;
+      padding: 14px 18px;
+    }
+
+    header .top-bar {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    header .logo {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    header .back-link {
+      background: #fff;
+      color: #000;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+
+    header .back-link span.icon {
+      font-size: 1.1rem;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 26px auto 40px;
+      padding: 0 16px 40px;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0,0,0,.06);
+      border-left: 5px solid var(--rojo);
+    }
+
+    .breadcrumb {
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      color: #666;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin: 8px 0 6px;
+    }
+
+    .meta {
+      font-size: 0.95rem;
+      color: #777;
+      margin-bottom: 18px;
+    }
+
+    .intro {
+      font-size: 1rem;
+      margin-bottom: 26px;
+    }
+
+    /* Línea de fases */
+    .timeline {
+      border-left: 3px solid var(--rojo);
+      padding-left: 18px;
+      margin-bottom: 32px;
+    }
+
+    .phase {
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .phase::before {
+      content: "";
+      position: absolute;
+      left: -22px;
+      top: 6px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #fff;
+      border: 3px solid var(--rojo);
+    }
+
+    .phase-title {
+      font-weight: 700;
+      color: var(--rojo);
+    }
+
+    .phase-desc {
+      margin: 3px 0 0;
+      font-size: 0.96rem;
+    }
+
+    /* Galería */
+    h2 {
+      margin-top: 10px;
+      font-size: 1.5rem;
+    }
+
+    .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .project-gallery figure {
+      margin: 0;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #eee;
+      cursor: zoom-in;
+      position: relative;
+    }
+
+    .project-gallery img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+      transition: transform .35s ease, filter .35s ease;
+    }
+
+    .project-gallery figure:hover img {
+      transform: scale(1.05);
+      filter: brightness(1.03);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .lightbox img {
+      max-width: 92vw;
+      max-height: 92vh;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.6);
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 14px;
+      right: 18px;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+      font-weight: 300;
+    }
+
+    .lightbox-counter {
+      position: fixed;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 700px) {
+      main {
+        margin: 16px auto 26px;
+        padding: 10px 14px 26px;
+      }
+      h1 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="top-bar">
+      <div class="logo">Hor-Maza</div>
+      <a class="back-link" href="../index.html#proyectos">
+        <span class="icon">←</span>
+        <span>Volver a proyectos</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="../index.html">Inicio</a> · <a href="../index.html#proyectos">Proyectos</a>
+    </div>
+
+    <h1>Reforma de cocina integral</h1>
+    <div class="meta">Reforma interior · 2024 · Duración: 3 semanas</div>
+
+    <p class="intro">
+      Reforma completa de cocina: demolición del revestimiento antiguo, actualización de instalaciones
+      de fontanería y electricidad, nuevos acabados, iluminación y mobiliario moderno para ganar
+      amplitud, luz y funcionalidad en el día a día.
+    </p>
+
+    <section class="timeline">
+      <div class="phase">
+        <div class="phase-title">Fase 1 — Demolición y desescombro</div>
+        <p class="phase-desc">
+          Retirada de azulejos, muebles antiguos, falsos techos y pavimentos, protegiendo el resto de la vivienda.
+        </p>
+      </div>
+
+      <div class="phase">
+        <div class="phase-title">Fase 2 — Instalaciones de agua y luz</div>
+        <p class="phase-desc">
+          Renovación completa de la instalación eléctrica y de fontanería, adaptada a la nueva distribución.
+        </p>
+      </div>
+
+      <div class="phase">
+        <div class="phase-title">Fase 3 — Revestimientos y pavimentos</div>
+        <p class="phase-desc">
+          Colocación de nuevos azulejos, alicatados y suelo cerámico resistente y fácil de limpiar.
+        </p>
+      </div>
+
+      <div class="phase">
+        <div class="phase-title">Fase 4 — Mobiliario, encimera e iluminación</div>
+        <p class="phase-desc">
+          Montaje de muebles, colocación de encimera, electrodomésticos, focos empotrados y remates finales.
+        </p>
+      </div>
+    </section>
+
+    <h2>Evolución de la obra</h2>
+    <div class="project-gallery">
+      <figure>
+        <img src="../6abf1a62-9b65-4f28-97c6-632ddc5d8717.jpg"
+             alt="Cocina reformada con mobiliario moderno"
+             data-full="../6abf1a62-9b65-4f28-97c6-632ddc5d8717.jpg">
+      </figure>
+
+      <!-- Puedes cambiar estas fotos por otras de la cocina -->
+      <figure>
+        <img src="../6abf1a62-9b65-4f28-97c6-632ddc5d8717.jpg"
+             alt="Detalle de la encimera y zona de trabajo"
+             data-full="../6abf1a62-9b65-4f28-97c6-632ddc5d8717.jpg">
+      </figure>
+
+      <figure>
+        <img src="../6abf1a62-9b65-4f28-97c6-632ddc5d8717.jpg"
+             alt="Vista general de la reforma de cocina"
+             data-full="../6abf1a62-9b65-4f28-97c6-632ddc5d8717.jpg">
+      </figure>
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Foto de la obra">
+    <div class="lightbox-counter" id="lightbox-counter"></div>
+  </div>
+
+  <script>
+    const galleryImages = Array.from(document.querySelectorAll('.project-gallery img'));
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const counter = document.getElementById('lightbox-counter');
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      const img = galleryImages[index];
+      currentIndex = index;
+      lightboxImg.src = img.dataset.full || img.src;
+      counter.textContent = (index + 1) + ' / ' + galleryImages.length;
+      lightbox.style.display = 'flex';
+    }
+
+    galleryImages.forEach((img, index) => {
+      img.addEventListener('click', () => openLightbox(index));
+    });
+
+    function closeLightbox() {
+      lightbox.style.display = 'none';
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.style.display !== 'flex') return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') openLightbox((currentIndex + 1) % galleryImages.length);
+      if (e.key === 'ArrowLeft') openLightbox((currentIndex - 1 + galleryImages.length) % galleryImages.length);
+    });
+  </script>
+</body>
+</html>
