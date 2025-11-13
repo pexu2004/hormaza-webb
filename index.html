@@ -226,44 +226,39 @@
       margin: 0 auto
     }
 
-    /* About */
+        /* About */
     .about {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: nowrap; /* 📌 así NO baja el texto debajo */
-  justify-content: space-between;
-}
-@media (max-width: 768px) {
-  .about {
-    flex-wrap: wrap;
-  }
-  .about .text {
-    text-align: left;
-  
-  }
-}
-
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: nowrap;           /* en escritorio: foto + texto en la misma fila */
+      justify-content: space-between;
+    }
 
     .about img {
-  flex: 1;
-  max-width: 350px;  /* 📌 tamaño más pequeño */
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-      @media (min-width: 769px) {
-  .about img {
-    max-height: 350px;
-  }
-}
-
+      flex: 1;
+      max-width: 350px;            /* tamaño de la foto */
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
     }
 
     .about .text {
-      flex: 2
+      flex: 2;
+      text-align: left;            /* texto alineado a la izquierda */
+    }
+
+    @media (max-width: 768px) {
+      .about {
+        flex-wrap: wrap;           /* en móvil: foto arriba, texto abajo */
+      }
+      .about img {
+        max-width: 100%;
+      }
+      .about .text {
+        text-align: left;          /* sigue alineado a la izquierda en móvil */
+      }
     }
 
     /* Services */
@@ -726,16 +721,16 @@
         Ontinyent y provincia de Valencia.</p>
     </section>
 
-    <section id="sobre-nosotros">
-  <h2>Sobre Nosotros</h2>
-  <div class="about">
-    <img src="e777291d-dcf2-4e20-8427-52c6ab1ff975.jpg" alt="Oficina de Hor-Maza en Ontinyent">
+        <section id="sobre-nosotros">
+      <h2>Sobre Nosotros</h2>
+      <div class="about">
+        <img src="e777291d-dcf2-4e20-8427-52c6ab1ff975.jpg" alt="Oficina de Hor-Maza en Ontinyent">
 
-    
+        <div class="text">
           <p>Hacemos realidad los proyectos de nuestros clientes con dedicación, calidad y confianza. Somos
             especialistas en <strong>obra, reformas, hormigón impreso, electricidad y fontanería.</strong></p>
           <p>Cuidamos cada detalle, cumplimos plazos y ofrecemos soluciones prácticas y duraderas.</p>
-          <p><strong>Nuestros Valores:</strong> integridad, innovación y compromiso con la comunidad.</p>
+          <p><strong>Nuestros valores:</strong> integridad, innovación y compromiso con la comunidad.</p>
         </div>
       </div>
     </section>
