@@ -112,6 +112,59 @@
       margin: 0 auto;
       padding: 0 20px
     }
+    /* ===== Intro / splash del logo al abrir la web ===== */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: #000; /* fondo negro elegante */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  pointer-events: none;
+  animation: preloaderFade 1.8s ease-out forwards;
+}
+
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transform: translateY(0);
+}
+
+#preloader img {
+  height: 130px;
+  width: auto;
+}
+
+#preloader span {
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@keyframes preloaderFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.05);
+    visibility: hidden;
+  }
+}
+
 
     /* ===== Header con imagen de fondo para TODAS las pantallas ===== */
     header {
@@ -711,11 +764,14 @@ header .logo {
 </head>
 
 <body>
-  <!-- Preloader sencillo (opcional) -->
-  <div id="preloader"
-    style="position:fixed;inset:0;background:#fff;display:none;align-items:center;justify-content:center;z-index:10000">
-    <img src="logo_small_icon_only.png" alt="Hor-Maza" style="height:72px;width:auto" />
+  <!-- Intro grande del logo al abrir la web -->
+<div id="preloader">
+  <div class="preloader-content">
+    <img src="logo_small_icon_only.png" alt="Hor-Maza" />
+    <span>Hor-Maza</span>
   </div>
+</div>
+
 
   <header>
     <div class="container">
