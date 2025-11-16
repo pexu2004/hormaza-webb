@@ -9,15 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
 
+  <!-- CSS ARREGLADO -->
   <style>
     :root {
       --rojo: #d32f2f;
       --rojo-oscuro: #b71c1c;
       --texto: #111;
       --gris-fondo: #f8f8f8;
-       
-</style>
-
     }
 
     * { box-sizing: border-box; }
@@ -65,10 +63,6 @@
       text-decoration: none;
     }
 
-    header .back-link span.icon {
-      font-size: 1.1rem;
-    }
-
     main {
       max-width: 1100px;
       margin: 26px auto 40px;
@@ -96,12 +90,6 @@
       margin-bottom: 18px;
     }
 
-    .intro {
-      font-size: 1rem;
-      margin-bottom: 26px;
-    }
-
-    /* Línea de fases */
     .timeline {
       border-left: 3px solid var(--rojo);
       padding-left: 18px;
@@ -130,11 +118,6 @@
       color: var(--rojo);
     }
 
-    .phase-desc {
-      margin: 3px 0 0;
-      font-size: 0.96rem;
-    }
-
     /* Galería */
     h2 {
       margin-top: 10px;
@@ -154,7 +137,6 @@
       overflow: hidden;
       background: #eee;
       cursor: zoom-in;
-      position: relative;
     }
 
     .project-gallery img {
@@ -185,47 +167,18 @@
       max-width: 92vw;
       max-height: 92vh;
       border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.6);
     }
-
-    .lightbox-close {
-      position: fixed;
-      top: 14px;
-      right: 18px;
-      font-size: 2rem;
-      color: #fff;
-      cursor: pointer;
-      font-weight: 300;
-    }
-
-    .lightbox-counter {
-      position: fixed;
-      bottom: 12px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: #fff;
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-
-    @media (max-width: 700px) {
-      main {
-        margin: 16px auto 26px;
-        padding: 10px 14px 26px;
-      }
-      h1 { font-size: 1.6rem; }
-    }
-    
   </style>
+
 </head>
 
 <body>
+
   <header>
     <div class="top-bar">
       <div class="logo">Hor-Maza</div>
       <a class="back-link" href="../index.html#proyectos">
-        <span class="icon">←</span>
-        <span>Volver a proyectos</span>
+        <span class="icon">←</span> Volver a proyectos
       </a>
     </div>
   </header>
@@ -236,113 +189,61 @@
     </div>
 
     <h1>Diseño de losas + césped</h1>
-    <div class="meta">Paviemnto Exterior · 2025 · Duración: 3 semanas</div>
-
-    <p class="intro">
-      Creación de un jardín moderno combinando losas de hormigón y césped artificial,
-      logrando un espacio limpio, cómodo de mantener y con un diseño geométrico muy visual.
-    </p>
+    <div class="meta">Pavimento Exterior · 2025 · Duración: 3 semanas</div>
 
     <section class="timeline">
       <div class="phase">
         <div class="phase-title">Fase 1 — Demolición y limpieza</div>
-        <p class="phase-desc">Retirada del pavimento existente y nivelación del terreno para evitar charcos y hundimientos.</p>
+        <p class="phase-desc">Retirada del pavimento existente y nivelación del terreno.</p>
       </div>
+
       <div class="phase">
         <div class="phase-title">Fase 2 — Replanteo y preparación de base</div>
-        <p class="phase-desc">Trazado de las líneas de las losas, colocación de bases y compactación de la zona de apoyo.</p>
+        <p class="phase-desc">Líneas de losas, bases y compactación.</p>
       </div>
+
       <div class="phase">
         <div class="phase-title">Fase 3 — Colocación de losas</div>
-        <p class="phase-desc">Instalación de las piezas de hormigón respetando alineaciones y separaciones para el césped.</p>
+        <p class="phase-desc">Instalación alineada de piezas de hormigón.</p>
       </div>
+
       <div class="phase">
-        <div class="phase-title">Fase 4 — Colocación del césped y remates</div>
-        <p class="phase-desc">Relleno de las zonas entre losas con césped artificial, cortes a medida y limpieza final de la zona.</p>
+        <div class="phase-title">Fase 4 — Césped y remates</div>
+        <p class="phase-desc">Relleno de zonas con césped artificial y cortes finales.</p>
       </div>
     </section>
 
+    <!-- SOLO UNA GALERÍA -->
+    <h2>Evolución de la obra</h2>
 
-    <section id="galeria-proyecto" class="project-gallery">
-</section>   ← ESTE FALTA O ESTÁ MAL CERRADO
-<h2>Evolución de la obra</h2>
+    <section class="project-gallery">
+      <figure>
+        <img src="/dis1.jpg" alt="">
+        <figcaption>Inicio del diseño de losas y distribución.</figcaption>
+      </figure>
 
-<section id="galeria-proyecto" class="project-gallery">
+      <figure>
+        <img src="/dis2.jpeg" alt="">
+        <figcaption>Detalle del hueco para césped.</figcaption>
+      </figure>
 
-    <figure>
-      <img src="/dis1.jpg" alt="Montaje de losas con césped artificial">
-      <figcaption>Inicio del diseño de losas y distribución.</figcaption>
-    </figure>
+      <figure>
+        <img src="/dis3.jpeg" alt="">
+        <figcaption>Encaje del césped artificial.</figcaption>
+      </figure>
 
-    <figure>
-      <img src="/dis2.jpeg" alt="Detalle del diseño de losas con separación para césped">
-      <figcaption>Detalle de las losas con hueco para césped.</figcaption>
-    </figure>
+      <figure>
+        <img src="/dis4.jpeg" alt="">
+        <figcaption>Vista general del diseño geométrico.</figcaption>
+      </figure>
 
-    <figure>
-      <img src="/dis3.jpeg" alt="Instalación del césped entre las losas">
-      <figcaption>Encaje del césped entre las piezas.</figcaption>
-    </figure>
-
-    <figure>
-      <img src="/dis4.jpeg" alt="Vista general del diseño final de losas con césped">
-      <figcaption>Vista general del diseño geométrico.</figcaption>
-    </figure>
-
-    <figure>
-      <img src="/dis5.jpeg" alt="Resultado final losas y césped artificial instalado">
-      <figcaption>Resultado final: losas + césped artificial.</figcaption>
-    </figure>
-
-</section>
-
-
+      <figure>
+        <img src="/dis5.jpeg" alt="">
+        <figcaption>Resultado final: losas + césped.</figcaption>
+      </figure>
+    </section>
 
   </main>
 
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox">
-    <span class="lightbox-close" id="lightbox-close">&times;</span>
-    <img id="lightbox-img" src="" alt="Foto de la obra">
-    <div class="lightbox-counter" id="lightbox-counter"></div>
-  </div>
-
-  <script>
-    // Lightbox igual que en los otros proyectos
-    const galleryImages = Array.from(document.querySelectorAll('.project-gallery img'));
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxClose = document.getElementById('lightbox-close');
-    const counter = document.getElementById('lightbox-counter');
-    let currentIndex = 0;
-
-    function openLightbox(index) {
-      const img = galleryImages[index];
-      currentIndex = index;
-      lightboxImg.src = img.dataset.full || img.src;
-      counter.textContent = (index + 1) + ' / ' + galleryImages.length;
-      lightbox.style.display = 'flex';
-    }
-
-    galleryImages.forEach((img, index) => {
-      img.addEventListener('click', () => openLightbox(index));
-    });
-
-    function closeLightbox() {
-      lightbox.style.display = 'none';
-    }
-
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) closeLightbox();
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (lightbox.style.display !== 'flex') return;
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowRight') openLightbox((currentIndex + 1) % galleryImages.length);
-      if (e.key === 'ArrowLeft') openLightbox((currentIndex - 1 + galleryImages.length) % galleryImages.length);
-    });
-  </script>
 </body>
 </html>
