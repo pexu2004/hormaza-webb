@@ -5,6 +5,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hor-Maza — Empresa de Reformas</title>
+
+  <meta name="description"
+    content="Hor-Maza: obras, reformas, hormigón impreso, electricidad y fontanería en Ontinyent (Valencia). Calidad, seguridad y puntualidad." />
+
+  <!-- ===== Favicons (subir a la raíz del dominio) ===== -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- ===== Fonts (performance) ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- ===== FontAwesome non-blocking (mejor fluidez) ===== -->
+  <link rel="preload" as="style"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </noscript>
+
+  <!-- ===== Google Analytics (GA4) ===== -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5BBL891R3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-E5BBL891R3');
+  </script>
+
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
@@ -19,16 +52,13 @@
       color: #d32f2f;
       text-align: center;
       margin-bottom: 30px;
-
     }
 
-    /* --- Contenedor general --- */
     .container {
       max-width: 1200px;
       margin: 0 auto;
     }
 
-    /* --- WhatsApp flotante --- */
     .whatsapp-fab {
       position: fixed;
       bottom: 28px;
@@ -54,26 +84,15 @@
       background-color: #20ba5a;
     }
 
-    /* Efecto zoom al pasar el ratón en Proyectos (gallery) */
     .gallery img {
       transition: transform .35s ease, box-shadow .35s ease;
-      /* añade transición */
     }
 
     .gallery figure:hover img {
       transform: scale(1.06);
-      /* zoom suave */
       box-shadow: 0 10px 24px rgba(0, 0, 0, .25);
     }
   </style>
-
-  <meta name="description"
-    content="Hor-Maza: obras, reformas, hormigón impreso, electricidad y fontanería en Ontinyent (Valencia). Calidad, seguridad y puntualidad." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     :root {
@@ -87,7 +106,6 @@
       box-sizing: border-box
     }
 
-    /* ===== Base ===== */
     html,
     body {
       height: 100%
@@ -97,7 +115,6 @@
       transform: none !important
     }
 
-    /* evita bugs de position:fixed en algunos navegadores */
     body {
       font-family: 'Montserrat', sans-serif;
       margin: 0;
@@ -112,73 +129,106 @@
       margin: 0 auto;
       padding: 0 20px
     }
+
     /* ===== Intro / splash del logo al abrir la web ===== */
-#preloader {
-  position: fixed;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.92); /* blanco con un 8% de transparencia */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10000;
-  pointer-events: none;
-  animation: preloaderFade 1.8s ease-out forwards;
-}
+    #preloader {
+      position: fixed;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      pointer-events: none;
+      animation: preloaderFade 1.8s ease-out forwards;
+    }
 
-.preloader-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  transform: translateY(0);
-}
+    .preloader-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      transform: translateY(0);
+    }
 
-#preloader img {
-  height: 130px;
-  width: auto;
-}
+    #preloader img {
+      height: 130px;
+      width: auto;
+    }
 
-#preloader span {
-  color: #ffffff;
-  font-size: 2.2rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
+    #preloader span {
+      color: #ffffff;
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
 
-@keyframes preloaderFade {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  20% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  70% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.05);
-    visibility: hidden;
-  }
-}
+    @keyframes preloaderFade {
+      0% {
+        opacity: 0;
+        transform: scale(0.9);
+      }
 
+      20% {
+        opacity: 1;
+        transform: scale(1);
+      }
 
-    /* ===== Header con imagen de fondo para TODAS las pantallas ===== */
+      70% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(1.05);
+        visibility: hidden;
+      }
+    }
+
+    /* ===== Header con imagen de fondo ===== */
     header {
       position: relative;
-      background:
-        linear-gradient(135deg, rgba(211, 47, 47, 0.88), rgba(183, 28, 28, 0.88)),
-        url('IMG_0081.JPG') no-repeat center/cover;
+      overflow: hidden;
       color: #fff;
-      padding: 80px 20px;
-      /* un poco más alto para lucir la foto */
+      padding: 110px 20px;
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, .4);
+    }
 
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("IMG_0081.JPG") no-repeat center 65% / cover;
+      transform: scale(1.06);
+      will-change: transform;
+      animation: heroZoom 22s ease-in-out infinite alternate;
+      z-index: 0;
+    }
 
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(211, 47, 47, 0.40), rgba(183, 28, 28, 0.40));
+      z-index: 1;
+    }
+
+    header .container,
+    header .logo,
+    header p {
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes heroZoom {
+      0% {
+        transform: scale(1.04);
+      }
+
+      100% {
+        transform: scale(1.16);
+      }
     }
 
     .logo {
@@ -190,46 +240,39 @@
       font-weight: 700;
       margin-bottom: 10px
     }
-   /* Animación de entrada del logo al cargar la página */
-@keyframes logoIntro {
-  0% {
-    opacity: 0;
-    transform: translateY(20px) scale(0.9);
-  }
-  60% {
-    opacity: 1;
-    transform: translateY(-6px) scale(1.03);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
 
-/* Aplica la animación al contenedor del logo */
-header .logo {
-  opacity: 0; /* invisible de inicio */
-  animation: logoIntro 1.1s ease-out 0.4s forwards;
-}
+    @keyframes logoIntro {
+      0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+      }
 
+      60% {
+        opacity: 1;
+        transform: translateY(-6px) scale(1.03);
+      }
 
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    header .logo {
+      opacity: 0;
+      animation: logoIntro 1.1s ease-out 0.4s forwards;
+    }
 
     .logo-img {
       height: 95px;
-      /* puedes ajustar 60–80 px según te guste */
       width: auto;
       vertical-align: middle;
-      /* alinea con el texto Hor-Maza */
       filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.25));
-      /* 🌟 sombra sutil para resaltar sobre fondo rojo */
       transition: transform 0.25s ease;
-      /* animación suave al pasar el ratón */
     }
 
     .logo-img:hover {
       transform: scale(1.06);
-      /* pequeño zoom cuando pasas el ratón */
-
     }
 
     header p {
@@ -238,7 +281,6 @@ header .logo {
       font-weight: 300
     }
 
-    /* ===== Nav ===== */
     nav {
       background: #000;
       padding: 12px 0;
@@ -263,7 +305,6 @@ header .logo {
       background: var(--rojo)
     }
 
-    /* ===== Secciones ===== */
     section {
       padding: 56px 20px;
       margin: 36px 0;
@@ -281,7 +322,6 @@ header .logo {
       font-size: 2.05em
     }
 
-    /* Hero */
     .hero {
       text-align: center;
       padding: 86px 20px;
@@ -302,18 +342,17 @@ header .logo {
       margin: 0 auto
     }
 
-        /* About */
     .about {
       display: flex;
       align-items: center;
       gap: 20px;
-      flex-wrap: nowrap;           /* en escritorio: foto + texto en la misma fila */
+      flex-wrap: nowrap;
       justify-content: space-between;
     }
 
     .about img {
       flex: 1;
-      max-width: 320px;            /* tamaño de la foto */
+      max-width: 320px;
       width: 100%;
       height: auto;
       border-radius: 10px;
@@ -322,22 +361,23 @@ header .logo {
 
     .about .text {
       flex: 2;
-      text-align: left;            /* texto alineado a la izquierda */
+      text-align: left;
     }
 
     @media (max-width: 768px) {
       .about {
-        flex-wrap: wrap;           /* en móvil: foto arriba, texto abajo */
+        flex-wrap: wrap;
       }
+
       .about img {
         max-width: 100%;
       }
+
       .about .text {
-        text-align: left;          /* sigue alineado a la izquierda en móvil */
+        text-align: left;
       }
     }
 
-    /* Services */
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -345,17 +385,19 @@ header .logo {
     }
 
     .service {
+      position: relative;
+      overflow: hidden;
       padding: 22px;
       background: #f9f9f9;
       border-radius: 10px;
       text-align: center;
-      transition: .25s;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       border: 1px solid #eaeaea
     }
 
     .service:hover {
       transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, .15)
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
     }
 
     .service i {
@@ -367,7 +409,6 @@ header .logo {
     .service-icon {
       margin-bottom: 15px;
       color: #d32f2f;
-      /* igual que los otros iconos */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -380,15 +421,56 @@ header .logo {
       fill: currentColor;
     }
 
-    /* Efecto hover igual que los otros iconos */
     .service:hover .service-icon {
       transform: translateY(-6px);
       color: #b71c1c;
-      /* tono más oscuro al pasar el ratón */
     }
 
+    .service::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%) scaleX(0);
+      transform-origin: center;
+      width: 80%;
+      height: 3px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, rgba(211, 47, 47, 0), rgba(211, 47, 47, 1), rgba(211, 47, 47, 0));
+      box-shadow: 0 0 8px rgba(211, 47, 47, 0.7), 0 0 16px rgba(211, 47, 47, 0.4);
+      transition: transform 0.4s ease;
+    }
 
-    /* Gallery */
+    .service::before {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: radial-gradient(ellipse at center, rgba(211, 47, 47, 0.4), rgba(211, 47, 47, 0) 70%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+
+    .service:hover::after {
+      transform: translateX(-50%) scaleX(1);
+    }
+
+    .service:hover::before {
+      opacity: 1;
+    }
+
+    .service:hover i,
+    .service:hover .service-icon {
+      color: #b71c1c;
+    }
+
+    .service:hover h3 {
+      color: #b71c1c;
+    }
+
     .gallery {
       display: grid;
       gap: 14px;
@@ -421,7 +503,6 @@ header .logo {
       font-size: .95rem
     }
 
-    /* Testimonios */
     .testimonials {
       display: flex;
       flex-wrap: wrap;
@@ -447,7 +528,6 @@ header .logo {
       color: var(--rojo)
     }
 
-    /* Contacto */
     .contact-form {
       max-width: 640px;
       margin: 0 auto 22px
@@ -480,7 +560,6 @@ header .logo {
       background: var(--rojo-hover)
     }
 
-    /* Más margen a la izquierda para datos de contacto */
     .contact-info {
       padding-left: 22px;
       border-left: 4px solid #eee
@@ -495,7 +574,6 @@ header .logo {
       margin-right: 8px
     }
 
-    /* Footer */
     footer {
       background: #000;
       color: #fff;
@@ -519,7 +597,6 @@ header .logo {
       color: var(--rojo)
     }
 
-    /* ===== WhatsApp FAB (Fijo, seguro y por encima de todo) ===== */
     .whatsapp-fab {
       position: fixed;
       bottom: calc(24px + env(safe-area-inset-bottom));
@@ -545,130 +622,12 @@ header .logo {
       background: #20ba5a
     }
 
-    /* ===== Hero del header con animación suave y enfoque en la furgoneta ===== */
-    header {
-      position: relative;
-      overflow: hidden;
-      /* recorta el zoom sin barras */
-      color: #fff;
-      padding: 110px 20px;
-      /* más alto para lucir la foto */
-      text-align: center;
-    }
-
-    /* Capa de la foto (se anima con transform, calidad alta) */
-    header::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: url("IMG_0081.JPG") no-repeat center 65% / cover;
-      /* 👈 78% = desplaza hacia abajo (se ve más furgoneta) */
-      transform: scale(1.06);
-      will-change: transform;
-      animation: heroZoom 22s ease-in-out infinite alternate;
-      /* 👈 suave y más largo */
-      z-index: 0;
-    }
-
-    /* Capa del degradado rojo encima de la foto (legibilidad) */
-    header::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(211, 47, 47, 0.40), rgba(183, 28, 28, 0.40));
-      /* 👈 más transparente */
-      z-index: 1;
-    }
-
-    /* Asegura que el contenido (logo + texto) quede por encima */
-    header .container,
-    header .logo,
-    header p {
-      position: relative;
-      z-index: 2;
-    }
-
-    /* Animación de zoom premium (sin saltos) */
-    @keyframes heroZoom {
-      0% {
-        transform: scale(1.04);
-      }
-
-      100% {
-        transform: scale(1.16);
-      }
-
-      /* 👈 más zoom pero suave */
-    }
-    /* --- Hover con luz roja bajo cada servicio --- */
-    .service {
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    /* Línea roja animada que aparece desde el centro */
-    .service::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: 0;
-      transform: translateX(-50%) scaleX(0);
-      transform-origin: center;
-      width: 80%;
-      height: 3px;
-      border-radius: 2px;
-      background: linear-gradient(90deg, rgba(211,47,47,0), rgba(211,47,47,1), rgba(211,47,47,0));
-      box-shadow: 0 0 8px rgba(211,47,47,0.7), 0 0 16px rgba(211,47,47,0.4);
-      transition: transform 0.4s ease;
-    }
-
-    /* Efecto glow suave */
-    .service::before {
-      content: "";
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      right: 0;
-      height: 8px;
-      background: radial-gradient(ellipse at center, rgba(211,47,47,0.4), rgba(211,47,47,0) 70%);
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      pointer-events: none;
-    }
-
-    /* Hover activo */
-    .service:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
-    }
-    .service:hover::after {
-      transform: translateX(-50%) scaleX(1);
-    }
-    .service:hover::before {
-      opacity: 1;
-    }
-
-    /* Cambia color de icono y título al pasar */
-    .service:hover i,
-    .service:hover .service-icon {
-      color: #b71c1c;
-    }
-    .service:hover h3 {
-      color: #b71c1c;
-    }
-
-
-    /* Ajustes en móvil (menos alto y un pelín más de furgoneta visible) */
     @media (max-width: 768px) {
-
-      /* --- Menú más legible en móvil --- */
       nav {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
-        /* espacio entre enlaces */
         padding: 10px 8px;
       }
 
@@ -691,87 +650,34 @@ header .logo {
 
       header::before {
         background-position: center 85%;
-        /* 👈 baja un poco más el encuadre */
         animation-duration: 18s;
-        /* algo más rápido en móvil */
+      }
+    }
 
-      }
-      /* --- Hover con luz roja bajo cada servicio --- */
-      .service {
-        position: relative;
-        overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
+    .project-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
 
-      /* Línea roja animada que aparece desde el centro */
-      .service::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        transform: translateX(-50%) scaleX(0);
-        transform-origin: center;
-        width: 80%;
-        height: 3px;
-        border-radius: 2px;
-        background: linear-gradient(90deg, rgba(211,47,47,0), rgba(211,47,47,1), rgba(211,47,47,0));
-        box-shadow: 0 0 8px rgba(211,47,47,0.7), 0 0 16px rgba(211,47,47,0.4);
-        transition: transform 0.4s ease;
-      }
+    .project-link figure {
+      margin: 0;
+    }
 
-      /* Efecto glow suave */
-      .service::before {
-        content: "";
-        position: absolute;
-        bottom: -4px;
-        left: 0;
-        right: 0;
-        height: 8px;
-        background: radial-gradient(ellipse at center, rgba(211,47,47,0.4), rgba(211,47,47,0) 70%);
-        opacity: 0;
-        transition: opacity 0.4s ease;
-        pointer-events: none;
-      }
-
-      /* Hover activo */
-      .service:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
-      }
-      .service:hover::after {
-        transform: translateX(-50%) scaleX(1);
-      }
-      .service:hover::before {
-        opacity: 1;
-      }
-
-      /* Cambia color de icono y título al pasar */
-      .service:hover i,
-      .service:hover .service-icon {
-        color: #b71c1c;
-      }
-      .service:hover h3 {
-        color: #b71c1c;
-      }
-      /* Enlace que envuelve cada proyecto (no rompe el diseño) */
-.project-link { display:block; text-decoration:none; color:inherit; }
-.project-link figure { margin:0; }
-.project-link:hover figcaption { text-decoration: underline; }
-
-
-      
+    .project-link:hover figcaption {
+      text-decoration: underline;
+    }
   </style>
 </head>
 
 <body>
   <!-- Intro grande del logo al abrir la web -->
-<div id="preloader">
-  <div class="preloader-content">
-    <img src="logo_small_icon_only.png" alt="Hor-Maza" />
-    <span>Hor-Maza</span>
+  <div id="preloader">
+    <div class="preloader-content">
+      <img src="logo_small_icon_only.png" alt="Hor-Maza" />
+      <span>Hor-Maza</span>
+    </div>
   </div>
-</div>
-
 
   <header>
     <div class="container">
@@ -800,10 +706,11 @@ header .logo {
         Ontinyent y provincia de Valencia.</p>
     </section>
 
-        <section id="sobre-nosotros">
+    <section id="sobre-nosotros">
       <h2>Sobre Nosotros</h2>
       <div class="about">
-        <img src="e777291d-dcf2-4e20-8427-52c6ab1ff975.jpg" alt="Oficina de Hor-Maza en Ontinyent">
+        <img src="e777291d-dcf2-4e20-8427-52c6ab1ff975.jpg" alt="Oficina de Hor-Maza en Ontinyent"
+          loading="lazy" decoding="async">
 
         <div class="text">
           <p>Hacemos realidad los proyectos de nuestros clientes con dedicación, calidad y confianza. Somos
@@ -822,43 +729,38 @@ header .logo {
           <p>Estructura, albañilería y acabados.</p>
           <p>Cuidamos cada detalle para garantizar resistencia, funcionalidad y un resultado duradero</p>
         </div>
+
         <div class="service"><i class="fa-solid fa-house-crack" aria-hidden="true"></i>
           <h3>Reformas</h3>
           <p>Renovaciones integrales en vivienda y negocio.</p>
         </div>
+
         <div class="service">
           <div class="service-icon icon-red" aria-hidden="true">
-            <!-- Icono SVG realista tipo adoquines -->
             <svg viewBox="0 0 64 64" width="48" height="48" role="img" aria-label="Hormigón Impreso">
               <title>Hormigón Impreso</title>
-              <!-- Fila 1 -->
               <rect x="4" y="8" width="16" height="10" rx="2" fill="currentColor" />
               <rect x="24" y="8" width="16" height="10" rx="2" fill="currentColor" />
               <rect x="44" y="8" width="16" height="10" rx="2" fill="currentColor" />
-              <!-- Fila 2 (desplazada) -->
               <rect x="14" y="22" width="16" height="10" rx="2" fill="currentColor" />
               <rect x="34" y="22" width="16" height="10" rx="2" fill="currentColor" />
-              <!-- Fila 3 -->
               <rect x="4" y="36" width="16" height="10" rx="2" fill="currentColor" />
               <rect x="24" y="36" width="16" height="10" rx="2" fill="currentColor" />
               <rect x="44" y="36" width="16" height="10" rx="2" fill="currentColor" />
-              <!-- Fila 4 (desplazada) -->
               <rect x="14" y="50" width="16" height="10" rx="2" fill="currentColor" />
               <rect x="34" y="50" width="16" height="10" rx="2" fill="currentColor" />
             </svg>
           </div>
           <h3>Hormigón Impreso</h3>
-          <p>
-            Creamos superficies decorativas resistentes y elegantes, ideales para patios, accesos y zonas exteriores.
-          </p>
+          <p>Creas superficies decorativas resistentes y elegantes, ideales para patios, accesos y zonas exteriores.</p>
           <p>Combinamos diseño y durabilidad para lograr un acabado impecable.</p>
-          </p>
         </div>
 
         <div class="service"><i class="fas fa-bolt" aria-hidden="true"></i>
           <h3>Electricidad</h3>
           <p>Instalaciones y mantenimiento certificados.</p>
         </div>
+
         <div class="service"><i class="fas fa-faucet" aria-hidden="true"></i>
           <h3>Fontanería</h3>
           <p>Instalaciones, reparaciones y eficiencia hídrica.</p>
@@ -868,93 +770,93 @@ header .logo {
     </section>
 
     <section id="proyectos">
-  <h2>Proyectos Recientes</h2>
-  <div class="gallery">
+      <h2>Proyectos Recientes</h2>
+      <div class="gallery">
 
-    <!-- Pasarela sobre el Clariano -->
-    <a class="project-link" href="projects/paso-rio-ontinyent.html">
-      <figure>
-        <img src="IMG_6578.JPG" alt="Obra de pasarela sobre el río en Ontinyent" />
-        <figcaption>Pasarela sobre el Clariano — Ontinyent</figcaption>
-      </figure>
-    </a>
+        <a class="project-link" href="projects/paso-rio-ontinyent.html">
+          <figure>
+            <img src="IMG_6578.JPG" alt="Obra de pasarela sobre el río en Ontinyent" loading="lazy" decoding="async" />
+            <figcaption>Pasarela sobre el Clariano — Ontinyent</figcaption>
+          </figure>
+        </a>
 
-    <!-- Hormigón impreso acabado piedra -->
-    <a class="project-link" href="projects/hormigon-impreso-acabado-piedra.html">
-      <figure>
-        <img src="d9ffa681-6cf7-4601-8d57-7ce1f99cb350.jpg" alt="Hormigón impreso acabado piedra" />
-        <figcaption>Hormigón impreso acabado piedra</figcaption>
-      </figure>
-    </a> <!-- ✅ ESTE CIERRE ES EL QUE FALTABA -->
+        <a class="project-link" href="projects/hormigon-impreso-acabado-piedra.html">
+          <figure>
+            <img src="d9ffa681-6cf7-4601-8d57-7ce1f99cb350.jpg" alt="Hormigón impreso acabado piedra"
+              loading="lazy" decoding="async" />
+            <figcaption>Hormigón impreso acabado piedra</figcaption>
+          </figure>
+        </a>
 
-    <!-- Encofrado y mallazo -->
-   <a class="project-link" href="projects/hormigon-impreso-cesped-artificial.html">
-  <figure>
-    <img src="6e49f6d1-fa4f-45a0-a787-476ce6431e88.jpg" alt="Trazado y encofrado para losas" />
-    <figcaption>Proyecto hormigon impreso+cesped artificial</figcaption>
-  </figure>
-</a>
+        <a class="project-link" href="projects/hormigon-impreso-cesped-artificial.html">
+          <figure>
+            <img src="6e49f6d1-fa4f-45a0-a787-476ce6431e88.jpg" alt="Trazado y encofrado para losas"
+              loading="lazy" decoding="async" />
+            <figcaption>Proyecto hormigon impreso+cesped artificial</figcaption>
+          </figure>
+        </a>
 
-    <!-- Jardín con losas + césped -->
-<a class="project-link" href="projects/diseno-losas-cesped.html">
-  <figure>
-    <img src="/dis1.jpg" alt="Diseño de losas y césped artificial" />
-    <figcaption>Diseño de losas + césped artificial</figcaption>
-  </figure>
-</a>
+        <a class="project-link" href="projects/diseno-losas-cesped.html">
+          <figure>
+            <img src="/dis1.jpg" alt="Diseño de losas y césped artificial" loading="lazy" decoding="async" />
+            <figcaption>Diseño de losas + césped artificial</figcaption>
+          </figure>
+        </a>
 
+        <a class="project-link" href="projects/entrada-con-impreso.html">
+          <figure>
+            <img src="499cc221-15c1-4ef0-81dc-2753b1248668.jpg" alt="Entrada con hormigón impreso"
+              loading="lazy" decoding="async" />
+            <figcaption>Entrada con impreso</figcaption>
+          </figure>
+        </a>
 
-    <!-- Entrada con impreso -->
-<a class="project-link" href="projects/entrada-con-impreso.html">
-  <figure>
-    <img src="499cc221-15c1-4ef0-81dc-2753b1248668.jpg" alt="Entrada con hormigón impreso" />
-    <figcaption>Entrada con impreso</figcaption>
-  </figure>
-</a>
+        <figure>
+          <img src="83F84458-D04C-49B4-811D-87FFA421E860.jpeg" alt="Vista del cauce y pasarela"
+            loading="lazy" decoding="async" />
+          <figcaption>Trabajos en cauce — vista</figcaption>
+        </figure>
 
-    <!-- Trabajos en cauce — vista -->
-    <figure>
-      <img src="83F84458-D04C-49B4-811D-87FFA421E860.jpeg" alt="Vista del cauce y pasarela" />
-      <figcaption>Trabajos en cauce — vista</figcaption>
-    </figure>
+        <a class="project-link" href="projects/tarima-borde-piscina.html">
+          <figure>
+            <img src="IMG_7580.JPG" alt="Tarima de madera junto a piscina" loading="lazy" decoding="async" />
+            <figcaption>Tarima y borde piscina</figcaption>
+          </figure>
+        </a>
 
-    <!-- Reforma piscina integra -->
-<a class="project-link" href="projects/tarima-borde-piscina.html">
-  <figure>
-    <img src="IMG_7580.JPG" alt="Tarima de madera junto a piscina" />
-    <figcaption>Tarima y borde piscina</figcaption>
-  </figure>
-</a>
+        <a class="project-link" href="projects/hormigon-impreso-imitacion-madera.html">
+          <figure>
+            <img src="IMG_7600.JPG" alt="Hormigón Impreso imitación madera" loading="lazy" decoding="async" />
+            <figcaption>Hormigón Impreso imitación madera</figcaption>
+          </figure>
+        </a>
 
-    <a class="project-link" href="projects/hormigon-impreso-imitacion-madera.html">
-  <figure>
-    <img src="IMG_7600.JPG" alt="Hormigón Impreso imitación madera" />
-    <figcaption>Hormigón Impreso imitación madera</figcaption>
-  </figure>
-</a>
+        <a class="project-link" href="projects/reforma-cocina-integral.html">
+          <figure>
+            <img src="6abf1a62-9b65-4f28-97c6-632ddc5d8717.jpg" alt="Reforma de cocina moderna"
+              loading="lazy" decoding="async" />
+            <figcaption>Reforma de cocina integral</figcaption>
+          </figure>
+        </a>
 
-    <!-- Reforma cocina integral -->
-    <a class="project-link" href="projects/reforma-cocina-integral.html">
-  <figure>
-    <img src="6abf1a62-9b65-4f28-97c6-632ddc5d8717.jpg" alt="Reforma de cocina moderna" />
-    <figcaption>Reforma de cocina integral</figcaption>
-  </figure>
-</a>
-
-  </div>
-</section>
+      </div>
+    </section>
 
     <section id="testimonios">
       <h2>Testimonios de Clientes</h2>
       <div class="testimonials">
         <div class="testimonial">
-          <p>"Desde hace años solo confiamos en ellos, gente seria , trabajadora y muy agradable ."</p><cite>- Antonio Molina</cite>
+          <p>"Desde hace años solo confiamos en ellos, gente seria , trabajadora y muy agradable ."</p><cite>- Antonio
+            Molina</cite>
         </div>
         <div class="testimonial">
           <p>"Magníficos profesionales, sin duda volvería a contratarlos."</p><cite>- Patricia Sanjurjo</cite>
         </div>
         <div class="testimonial">
-          <p>"Quedé muy satisfecho con la reforma de mi cocina realizada por Hor-Maza. Su experiencia y compromiso se notan en cada paso: planificación, ejecución y acabado final. Todo se hizo con gran seriedad, cumpliendo los tiempos acordados y además a un precio muy competitivo. Un equipo de confianza para cualquier proyecto de construcción o reforma."</p><cite>- Chema B.</cite>
+          <p>"Quedé muy satisfecho con la reforma de mi cocina realizada por Hor-Maza. Su experiencia y compromiso se
+            notan en cada paso: planificación, ejecución y acabado final. Todo se hizo con gran seriedad, cumpliendo
+            los tiempos acordados y además a un precio muy competitivo. Un equipo de confianza para cualquier proyecto
+            de construcción o reforma."</p><cite>- Chema B.</cite>
         </div>
       </div>
     </section>
@@ -996,32 +898,34 @@ header .logo {
     </div>
   </footer>
 
-  <!-- ===== Botón flotante WhatsApp (Fijo + por encima de todo) ===== -->
   <a href="https://wa.me/34629974287?text=Hola%20Hor-Maza,%20me%20gustaría%20pedir%20un%20presupuesto"
     class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
     <i class="fab fa-whatsapp" aria-hidden="true"></i>
   </a>
 
   <script>
-    // Año dinámico
     (function () {
-      var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+      var y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
     })();
   </script>
 
-  <!-- IMPORTANTE: No pegues NINGÚN JS suelto fuera de <script> ... </script>.
-       Si vas a usar Google Reviews, añádelo aquí dentro y cargando la librería correctamente. -->
   <script>
     const form = document.querySelector("form");
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const data = new FormData(form);
-      const res = await fetch(form.action, {method: form.method, body: data, headers: {'Accept': 'application/json'}});
+      const res = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
       if (res.ok) {
-        alert("✅ Gracias, tu mensaje ha sido enviado correctamente.¡Gracias por contactar con Hor-Maza!"); status.style.color = "#25D366";
+        alert("✅ Gracias, tu mensaje ha sido enviado correctamente. ¡Gracias por contactar con Hor-Maza!");
         form.reset();
       } else {
-        alert("❌ Hubo un error al enviar tu mensaje. Intenta de nuevo más tarde."); status.style.color = "#d32f2f";
+        alert("❌ Hubo un error al enviar tu mensaje. Intenta de nuevo más tarde.");
       }
     });
   </script>
