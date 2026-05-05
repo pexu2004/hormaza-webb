@@ -3,19 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Diseño de losas + césped — Hor-Maza</title>
+  <title>Jardín con losas de hormigón y césped — Hor-Maza</title>
+  <meta name="description" content="Proyecto de jardín exterior con losas de hormigón y césped artificial realizado por Hor-Maza." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-  <!-- CSS ARREGLADO -->
   <style>
     :root {
       --rojo: #d32f2f;
       --rojo-oscuro: #b71c1c;
       --texto: #111;
+      --muted: #666;
       --gris-fondo: #f8f8f8;
+      --linea: #e9e9e9;
+      --radius: 16px;
+      --shadow: 0 12px 30px rgba(0,0,0,.06);
     }
 
     * { box-sizing: border-box; }
@@ -66,28 +70,36 @@
     main {
       max-width: 1100px;
       margin: 26px auto 40px;
-      padding: 0 16px 40px;
+      padding: 28px 22px 40px;
       background: #fff;
       border-radius: 14px;
-      box-shadow: 0 4px 18px rgba(0,0,0,.06);
+      box-shadow: var(--shadow);
       border-left: 5px solid var(--rojo);
     }
 
     .breadcrumb {
       font-size: 0.9rem;
       margin-bottom: 10px;
-      color: #666;
+      color: var(--muted);
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: clamp(1.8rem, 4vw, 2.35rem);
       margin: 8px 0 6px;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
     }
 
     .meta {
       font-size: 0.95rem;
       color: #777;
       margin-bottom: 18px;
+    }
+
+    .intro {
+      max-width: 850px;
+      margin: 0 0 26px;
+      color: #333;
     }
 
     .timeline {
@@ -104,7 +116,7 @@
     .phase::before {
       content: "";
       position: absolute;
-      left: -22px;
+      left: -26px;
       top: 6px;
       width: 11px;
       height: 11px;
@@ -118,10 +130,21 @@
       color: var(--rojo);
     }
 
-    /* Galería */
+    .phase-desc {
+      margin: 4px 0 0;
+      color: #333;
+    }
+
     h2 {
       margin-top: 10px;
       font-size: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .gallery-note {
+      margin: -4px 0 14px;
+      color: var(--muted);
+      font-size: .95rem;
     }
 
     .project-gallery {
@@ -133,10 +156,18 @@
 
     .project-gallery figure {
       margin: 0;
-      border-radius: 10px;
+      border-radius: 12px;
       overflow: hidden;
-      background: #eee;
+      background: #fff;
+      border: 1px solid var(--linea);
+      box-shadow: var(--shadow);
+    }
+
+    .project-gallery a {
+      display: block;
       cursor: zoom-in;
+      color: inherit;
+      text-decoration: none;
     }
 
     .project-gallery img {
@@ -152,7 +183,13 @@
       filter: brightness(1.03);
     }
 
-    /* Lightbox */
+    .project-gallery figcaption {
+      padding: 10px 12px 12px;
+      color: var(--muted);
+      font-size: .9rem;
+      background: #fff;
+    }
+
     .lightbox {
       position: fixed;
       inset: 0;
@@ -161,15 +198,46 @@
       align-items: center;
       justify-content: center;
       z-index: 9999;
+      padding: 18px;
+    }
+
+    .lightbox.active {
+      display: flex;
     }
 
     .lightbox img {
       max-width: 92vw;
-      max-height: 92vh;
+      max-height: 88vh;
       border-radius: 12px;
+      box-shadow: 0 18px 40px rgba(0,0,0,.35);
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 999px;
+      background: #fff;
+      color: #000;
+      font-size: 1.4rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    @media (max-width: 700px) {
+      main {
+        margin: 16px 10px 30px;
+        padding: 22px 16px 34px;
+      }
+
+      .project-gallery img {
+        height: 220px;
+      }
     }
   </style>
-
 </head>
 
 <body>
@@ -188,62 +256,119 @@
       <a href="../index.html">Inicio</a> · <a href="../index.html#proyectos">Proyectos</a>
     </div>
 
-    <h1>Diseño de losas + césped</h1>
-    <div class="meta">Pavimento Exterior · 2025 · Duración: 3 semanas</div>
+    <h1>Jardín con losas de hormigón y césped</h1>
+    <div class="meta">Exterior · Diseño de jardín · 2025</div>
+
+    <p class="intro">
+      En este proyecto se realizó un diseño exterior con losas de hormigón y césped artificial, creando una zona limpia, moderna y fácil de mantener. El objetivo fue conseguir un acabado decorativo, ordenado y resistente para el uso diario.
+    </p>
 
     <section class="timeline">
       <div class="phase">
         <div class="phase-title">Fase 1 — Demolición y limpieza</div>
-        <p class="phase-desc">Retirada del pavimento existente y nivelación del terreno.</p>
+        <p class="phase-desc">Retirada del pavimento existente y limpieza de la zona de trabajo.</p>
       </div>
 
       <div class="phase">
         <div class="phase-title">Fase 2 — Replanteo y preparación de base</div>
-        <p class="phase-desc">Líneas de losas, bases y compactación.</p>
+        <p class="phase-desc">Marcado del diseño, preparación de bases y nivelación para colocar las losas.</p>
       </div>
 
       <div class="phase">
         <div class="phase-title">Fase 3 — Colocación de losas</div>
-        <p class="phase-desc">Instalación alineada de piezas de hormigón.</p>
+        <p class="phase-desc">Instalación alineada de las piezas de hormigón según el diseño previsto.</p>
       </div>
 
       <div class="phase">
-        <div class="phase-title">Fase 4 — Césped y remates</div>
-        <p class="phase-desc">Relleno de zonas con césped artificial y cortes finales.</p>
+        <div class="phase-title">Fase 4 — Césped artificial y remates</div>
+        <p class="phase-desc">Colocación del césped artificial entre losas y remates finales del acabado.</p>
       </div>
     </section>
 
-    <!-- SOLO UNA GALERÍA -->
-    <h2>Evolución de la obra</h2>
+    <h2>Evolución del proyecto</h2>
+    <p class="gallery-note">Pulsa sobre cualquier foto para verla en grande.</p>
 
     <section class="project-gallery">
       <figure>
-        <img src="/dis1.jpg" alt="">
+        <a href="../dis1.jpg" class="gallery-open">
+          <img src="../dis1.jpg" alt="Inicio del diseño de losas y distribución" loading="lazy" decoding="async">
+        </a>
         <figcaption>Inicio del diseño de losas y distribución.</figcaption>
       </figure>
 
       <figure>
-        <img src="/dis2.jpeg" alt="">
+        <a href="../dis2.jpeg" class="gallery-open">
+          <img src="../dis2.jpeg" alt="Detalle del hueco preparado para el césped artificial" loading="lazy" decoding="async">
+        </a>
         <figcaption>Detalle del hueco para césped.</figcaption>
       </figure>
 
       <figure>
-        <img src="/dis3.jpeg" alt="">
+        <a href="../dis3.jpeg" class="gallery-open">
+          <img src="../dis3.jpeg" alt="Colocación del césped artificial entre losas" loading="lazy" decoding="async">
+        </a>
         <figcaption>Encaje del césped artificial.</figcaption>
       </figure>
 
       <figure>
-        <img src="/dis4.jpeg" alt="">
+        <a href="../dis4.jpeg" class="gallery-open">
+          <img src="../dis4.jpeg" alt="Vista general del diseño geométrico con losas y césped" loading="lazy" decoding="async">
+        </a>
         <figcaption>Vista general del diseño geométrico.</figcaption>
       </figure>
 
       <figure>
-        <img src="/dis5.jpeg" alt="">
-        <figcaption>Resultado final: losas + césped.</figcaption>
+        <a href="../dis5.jpeg" class="gallery-open">
+          <img src="../dis5.jpeg" alt="Resultado final de jardín con losas de hormigón y césped artificial" loading="lazy" decoding="async">
+        </a>
+        <figcaption>Resultado final: losas de hormigón y césped artificial.</figcaption>
       </figure>
     </section>
-
   </main>
 
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Cerrar imagen">×</button>
+    <img src="" alt="Imagen ampliada del proyecto" id="lightboxImg">
+  </div>
+
+  <script>
+    (function () {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const closeBtn = document.querySelector('.lightbox-close');
+      const galleryLinks = document.querySelectorAll('.gallery-open');
+
+      function openLightbox(src, alt) {
+        lightboxImg.src = src;
+        lightboxImg.alt = alt || 'Imagen ampliada del proyecto';
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        lightbox.setAttribute('aria-hidden', 'true');
+        lightboxImg.src = '';
+      }
+
+      galleryLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const img = link.querySelector('img');
+          openLightbox(link.getAttribute('href'), img ? img.alt : 'Imagen ampliada del proyecto');
+        });
+      });
+
+      closeBtn.addEventListener('click', closeLightbox);
+
+      lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    })();
+  </script>
 </body>
 </html>
