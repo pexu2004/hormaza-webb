@@ -1,732 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hor-Maza — Reformas Integrales </title>
-
-  <meta name="description" content="Hor-Maza: obras, reformas, hormigón impreso, electricidad y fontanería en Ontinyent (Valencia). Calidad, seguridad y puntualidad." />
-
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  </noscript>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5BBL891R3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-E5BBL891R3');
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Hor-Maza",
-    "description": "Obras, reformas, hormigón impreso, electricidad y fontanería en Ontinyent (Valencia).",
-    "url": "https://www.hormazareformas.com/",
-    "image": "https://www.hormazareformas.com/logo_small_icon_only.png",
-    "telephone": ["+34646944703", "+34629974287"],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Carrer d'Artal de Foces, 6",
-      "addressLocality": "Ontinyent",
-      "postalCode": "46870",
-      "addressRegion": "Valencia",
-      "addressCountry": "ES"
-    },
-    "areaServed": ["Ontinyent", "Vall d'Albaida", "Valencia"],
-    "sameAs": [
-      "https://www.instagram.com/hor_maza/",
-      "https://www.tiktok.com/@hor_maza"
-    ]
-  }
-  </script>
-
-  <style>
-    :root{
-      --bg:#ffffff;
-      --paper:#ffffff;
-      --text:#0b0b0b;
-      --muted:#5a5a5a;
-      --line:#e9e9e9;
-      --black:#0b0b0b;
-      --accent:#d32f2f;
-      --accent2:#b71c1c;
-      --radius:16px;
-      --shadow: 0 12px 30px rgba(0,0,0,.06);
-    }
-
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      font-family:'Montserrat',sans-serif;
-      color:var(--text);
-      background:var(--bg);
-      line-height:1.65;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
-
-    .container{
-      max-width:1160px;
-      margin:0 auto;
-      padding:0 22px;
-    }
-
-    #preloader{
-      position:fixed;
-      inset:0;
-      background:rgba(255,255,255,.92);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      z-index:9999;
-      animation:fadeOut .7s ease .45s forwards;
-      pointer-events:none;
-    }
-
-    .preloader-content{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      padding:14px 16px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      background:rgba(255,255,255,.75);
-      backdrop-filter: blur(10px);
-    }
-
-    .preloader-content img{ height:34px; width:auto; }
-
-    .preloader-content span{
-      font-weight:700;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      font-size:.95rem;
-      color:var(--text);
-    }
-
-    @keyframes fadeOut{
-      to{ opacity:0; visibility:hidden; }
-    }
-
-    header{
-      position:relative;
-      overflow:hidden;
-      color:#fff;
-      padding:34px 0 40px;
-      border-bottom:1px solid rgba(255,255,255,.12);
-    }
-
-    header::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:url("IMG_0081.JPG") no-repeat center 65%/cover;
-      transform:scale(1.03);
-      z-index:0;
-    }
-
-    header::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.55));
-      z-index:1;
-    }
-
-    header .container{ position:relative; z-index:2; }
-
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      padding:14px 0;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      text-decoration:none;
-      color:#fff;
-    }
-
-    .brand img{ height:46px; width:auto; }
-
-    .brand strong{
-      font-weight:700;
-      letter-spacing:.06em;
-      text-transform:uppercase;
-      font-size:1.05rem;
-    }
-
-    .nav{
-      display:flex;
-      align-items:center;
-      gap:18px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-
-    .nav a{
-      color:rgba(255,255,255,.92);
-      text-decoration:none;
-      font-weight:500;
-      font-size:.95rem;
-      padding:10px 12px;
-      border-radius:999px;
-      border:1px solid transparent;
-      transition: background .18s ease, border-color .18s ease, transform .18s ease;
-      will-change: transform;
-    }
-
-    .nav a:hover{
-      background:rgba(255,255,255,.10);
-      border-color:rgba(255,255,255,.16);
-      transform: translateY(-1px);
-    }
-
-    .hero{
-      padding:54px 0 18px;
-      max-width:860px;
-    }
-
-    .hero h1{
-      margin:0 0 10px;
-      font-size:clamp(2rem, 3.2vw, 3rem);
-      line-height:1.15;
-      letter-spacing:-.02em;
-    }
-
-    .hero p{
-      margin:0;
-      color:rgba(255,255,255,.88);
-      font-size:1.05rem;
-      max-width:720px;
-    }
-
-    .cta-row{
-      margin-top:18px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:12px 16px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:600;
-      font-size:.95rem;
-      border:1px solid rgba(255,255,255,.35);
-      color:#fff;
-      background:transparent;
-      transition: transform .16s ease, background .16s ease, border-color .16s ease;
-      will-change: transform;
-      outline:none;
-    }
-
-    .btn:hover{
-      transform: translateY(-1px);
-      background:rgba(255,255,255,.10);
-      border-color:rgba(255,255,255,.55);
-    }
-
-    .btn:active{ transform: translateY(0px); }
-
-    .btn-solid{
-      background:#fff;
-      color:#0b0b0b;
-      border-color:#fff;
-    }
-
-    .btn-solid:hover{
-      background:rgba(255,255,255,.88);
-      border-color:rgba(255,255,255,.88);
-    }
-
-    .hero-kpis{
-      margin-top:22px;
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      color:rgba(255,255,255,.85);
-      font-size:.92rem;
-    }
-
-    .kpi{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 12px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.18);
-      background:rgba(255,255,255,.06);
-    }
-
-    main{ padding:42px 0 54px; }
-
-    .section{
-      padding:36px 0;
-      border-bottom:1px solid var(--line);
-    }
-
-    .section h2{
-      margin:0 0 10px;
-      font-size:1.9rem;
-      letter-spacing:-.02em;
-    }
-
-    .section .lead{
-      margin:0 0 18px;
-      color:var(--muted);
-      max-width:820px;
-    }
-
-    .about{
-      display:grid;
-      grid-template-columns: 320px 1fr;
-      gap:22px;
-      align-items:start;
-    }
-
-    .about img{
-      width:100%;
-      height:auto;
-      border-radius:var(--radius);
-      border:1px solid var(--line);
-      box-shadow: var(--shadow);
-      object-fit:cover;
-    }
-
-    .about .card{
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:22px;
-      background:var(--paper);
-      box-shadow: var(--shadow);
-    }
-
-    .about .card p{ margin:0 0 10px; }
-
-    .about .steps{
-      margin:14px 0 0;
-      padding:0;
-      list-style:none;
-      display:grid;
-      gap:10px;
-    }
-
-    .step{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      padding:12px 14px;
-      border:1px solid var(--line);
-      border-radius:14px;
-      background:#fff;
-    }
-
-    .step i{ color:var(--accent); margin-top:2px; }
-
-    .services{
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap:14px;
-    }
-
-    .service{
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:18px 18px 16px;
-      background:#fff;
-      box-shadow: var(--shadow);
-      transition: transform .16s ease;
-      will-change: transform;
-    }
-
-    .service:hover{ transform: translateY(-2px); }
-
-    .service .icon{
-      width:42px;
-      height:42px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      margin-bottom:10px;
-      background:#fff;
-    }
-
-    .service .icon i{ color:var(--accent); font-size:1.2rem; }
-
-    .service h3{ margin:6px 0 6px; font-size:1.05rem; }
-    .service p{ margin:0; color:var(--muted); font-size:.95rem; }
-
-    .service-icon{
-      width:42px;
-      height:42px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      margin-bottom:10px;
-      color:var(--accent);
-      background:#fff;
-    }
-
-    .service-icon svg{ width:28px; height:28px; fill:currentColor; }
-
-    .projects-head{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:14px;
-      flex-wrap:wrap;
-      margin-bottom:14px;
-    }
-
-    .filters{
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-    }
-
-    .filter-btn{
-      border:1px solid var(--line);
-      background:#fff;
-      color:var(--text);
-      padding:10px 12px;
-      border-radius:999px;
-      font-weight:600;
-      cursor:pointer;
-      transition: transform .14s ease, background .14s ease, border-color .14s ease;
-      will-change: transform;
-    }
-
-    .filter-btn:hover{
-      transform: translateY(-1px);
-      border-color:#d8d8d8;
-    }
-
-    .filter-btn.active{
-      border-color: var(--text);
-      background: var(--text);
-      color:#fff;
-    }
-
-    .gallery{
-      display:grid;
-      gap:14px;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    }
-
-    .project-link, .project-plain{
-      display:block;
-      text-decoration:none;
-      color:inherit;
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      overflow:hidden;
-      background:#fff;
-      box-shadow: var(--shadow);
-      transition: transform .16s ease;
-      will-change: transform;
-    }
-
-    .project-link:hover, .project-plain:hover{ transform: translateY(-2px); }
-
-    .gallery img{
-      width:100%;
-      height:240px;
-      object-fit:cover;
-      display:block;
-    }
-
-    .cap{
-      padding:12px 14px 14px;
-    }
-
-    .cap b{
-      display:block;
-      font-size:1rem;
-      letter-spacing:-.01em;
-    }
-
-    .cap span{
-      display:block;
-      margin-top:2px;
-      color:var(--muted);
-      font-size:.9rem;
-    }
-
-    .projects-cta{
-      margin-top:16px;
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      background:#fff;
-      padding:16px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-      box-shadow: var(--shadow);
-    }
-
-    .projects-cta p{
-      margin:0;
-      color:var(--muted);
-    }
-
-    .btn-dark{
-      border:1px solid var(--text);
-      color:var(--text);
-      background:#fff;
-    }
-
-    .btn-dark:hover{
-      background:#f5f5f5;
-      border-color:var(--text);
-    }
-
-    .btn-accent{
-      border-color:var(--accent);
-      color:#fff;
-      background: var(--accent);
-    }
-
-    .btn-accent:hover{
-      background: var(--accent2);
-      border-color: var(--accent2);
-    }
-
-    .testimonials{
-      display:grid;
-      gap:14px;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    }
-
-    .testimonial{
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:18px;
-      background:#fff;
-      box-shadow: var(--shadow);
-    }
-
-    .testimonial p{ margin:0 0 10px; color:var(--muted); font-style:italic; }
-    .testimonial cite{ font-style:normal; font-weight:700; color:var(--text); }
-
-    .contact-wrap{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:14px;
-      align-items:start;
-    }
-
-    .panel{
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      background:#fff;
-      padding:18px;
-      box-shadow: var(--shadow);
-    }
-
-    .contact-form input, .contact-form textarea{
-      width:100%;
-      padding:12px 12px;
-      margin:10px 0;
-      border:1px solid var(--line);
-      border-radius:12px;
-      font-family:'Montserrat',sans-serif;
-      font-size:.95rem;
-      outline:none;
-    }
-
-    .contact-form input:focus, .contact-form textarea:focus{
-      border-color:#cfcfcf;
-    }
-
-    .send-btn{
-      width:100%;
-      justify-content:center;
-      cursor:pointer;
-    }
-
-    .contact-info p{ margin:10px 0; color:var(--muted); }
-
-    .contact-info a{
-      color:var(--text);
-      text-decoration:none;
-      border-bottom:1px solid rgba(0,0,0,.15);
-    }
-
-    .contact-info a:hover{ border-bottom-color: rgba(0,0,0,.35); }
-
-    footer{
-      padding:28px 0 34px;
-      color:var(--muted);
-    }
-
-    footer .row{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-      padding-top:14px;
-      border-top:1px solid var(--line);
-    }
-
-    footer .social a{
-      color:var(--text);
-      margin-right:10px;
-      text-decoration:none;
-      opacity:.8;
-    }
-
-    footer .social a:hover{ opacity:1; }
-
-    .whatsapp-fab{
-      position:fixed;
-      bottom: calc(22px + env(safe-area-inset-bottom));
-      right: calc(22px + env(safe-area-inset-right));
-      width:56px;
-      height:56px;
-      border-radius:999px;
-      background:#25D366;
-      color:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-decoration:none;
-      box-shadow: 0 16px 30px rgba(0,0,0,.20);
-      transition: transform .16s ease;
-      z-index:9999;
-    }
-
-    .whatsapp-fab:hover{ transform: translateY(-2px); }
-
-    @media (max-width: 860px){
-      .about{ grid-template-columns: 1fr; }
-      .contact-wrap{ grid-template-columns: 1fr; }
-      .nav{ display:none; }
-      #preloader{ animation:fadeOut .45s ease .25s forwards; }
-      .gallery img{ height:220px; }
-    }
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Hor-Maza · Construimos lo que imaginas</title>
+<meta name="description" content="Obra, reformas y hormigón impreso en Ontinyent y Valencia. Cuéntanos tu proyecto. Hor-Maza: 646 944 703.">
+<link rel="icon" href="assets/0afb6ef156f837.jpg">
+<style>
+:root{--paper:#f4f4f1;--ink:#171817;--red:#c12f25;--line:#d9dad5;--gray:#686b65;--ease:cubic-bezier(.2,.7,.2,1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button,a,input,select,textarea,summary{-webkit-tap-highlight-color:transparent}button{color:inherit}a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--red);outline-offset:5px}::selection{background:var(--red);color:white}p{line-height:1.65}h1,h2,h3,p{margin:0}button{cursor:pointer}img{max-width:100%;height:auto}.wrap{width:min(1320px,calc(100% - 112px));margin:auto}.eyebrow{font-size:12px;line-height:1.5;letter-spacing:.17em;text-transform:uppercase;font-weight:700}.muted{color:var(--gray)}.red{color:var(--red)}.skip{position:fixed;top:-100px;left:20px;z-index:100;background:white;padding:16px}.skip:focus{top:10px}
+header{height:88px;position:absolute;top:0;left:0;right:0;z-index:40;border-bottom:1px solid var(--line)}.header-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}.mark{position:relative;width:42px;height:37px;overflow:hidden;display:inline-block;mix-blend-mode:multiply}.mark img{position:absolute;width:190px;max-width:none;left:-70px;top:-41px}.wordmark{font-size:23px;font-weight:800;letter-spacing:-1px}.brand small{display:block;font-size:9px;letter-spacing:.18em;font-weight:600;margin-top:3px}.nav{display:flex;align-items:center;gap:30px;font-size:14px}.nav a{position:relative}.nav a:after{content:'';position:absolute;bottom:-7px;left:0;width:0;height:2px;background:var(--red);transition:width .25s}.nav a:hover:after{width:100%}.header-cta{font-size:13px;padding:13px 19px;border:1px solid var(--ink);border-radius:30px;transition:background .25s,color .25s}.header-cta:hover{background:var(--ink);color:white}.menu-toggle{display:none;background:none;border:0;padding:12px;font-size:14px}
+.hero{position:relative;min-height:850px;height:100svh;max-height:1200px;padding:160px 0 40px;overflow:hidden}.hero-top{display:flex;justify-content:space-between;align-items:center}.location{display:flex;align-items:center;gap:10px}.location:before{content:'+';font-size:20px;color:var(--red)}.hero-tag{color:var(--gray);font-size:12px}.hero h1{font-size:clamp(68px,8.1vw,126px);line-height:.99;letter-spacing:-.071em;max-width:1100px;margin-top:48px;font-weight:600}.hero h1 span{color:var(--red)}.hero-bottom{display:flex;justify-content:space-between;align-items:flex-start;gap:45px;margin-top:36px}.hero-description{max-width:355px;font-size:17px;color:var(--gray)}.round-link{display:flex;align-items:center;gap:20px;font-size:14px;padding-top:8px}.round-link b{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--ink);color:white;font-size:21px;font-weight:400;transition:transform .3s}.round-link:hover b{transform:translateY(5px);background:var(--red)}.hero-foot{position:absolute;bottom:37px;left:0;right:0;display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:20px;font-size:12px;letter-spacing:.07em}.hero-foot span:last-child{color:var(--gray)}.hero-corner{position:absolute;right:4%;bottom:100px;font-size:180px;color:#e5e6e0;font-weight:700;line-height:1;z-index:-1}
+.journey{height:290svh;position:relative;background:#e9eae5}.scene{height:100svh;min-height:600px;position:sticky;top:0;overflow:hidden;background:radial-gradient(ellipse at 50% 70%,#fff 0%,#e9eae5 65%)}.scene-top{position:absolute;left:0;right:0;top:47px;display:flex;justify-content:space-between}.scene-heading{position:absolute;top:14%;left:0;right:0;text-align:center;padding:0 22px}.scene-heading h2{font-size:clamp(46px,6.8vw,106px);letter-spacing:-.065em;line-height:1.05;font-weight:600}.scene-heading p{color:var(--gray);font-size:17px;margin-top:16px}.van{position:absolute;width:min(1050px,87vw);max-width:none;left:50%;top:49%;transform:translate(-50%,-5%);filter:drop-shadow(0 28px 13px #0002);will-change:transform}.road{position:absolute;height:1px;background:#c8cbc1;left:0;right:0;top:81%}.road:after{content:'';position:absolute;top:22px;width:100%;height:1px;background:repeating-linear-gradient(to right,#bec1b8 0 55px,transparent 55px 100px)}.scene-caption{position:absolute;bottom:6%;left:0;right:0;display:flex;justify-content:space-between;gap:25px}.scene-caption p{font-size:15px;color:var(--gray);max-width:340px}.stages{display:flex;gap:28px;font-size:12px;font-weight:700;align-items:center}.stage{color:#75786f;transition:color .3s}.stage.active{color:var(--red)}.track{position:absolute;bottom:0;left:0;height:3px;background:var(--red);width:0}.scene-count{font-size:12px;color:var(--gray)}
+.intro{background:var(--ink);color:white;padding:110px 0}.intro-grid{display:grid;grid-template-columns:1fr 2fr;gap:45px}.intro h2{font-size:clamp(34px,4.1vw,64px);font-weight:500;line-height:1.15;letter-spacing:-.045em}.intro h2 span{color:#969a91}.intro p{margin-top:28px;max-width:560px;color:#bfc2ba;font-size:17px}.intro .eyebrow{color:#c9cdc4;margin-top:10px}.facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:70px;border-top:1px solid #ffffff28;padding-top:28px;gap:25px}.fact strong{font-size:40px;font-weight:500;letter-spacing:-.04em}.fact p{font-size:13px;margin-top:8px}
+.section{padding:112px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:52px}.section-head h2{font-size:clamp(40px,5.2vw,78px);line-height:1.06;font-weight:500;letter-spacing:-.06em;margin-top:22px}.section-head>p{max-width:290px;color:var(--gray);font-size:16px}.service{border-top:1px solid var(--line)}.service:last-child{border-bottom:1px solid var(--line)}.service summary{list-style:none;display:grid;grid-template-columns:70px 1fr 40px;gap:20px;align-items:center;padding:29px 0;cursor:pointer}.service summary::-webkit-details-marker{display:none}.service-num{font-size:12px;color:var(--gray)}.service h3{font-size:clamp(23px,3vw,42px);font-weight:500;letter-spacing:-.045em;transition:color .25s}.service summary:hover h3,.service[open] h3{color:var(--red)}.plus{font-size:25px;font-weight:300;justify-self:end;transition:transform .3s}.service[open] .plus{transform:rotate(45deg)}.service-content{margin-left:90px;padding:0 0 30px;display:flex;justify-content:space-between;gap:50px}.service-content p{max-width:600px;color:var(--gray);font-size:16px}.text-link{display:inline-block;font-size:14px;border-bottom:1px solid;padding-bottom:5px;align-self:end;white-space:nowrap}.text-link:hover{color:var(--red)}
+.method{background:#e7e8e2}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:35px}.step{border-top:1px solid #b9bcb2;padding-top:22px}.step>span{color:var(--red);font-size:13px}.step h3{font-size:24px;font-weight:500;letter-spacing:-.03em;margin:35px 0 14px}.step p{font-size:15px;color:var(--gray)}.work-link{margin-top:60px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #b9bcb2;padding-top:28px;gap:20px}.work-link p{font-size:18px}.pill{display:inline-flex;align-items:center;gap:32px;border-radius:30px;background:var(--ink);color:white;padding:17px 23px;font-size:14px;transition:background .25s;border:0}.pill:hover{background:var(--red)}
+.contact{background:var(--red);color:white}.contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:90px}.contact h2{font-size:clamp(50px,6.2vw,92px);letter-spacing:-.065em;line-height:1.02;font-weight:500;margin:30px 0}.contact-copy{max-width:360px;color:#ffe7e3;font-size:16px}.contact-phone{display:inline-block;font-size:30px;letter-spacing:-.03em;margin:35px 0 14px}.contact-email{font-size:14px;border-bottom:1px solid #fff6;padding-bottom:5px}.contact-address{font-size:14px;margin-top:25px;color:#ffe7e3}.form{padding-top:10px}.form label{display:block;font-size:13px;margin-bottom:10px}.form input,.form select,.form textarea{display:block;width:100%;border:0;border-bottom:1px solid #ffffff65;border-radius:0;background:transparent;color:white;padding:10px 0 14px;margin-bottom:25px;font-size:16px}.form input::placeholder,.form textarea::placeholder{color:#ffc9c3}.form option{color:var(--ink);background:white}.form textarea{resize:vertical;min-height:90px}.form .pill{width:100%;justify-content:space-between;background:white;color:var(--ink)}.form .pill:hover{background:var(--ink);color:white}.form small{display:block;font-size:12px;line-height:1.5;color:#ffe7e3;margin-top:14px}.contact :focus-visible{outline-color:white}footer{padding:32px 0;background:var(--ink);color:#c2c5bd}footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:12px}.footer-brand{font-weight:700;color:white;font-size:21px}.reveal{transition:opacity .8s var(--ease),transform .8s var(--ease)}.js .reveal{opacity:0;transform:translateY(28px)}.js .reveal.seen{opacity:1;transform:none}.hammer{display:none;position:fixed;z-index:100;left:0;top:0;width:37px;height:37px;pointer-events:none;transform:translate(-100px,-100px);filter:drop-shadow(1px 2px 1px #0003)}.hammer svg{width:100%;height:100%;transition:transform .15s}.hammer.down svg{transform:rotate(-42deg)}.cursor-option{background:none;border:0;color:#c2c5bd;font-size:12px;text-decoration:underline;padding:10px}.scroll-meter{position:fixed;top:0;left:0;width:0;height:3px;z-index:80;background:var(--red)}
+@media(pointer:fine) and (prefers-reduced-motion:no-preference){.custom-cursor,.custom-cursor *{cursor:none!important}.custom-cursor .hammer{display:block}}
+@media(min-width:1600px){.hero h1{max-width:1200px}}
+@media(max-width:950px){.wrap{width:calc(100% - 64px)}.nav{gap:18px}.hero{min-height:780px}.hero h1{font-size:clamp(65px,9.4vw,90px)}.header-cta{display:none}.contact-grid{gap:40px}.intro-grid{grid-template-columns:1fr 2.5fr}.stages{gap:14px}.scene-caption p{max-width:270px}.steps{grid-template-columns:repeat(2,1fr);gap:36px}.scene{min-height:570px}.van{top:52%}.road{top:75%}}
+@media(max-width:600px){.wrap{width:calc(100% - 40px)}header{height:76px}.wordmark{font-size:21px}.menu-toggle{display:block}.nav{display:none;position:absolute;top:75px;left:0;right:0;background:var(--paper);padding:24px 20px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:23px}.nav.open{display:flex}.hero{height:calc(100svh - 10px);min-height:710px;padding-top:116px}.hero-tag{display:none}.hero .eyebrow{font-size:10px}.hero h1{font-size:clamp(55px,12.5vw,75px);margin-top:45px;letter-spacing:-.065em}.hero-bottom{display:block;margin-top:30px}.hero-description{font-size:16px;max-width:300px}.round-link{margin-top:23px;gap:14px}.round-link b{width:39px;height:39px}.hero-foot{font-size:10px;bottom:23px;gap:15px}.hero-foot span:last-child{max-width:130px;text-align:right}.journey{height:220svh}.scene-top{top:28px}.scene-top .eyebrow,.scene-count{font-size:10px}.scene-heading{top:18%}.scene-heading h2{font-size:48px}.scene-heading p{font-size:15px;max-width:260px;margin:18px auto 0}.van{width:125vw;top:51%}.road{top:72%}.scene-caption{bottom:6%;display:block}.scene-caption p{font-size:14px;max-width:280px}.stages{margin-top:27px;gap:22px;font-size:10px}.intro,.section{padding:72px 0}.intro-grid{display:block}.intro h2{margin-top:30px;font-size:36px}.intro p{font-size:16px}.facts{gap:18px;margin-top:43px}.fact strong{font-size:27px}.fact p{font-size:12px}.section-head{display:block;margin-bottom:35px}.section-head h2{font-size:47px}.section-head>p{margin-top:24px}.service summary{grid-template-columns:30px 1fr 25px;gap:12px;padding:26px 0}.service h3{font-size:26px}.service-content{margin-left:42px;display:block}.service-content p{font-size:15px}.service-content .text-link{margin-top:20px}.steps{gap:30px 22px}.step h3{font-size:21px;margin-top:24px}.step p{font-size:14px}.work-link{align-items:start;flex-direction:column}.work-link p{font-size:17px}.contact-grid{display:block}.contact h2{font-size:62px}.form{margin-top:55px}.contact-phone{font-size:30px}footer .wrap{flex-wrap:wrap;gap:20px}footer .wrap>span{max-width:150px;line-height:1.6}.cursor-option{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}.js .reveal{opacity:1;transform:none}.journey{height:auto}.scene{position:relative;height:850px}.van{transform:translate(-50%,0)!important}.hammer{display:none!important}}
+/* Hor-Maza v2: photographic, layered, close to the requested reference. */
+:root{--paper:#f5f6f8;--ink:#122137;--red:#d74433;--gray:#607084;--line:#dce2e9}body{background:var(--paper)}.wrap{width:min(1260px,calc(100% - 80px))}header{background:#101e32eb;color:white;border-color:#ffffff15;position:absolute}.mark{mix-blend-mode:normal;border-radius:9px;background:white}.header-cta{border:0;background:var(--red);color:white;font-weight:700}.nav{gap:21px;font-size:13px}.hero{min-height:750px;height:auto;max-height:none;padding:150px 0 100px;background:radial-gradient(ellipse at 76% 40%,#3b414b 0,transparent 50%),radial-gradient(ellipse at 10% 85%,#22395a 0,transparent 55%),#101e32;color:white}.hero:before{content:'';position:absolute;inset:0;background-image:linear-gradient(#ffffff04 1px,transparent 1px),linear-gradient(90deg,#ffffff04 1px,transparent 1px);background-size:70px 70px;pointer-events:none}.hero-layout{display:grid;grid-template-columns:1.04fr 1fr;gap:70px;align-items:center;position:relative}.hero h1{font-size:clamp(48px,4.8vw,74px);line-height:1.09;letter-spacing:-.052em;font-weight:800;margin:23px 0}.hero h1 span{color:#fa8069}.hero-description{color:#bdc8d7;max-width:490px;font-size:18px}.hero .eyebrow{font-size:11px;color:#d4dcea}.hero-actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:32px}.primary{background:var(--red);box-shadow:0 10px 30px #d7443340}.secondary{background:#ffffff08;border:1px solid #ffffff30}.hero-promises{font-size:12px;color:#bdc8d7;margin-top:23px}.hero-visual{height:490px;position:relative}.hero-visual>img{width:100%;height:100%;object-fit:cover;border-radius:35px;border:1px solid #ffffff30;box-shadow:0 40px 70px #0005}.float-badge{position:absolute;background:#ffffffed;color:var(--ink);padding:21px 25px;border-radius:20px;box-shadow:0 20px 45px #0003;backdrop-filter:blur(14px);animation:bob 6s ease-in-out infinite}.badge-one{top:25px;left:-30px}.badge-one strong{font-size:40px;display:block;letter-spacing:-.04em}.badge-one span{font-size:12px}.badge-two{right:-22px;bottom:45px;animation-delay:-3s}.badge-two>span{font-size:10px;letter-spacing:.12em;color:var(--red);font-weight:bold}.badge-two strong{display:block;font-size:24px;line-height:1.15;margin:9px 0 12px}.badge-two a{font-size:12px}.play-chip{position:absolute;left:20px;bottom:-24px;background:#d74433;border:1px solid #fff4;color:white;border-radius:50px;display:flex;align-items:center;gap:13px;padding:15px 22px;font-size:12px;box-shadow:0 10px 35px #0005}.play-chip>span{font-size:17px}.hero-scroll{position:absolute;bottom:20px;left:50%;font-size:23px;color:#bbc8d6}.trust-strip{background:white;border-bottom:1px solid var(--line);padding:32px 0}.trust-strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}.trust-strip strong{display:block;font-size:20px;letter-spacing:-.025em}.trust-strip span{display:block;color:var(--gray);font-size:13px;margin-top:7px}.intro{background:white;color:var(--ink);padding:86px 0}.intro-grid{grid-template-columns:.9fr 1.2fr;gap:90px;align-items:center}.about-photo{height:330px;position:relative}.about-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 32%;border-radius:28px}.about-photo>span{position:absolute;left:20px;bottom:20px;color:white;background:#101e32d9;padding:12px 18px;border-radius:20px;font-size:11px;letter-spacing:.1em}.intro h2{font-size:clamp(35px,3.8vw,55px);font-weight:750}.intro h2 span{color:var(--red)}.intro p{color:var(--gray)}.facts{border-color:var(--line);margin-top:45px}.fact strong{color:var(--red)}.section-head h2{font-weight:750;font-size:clamp(38px,4.5vw,65px);letter-spacing:-.05em}.section{padding:85px 0}.service-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-bottom:75px}.service-card{border-radius:22px;overflow:hidden;background:white;border:1px solid #e1e5ec;box-shadow:0 9px 25px #12213706;transition:transform .35s,box-shadow .35s}.service-card:hover{transform:translateY(-7px);box-shadow:0 20px 40px #12213715}.card-photo{height:225px;overflow:hidden;position:relative}.card-photo img{width:100%;height:100%;object-fit:cover;transition:transform .65s}.service-card:hover img{transform:scale(1.05)}.card-photo>span{position:absolute;top:15px;left:16px;display:grid;place-items:center;background:white;border-radius:50%;width:33px;height:33px;font-size:12px;font-weight:bold}.card-copy{padding:25px}.card-copy h3{font-size:23px;letter-spacing:-.04em}.card-copy p{font-size:15px;color:var(--gray);margin:14px 0 24px;min-height:72px}.card-copy .text-link{color:var(--red);font-weight:bold}.service-cta{background:radial-gradient(ellipse at top right,#654746,transparent),#14243a;color:white;border-radius:22px;display:flex;flex-direction:column;justify-content:space-between;padding:35px}.service-cta>span{font-size:12px}.service-cta h3{font-size:43px;line-height:1.1;letter-spacing:-.04em}.details-heading{margin-bottom:30px}.details-heading h3{font-size:27px;letter-spacing:-.04em;margin-top:12px}.service{background:white;padding:0 22px;border:1px solid var(--line);border-radius:14px;margin-bottom:10px}.service summary{padding:24px 0}.service h3{font-size:25px;font-weight:650}.service-content{padding-bottom:25px}.scene{background:radial-gradient(ellipse at 50% 68%,#fff,#dce3ec 75%)}.journey{height:240svh}.scene-heading h2{font-weight:750}.project-section{background:#fff}.filters{display:flex;flex-wrap:wrap;gap:10px}.filters button{border:1px solid var(--line);background:white;padding:12px 20px;border-radius:30px;font-size:14px}.filters button[aria-pressed=true]{background:var(--ink);color:white;border-color:var(--ink)}.project-count{font-size:12px;color:var(--gray);margin:20px 0}.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:27px}.project-card{text-align:left;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:white;padding:0;transition:transform .3s,box-shadow .3s}.project-card:hover{transform:translateY(-5px);box-shadow:0 20px 45px #12213715}.project-card[hidden]{display:none}.project-photo{height:280px;position:relative;overflow:hidden}.project-photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s}.project-card:hover img{transform:scale(1.055)}.photo-count{position:absolute;right:15px;bottom:15px;background:#fffefc;border-radius:20px;padding:9px 15px;font-size:12px}.project-copy{padding:23px}.project-copy>span{color:var(--red);font-size:11px;font-weight:bold;letter-spacing:.1em;text-transform:uppercase}.project-copy h3{font-size:22px;line-height:1.3;letter-spacing:-.04em;margin-top:9px}.instagram-link{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:28px 32px;margin-top:40px;border-radius:20px;background:#f1f3f7;color:var(--gray);font-size:15px}.instagram-link strong{color:var(--red)}.film-section{background:#101e32;color:white}.film-section .section-head>p{color:#bcc9da}.film-section .eyebrow{color:#fb8c78}.film{height:560px;position:relative;overflow:hidden;border-radius:26px;background:#080e17}.film>img{width:100%;height:100%;object-fit:contain;transition:opacity .3s}.film.playing>img{animation:filmzoom 5s linear infinite}.film-overlay{position:absolute;inset:auto 0 0;padding:50px 30px 28px;background:linear-gradient(transparent,#000a);pointer-events:none}.film-overlay span{font-size:12px;display:block;margin-bottom:8px}.film-overlay strong{font-size:28px}.film-controls{display:flex;align-items:center;gap:15px;margin-top:20px}.film-controls button{border:1px solid #ffffff35;background:#ffffff09;color:white;border-radius:24px;padding:12px 20px;font-size:13px}.film-controls #film-play{background:var(--red);min-width:140px}.film-controls input{flex:1;min-width:40px;accent-color:#fa8069}.film-controls>span{font-size:13px;white-space:nowrap}.film-note{font-size:12px;color:#95a7bd;margin-top:16px}.method{background:#edf0f5}.step{border-color:#c6cfdc}.contact{background:radial-gradient(ellipse at 0 100%,#34445c,transparent 65%),#14243a}.contact h2{color:white}.contact .eyebrow{color:#fb8c78}.contact-copy,.contact-address{color:#bac7d8}.contact-phone{color:#ff8a75}.form{background:#ffffff08;border:1px solid #ffffff15;padding:35px;border-radius:25px}.form input,.form textarea,.form select{border-color:#ffffff30}.form input::placeholder,.form textarea::placeholder{color:#9eafc3}.form small{color:#b4c3d5}.form .pill{background:var(--red);color:white}.whatsapp-float{position:fixed;right:20px;bottom:20px;background:#c2f178;color:#16311e;padding:15px 20px;border-radius:35px;font-size:13px;font-weight:700;box-shadow:0 6px 30px #0003;z-index:45}footer{padding-bottom:60px}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}dialog{width:min(1100px,94vw);max-height:92svh;background:#101e32;color:white;border:1px solid #ffffff30;border-radius:22px;padding:24px;overflow:auto}dialog::backdrop{background:#050c16e8;backdrop-filter:blur(8px)}.gallery-head{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:18px}.gallery-head h2{font-size:24px;letter-spacing:-.03em}.gallery-head .eyebrow{color:#fb8c78;font-size:10px;margin-bottom:7px}.gallery-head button,.gallery-controls button{background:#ffffff10;border:1px solid #ffffff30;border-radius:50%;color:white;width:42px;height:42px;flex-shrink:0;font-size:24px}.gallery-stage{height:52svh;background:#080e17;border-radius:12px;overflow:hidden}.gallery-stage img{width:100%;height:100%;object-fit:contain}.gallery-controls{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:15px 0}.gallery-controls p{font-size:13px;color:#c5d0de;text-align:center}#gallery-thumbs{display:flex;gap:9px;overflow-x:auto;padding:5px 0 15px}#gallery-thumbs button{padding:0;border:2px solid transparent;border-radius:7px;background:none;flex-shrink:0;width:75px;height:58px;overflow:hidden}#gallery-thumbs button[aria-pressed=true]{border-color:#ff8974}#gallery-thumbs img{width:100%;height:100%;object-fit:cover}#gallery-source{font-size:12px;color:#aebed1}.custom-cursor dialog{cursor:auto!important}.custom-cursor dialog *{cursor:auto!important}.custom-cursor dialog button{cursor:pointer!important}@keyframes bob{50%{transform:translateY(-9px)}}@keyframes filmzoom{from{transform:scale(1)}to{transform:scale(1.055)}}
+@media(max-width:1050px){.hero-layout{gap:40px}.hero-visual{height:440px}.hero h1{font-size:52px}.nav{gap:14px}.hero-description{font-size:16px}.intro-grid{gap:45px}.card-copy{padding:21px}.card-copy h3{font-size:21px}.project-photo{height:230px}.service-cta h3{font-size:34px}}
+@media(max-width:760px){.wrap{width:calc(100% - 40px)}.nav{display:none;position:absolute;top:87px;left:0;right:0;background:#14243a;padding:24px;flex-direction:column;align-items:start}.nav.open{display:flex}.menu-toggle{display:block;color:white}.header-cta{display:none}.hero{padding:130px 0 75px;min-height:0;height:auto}.hero-layout{grid-template-columns:1fr;gap:55px}.hero h1{font-size:58px}.hero-visual{height:430px;margin:0 16px}.hero-description{max-width:550px}.hero-promises{font-size:12px}.badge-one{left:-16px}.badge-two{right:-16px}.trust-strip .wrap{grid-template-columns:repeat(2,1fr);gap:25px}.trust-strip strong{font-size:17px}.intro-grid{grid-template-columns:1fr;display:grid;gap:35px}.about-photo{height:340px}.intro h2{margin-top:0}.service-cards,.project-grid{grid-template-columns:repeat(2,1fr);gap:16px}.service-cta{min-height:340px;padding:25px}.service-cta h3{font-size:35px}.card-photo{height:210px}.card-copy p{min-height:95px}.project-copy h3{font-size:19px}.project-copy{padding:19px}.film{height:420px}.film-controls{gap:8px}.film-controls button{padding:12px 15px}.film-controls #film-play{min-width:120px}.contact-grid{grid-template-columns:1fr;display:grid}.form{margin-top:10px}.instagram-link{padding:24px;flex-wrap:wrap}}
+@media(max-width:480px){header{height:76px}.nav{top:75px}.hero h1{font-size:46px}.hero .eyebrow{font-size:9px;letter-spacing:.12em}.hero-actions{gap:10px}.hero-actions .pill{font-size:12px;padding:15px 18px;gap:13px}.hero-promises{font-size:10px}.hero-visual{height:380px;margin:0 6px}.badge-one{padding:15px 20px;top:18px}.badge-one strong{font-size:32px}.badge-two{padding:18px;bottom:50px}.badge-two strong{font-size:22px}.play-chip{left:4px;font-size:10px;padding:14px 17px}.section{padding:65px 0}.section-head h2{font-size:40px}.service-cards,.project-grid{grid-template-columns:1fr}.card-photo{height:250px}.card-copy p{min-height:0}.service-cta{min-height:300px}.service-cta h3{font-size:43px}.service h3{font-size:21px}.service summary{grid-template-columns:23px 1fr 20px;gap:10px}.service{padding:0 15px}.service-content{margin-left:33px}.project-photo{height:310px}.project-copy h3{font-size:23px}.scene-heading h2{font-size:43px}.scene-caption p{font-size:13px}.stages{gap:16px;font-size:9px}.film{height:350px}.film-controls{flex-wrap:wrap}.film-controls input{order:5;flex-basis:100%}.film-controls>span{margin-left:auto}.film-overlay strong{font-size:25px}.film-overlay{padding:50px 20px 20px}.form{padding:24px}.contact h2{font-size:60px}.contact-phone{font-size:28px}.gallery-head h2{font-size:19px}dialog{padding:16px}.gallery-stage{height:45svh}.gallery-controls{gap:12px}.gallery-controls p{font-size:11px}.instagram-link{font-size:14px}.whatsapp-float{font-size:12px;padding:13px 17px;right:12px;bottom:12px}}
+@media(prefers-reduced-motion:reduce){.film.playing>img{animation:none}.journey{height:auto}}
+/* Brand refinement: Hor-Maza black, red and white. */
+:root{--paper:#f6f6f5;--ink:#171717;--red:#c92c24;--gray:#686868;--line:#dededb}
+header{background:#111111ed}.hero{background:#141414}.hero:before{background-image:linear-gradient(90deg,#101010f5 10%,#101010d4 48%,#101010a8),url('assets/bf66912ac0c91e.webp');background-size:cover;background-position:center;opacity:1}.hero-copy{position:relative;z-index:1}.hero h1{font-size:clamp(48px,5vw,76px)}.hero h1 span{color:#ff6657}.hero-description,.hero-promises{color:#c7c7c7}.hero .eyebrow{color:#e2e2e2}.hero h1 em{font-style:normal;color:white}.float-badge{background:#fffffff0}.primary{background:var(--red);box-shadow:0 10px 30px #c92c2433}.play-chip{background:var(--red)}.hero-scroll{color:#e2e2e2}.trust-strip strong{color:#151515}.service-cta{background:radial-gradient(ellipse at top right,#782820,transparent 80%),#161616}.service-cta h3{font-weight:750}.scene{background:radial-gradient(ellipse at 50% 70%,#fff 0%,#e9eae5 65%)}.scene-heading h2{font-weight:600}.journey{height:290svh}.project-section{background:#fff}.instagram-link{background:#f2f2ef}.film-section{background:#141414}.film-section .section-head>p{color:#c4c4c4}.film-section .eyebrow{color:#ff7567}.film{background:#080808}.film-note{color:#aaa}.method{background:#f0f0ed}.step{border-color:#ccc}.contact{background:radial-gradient(ellipse at 0 100%,#45231f,transparent 65%),#171717}.contact .eyebrow{color:#ff7567}.contact-copy,.contact-address{color:#c4c4c4}.contact-phone{color:#ff7567}.form input::placeholder,.form textarea::placeholder{color:#b0b0b0}.form small{color:#bbb}.whatsapp-float{background:var(--red);color:white}.about-photo>span{background:#171717d9}.film-controls input{accent-color:#fa6454}dialog{background:#171717}dialog::backdrop{background:#080808ed}.gallery-stage{background:#080808}.gallery-controls p{color:#ccc}#gallery-source{color:#bdbdbd}.film-overlay{background:linear-gradient(transparent,#000c)}.hero-visual>img{border-color:#ffffff30}.section-head h2 span{color:var(--red)}
+@media(max-width:1050px){.hero h1{font-size:53px}}@media(max-width:760px){.nav{background:#171717}.hero h1{font-size:58px}}@media(max-width:480px){.hero h1{font-size:46px}.journey{height:220svh}}@media(prefers-reduced-motion:reduce){.journey{height:auto}}
+
+/* Final composition */
+.hero{min-height:760px;padding:165px 0 100px;isolation:isolate}.hero:before{background-image:linear-gradient(90deg,#080808ee 0%,#080808ad 42%,#08080816 75%),linear-gradient(0deg,#080808b3,transparent 55%),url('assets/579c405c4a6025.webp');background-position:center;background-size:cover;z-index:-1}.hero-layout{grid-template-columns:1.1fr .9fr;gap:30px}.hero h1{font-size:clamp(58px,6vw,88px);font-weight:800;max-width:720px}.hero-description{max-width:470px}.hero-visual{height:470px;display:flex;align-items:end;justify-content:end}.hero-visual>img{display:none}.badge-two{right:0;bottom:70px;background:#ffffffed;border-radius:14px;padding:20px 25px;animation:none}.badge-two strong{font-size:25px}.play-chip{left:auto;right:0;bottom:0;background:var(--red);font-size:13px}.hero-promises{color:#eee}.hero h1 span{color:#ff6556}.journey{height:190svh}.featured{background:#171717;color:white}.featured .section-head>p{color:#bdbdbd}.featured-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-bottom:40px}.featured-photo{padding:0;border:0;border-radius:16px;overflow:hidden;height:350px;position:relative;width:100%;background:#222}.featured-photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.featured-photo:hover img{transform:scale(1.045)}.featured-photo span{position:absolute;bottom:18px;right:18px;background:white;color:#111;padding:11px 17px;border-radius:25px;font-size:12px}.featured article>.eyebrow{margin:24px 0 12px;color:#ff7c6c;font-size:10px}.featured h3{font-size:28px;letter-spacing:-.04em;margin-bottom:12px}.featured article>p:last-child{font-size:15px;color:#bfbfbf}.featured .pill{background:var(--red)}#gallery-story{font-size:13px;color:#bbb;max-width:720px;margin-top:10px;line-height:1.5}.project-section .section-head h2{font-size:50px}.film.playing>img{animation:none}@media(max-width:760px){.hero{min-height:820px;padding:125px 0 50px}.hero:before{background-image:linear-gradient(180deg,#080808e6 5%,#080808b0 46%,#08080826 80%),url('assets/579c405c4a6025.webp');background-position:62% center}.hero-layout{display:block}.hero h1{font-size:58px}.hero-visual{height:220px;margin:0}.badge-two{bottom:55px;right:0;padding:16px 20px}.badge-two strong{font-size:21px}.hero-description{max-width:410px}.featured-grid{grid-template-columns:1fr}.featured-photo{height:420px}.featured article{margin-bottom:18px}.journey{height:175svh}}@media(max-width:480px){.hero{min-height:840px}.hero h1{font-size:49px}.hero-description{font-size:16px}.hero-visual{height:230px}.hero-actions{margin-top:25px}.featured-photo{height:340px}.featured h3{font-size:27px}.project-section .section-head h2{font-size:38px}.hero-scroll{left:20px;bottom:28px}}@media(prefers-reduced-motion:reduce){.journey{height:auto}}
+
+/* Rich layout restored, with an original Pegasus video. */
+header .mark{width:64px;height:64px;overflow:visible;mix-blend-mode:normal;background:white;border-radius:12px;padding:3px;flex-shrink:0}header .mark img{position:static;width:100%;height:100%;max-width:100%;object-fit:contain}header .wordmark{font-size:27px}.hero:before{background-position:60% center}.video-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:center}.video-copy h2{font-size:clamp(38px,4.3vw,65px);letter-spacing:-.05em;line-height:1.07;margin:22px 0 28px}.video-copy h2 span{color:#ff8071}.video-copy>p:not(.eyebrow){color:#bdbdbd;max-width:410px;font-size:17px}.video-copy .eyebrow{color:#ff8071}.video-meta{display:flex;flex-direction:column;gap:7px;color:#a5a5a5;font-size:12px;margin:25px 0 30px}.video-copy .pill{background:var(--red);color:white}.video-frame{max-width:365px;width:100%;justify-self:center}.video-frame video{display:block;width:100%;height:auto;aspect-ratio:9/16;max-height:75svh;object-fit:contain;border-radius:16px;background:#080808;box-shadow:0 22px 65px #0006}.video-frame>p{font-size:12px;color:#aaa;text-align:center;margin-top:13px}.play-chip{color:white}.custom-cursor video{cursor:auto!important}@media(max-width:760px){.video-layout{grid-template-columns:1fr;gap:35px}.video-copy h2{font-size:43px}.video-copy>p:not(.eyebrow){font-size:16px}.video-frame{max-width:330px}.video-frame video{max-height:none}.hero:before{background-position:60% center}header .mark{width:50px;height:50px}header .wordmark{font-size:23px}}@media(max-width:480px){.video-copy h2{font-size:39px}.video-frame{max-width:300px}}
+
+/* Requested refinements: brand, portrait, calmer type and early videos. */
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}header{height:104px;background:#101010f5}header .brand{gap:16px}header .mark{width:76px;height:76px;padding:0;border-radius:12px;overflow:hidden}header .mark img{width:100%;height:100%;object-fit:contain;position:static}header .wordmark{font-size:30px;font-weight:700;letter-spacing:-1px}.brand small{font-size:10px}.hero{padding-top:170px}.hero h1{font-weight:650;letter-spacing:-.055em}.section-head h2,.intro h2{font-weight:600}.service h3,.card-copy h3,.project-copy h3{font-weight:600}.hero:before{background-image:linear-gradient(90deg,#101010 0%,#101010 47%,#101010b0 65%,#10101018 100%),url('assets/pegasus-68.jpg');background-size:100% 100%,auto 100%;background-position:center,right center;background-repeat:no-repeat}.hero-description{color:#d1d1d1}.hero .badge-two{background:#fffffff0}.hero-visual{height:470px}.about-photo{height:auto;max-width:410px;width:100%;justify-self:center;aspect-ratio:3/4}.about-photo img{height:100%;width:100%;object-fit:contain;object-position:center;border-radius:20px;background:#e6e1d8}.about-photo>span{left:16px;bottom:16px}.intro-grid{align-items:center;gap:70px;grid-template-columns:1fr 1.2fr}.intro h2{font-size:clamp(33px,3.6vw,51px)}.service-num{font-size:27px;line-height:1.2;filter:none}.service summary{grid-template-columns:54px 1fr 35px}.service-content{margin-left:74px}.video-showcase{padding:65px 0 75px}.video-showcase .section-head h2{font-size:clamp(36px,4vw,56px)}.video-showcase .section-head h2 span{color:#ff8071}.video-pair{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}.video-project{background:#ffffff06;border:1px solid #ffffff19;border-radius:20px;padding:26px;display:grid;grid-template-columns:minmax(170px,.85fr) 1fr;gap:23px;align-items:center}.video-project .video-frame{max-width:260px;width:100%}.video-project video{width:100%;max-height:none;aspect-ratio:9/16;object-fit:contain;border-radius:12px;box-shadow:0 12px 35px #0003}.video-info>.eyebrow{font-size:9px;letter-spacing:.1em;color:#ff8071}.video-info h3{font-size:27px;line-height:1.1;font-weight:600;letter-spacing:-.035em;margin:14px 0}.video-info>p:not(.eyebrow){font-size:14px;line-height:1.6;color:#bbb}.video-info button{color:white;background:none;border:0;border-bottom:1px solid #888;padding:0 0 5px;margin-top:23px;text-align:left;white-space:normal;font-size:12px}.video-showcase .section-head>p{font-size:15px}.hero .play-chip{border:1px solid #fff5}.custom-cursor video{cursor:auto!important}@media(max-width:1150px){.video-project{grid-template-columns:1fr}.video-project .video-frame{max-width:240px}.video-info{max-width:360px}.video-info h3{font-size:25px}}@media(max-width:760px){header{height:92px}header .mark{width:64px;height:64px}header .wordmark{font-size:26px}.nav{top:91px}.hero{padding-top:132px}.hero:before{background:#121212}.hero-visual{height:420px;background:linear-gradient(0deg,#0006,transparent 50%),url('assets/pegasus-68.jpg') center 60% / cover;border-radius:24px;margin-top:25px}.hero-layout{gap:30px}.badge-two{right:16px;bottom:65px}.play-chip{right:16px;bottom:16px}.intro-grid{grid-template-columns:1fr;gap:32px}.about-photo{max-width:340px}.video-pair{gap:18px}.video-project{padding:20px}.video-info h3{font-size:24px}}@media(max-width:600px){.video-pair{grid-template-columns:1fr;gap:24px}.video-project{grid-template-columns:1fr;padding:24px}.video-project .video-frame{max-width:270px}.video-info{max-width:100%}.video-info h3{font-size:28px}.video-info>p:not(.eyebrow){font-size:15px}.hero-visual{height:390px}.service summary{grid-template-columns:34px 1fr 22px}.service-num{font-size:23px}.service-content{margin-left:46px}.about-photo{max-width:310px}.hero h1{font-size:46px}.video-showcase{padding:52px 0}.hero .badge-two{right:14px;bottom:76px}.hero .play-chip{right:14px;left:auto;bottom:16px}}
+
+/* Original-site pictograms, embedded so they also work offline. */
+.service-num{display:grid;place-items:center;width:44px;height:44px;background:#c92c240b;border:1px solid #c92c2420;border-radius:11px;color:var(--red);font-size:initial}.service-num>svg{display:block;width:24px;height:24px}.paired-icons{display:flex;align-items:center;gap:4px}.paired-icons svg{display:block;width:17px;height:23px}@media(max-width:600px){.service-num{width:34px;height:36px;border-radius:8px}.service-num>svg{width:21px;height:21px}.paired-icons{gap:2px}.paired-icons svg{width:13px;height:20px}}
+
+.wa-icon{width:23px;height:23px;display:inline-block;vertical-align:middle;flex-shrink:0;fill:currentColor}.whatsapp-float{display:flex;align-items:center;gap:10px}.contact-channels{display:flex;gap:9px;margin-bottom:27px}.contact-channels button{display:flex;gap:8px;align-items:center;justify-content:center;background:transparent;border:1px solid #ffffff35;border-radius:28px;color:#ddd;font-size:13px;padding:12px 15px;flex:1}.contact-channels button[aria-pressed=true]{color:#111;background:white;border-color:white}.contact-channels button[data-channel=whatsapp][aria-pressed=true]{background:#c92c24;border-color:#c92c24;color:#ffffff}.contact-channels .wa-icon{width:19px;height:19px}#email-fields[hidden],#gallery-video-panel[hidden]{display:none!important}.pill,.header-cta,.whatsapp-float,.outline-button,.contact-channels button{transition:transform .22s ease,background .22s ease,color .22s ease,box-shadow .22s ease,border-color .22s ease}.pill:hover,.pill:focus-visible,.header-cta:hover{transform:translateY(-3px);box-shadow:0 8px 24px #c92c2438}.pill:active,.whatsapp-float:active{transform:translateY(0) scale(.98)}.form .whatsapp-action:hover,.form .whatsapp-action:focus-visible,.whatsapp-float:hover,.whatsapp-float:focus-visible{background:#e23c31;color:#ffffff;box-shadow:0 0 0 5px #e23c3115,0 10px 32px #c92c2438;transform:translateY(-3px)}.whatsapp-action .wa-icon,.whatsapp-float .wa-icon{transition:transform .2s}.whatsapp-action:hover .wa-icon,.whatsapp-float:hover .wa-icon{transform:rotate(-9deg) scale(1.12)}.contact-channels button:hover{border-color:#e23c31;transform:translateY(-2px)}#gallery-video-panel{display:grid;grid-template-columns:1fr 230px;gap:25px;align-items:center;padding:25px 0;margin:12px 0 22px;border-top:1px solid #ffffff25;border-bottom:1px solid #ffffff25}#gallery-video-panel .eyebrow{color:#ff8071;font-size:10px}#gallery-video-panel h3{font-size:26px;margin:12px 0}#gallery-video-panel p{color:#bbb;font-size:14px}#gallery-video{width:100%;aspect-ratio:9/16;object-fit:contain;background:#080808;border-radius:12px;max-height:55svh}.custom-cursor #gallery-video{cursor:auto!important}@media(max-width:600px){.contact-channels button{font-size:12px;padding:11px 10px}#gallery-video-panel{grid-template-columns:1fr}#gallery-video{max-width:270px;justify-self:center;max-height:none}}
+/* Responsive finishing pass: desktop, tablets, touch and small phones. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:24px}body{overflow-wrap:break-word}.wrap{max-width:1260px}.hero-layout>*,.intro-grid>*,.contact-grid>*,.video-pair>*,.video-project>*,.section-head>*,.service-content>*,.featured-grid>*,.project-grid>*{min-width:0}img,video{max-width:100%}button,a,input,select,textarea{touch-action:manipulation}.nav a,.header-cta,.menu-toggle,.filters button,.contact-channels button,.pill,.gallery-controls button,#gallery-close{min-height:44px}.nav a{display:flex;align-items:center}.contact-email{overflow-wrap:anywhere}.form input,.form select,.form textarea{font-size:16px;max-width:100%}.contact-channels{flex-wrap:wrap}.contact-channels button{min-width:130px}.service-content .text-link{white-space:normal}.gallery-stage{max-width:100%}dialog{max-width:calc(100vw - 24px);overscroll-behavior:contain}#gallery-thumbs{overscroll-behavior-x:contain;scroll-snap-type:x proximity}#gallery-thumbs button{scroll-snap-align:start;min-width:70px;min-height:55px}.video-frame{min-width:0}.video-frame video{height:auto;object-fit:contain}.whatsapp-float{bottom:max(16px,env(safe-area-inset-bottom));right:max(16px,env(safe-area-inset-right))}footer{padding-bottom:95px}.menu-toggle{align-items:center;justify-content:center}.hero-actions{row-gap:14px}.hero-description{max-width:100%}
+@media(min-width:1400px){.hero-layout{grid-template-columns:1.1fr .9fr}.hero h1{font-size:clamp(72px,5.4vw,88px)}.video-project{grid-template-columns:minmax(180px,.85fr) 1fr}}
+@media(max-width:1050px){.header-inner{gap:18px}.nav{gap:15px;font-size:13px}.header-cta{display:none}.video-project{grid-template-columns:1fr}.video-frame{justify-self:center}.section-head{gap:28px}.contact-grid{gap:35px}.hero-layout{gap:35px}}
+@media(max-width:900px){.wrap{width:calc(100% - 48px)}.menu-toggle{display:flex;color:white;background:none;border:1px solid #ffffff30;border-radius:10px;padding:10px 14px;font-size:14px}.nav{display:none;position:absolute;top:103px;left:0;right:0;z-index:50;background:#171717;padding:18px 24px 24px;border-bottom:1px solid #ffffff25;flex-direction:column;align-items:stretch;gap:3px}.nav.open{display:flex}.nav a{padding:8px 12px;font-size:16px}.nav a:hover{background:#ffffff0a}.hero-layout{grid-template-columns:1fr 1fr}.hero h1{font-size:clamp(44px,6.6vw,60px)}.hero-actions{flex-wrap:wrap}.hero .pill{padding:15px 19px;font-size:13px}.intro-grid{gap:35px}.service-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.featured-grid{grid-template-columns:1fr}.featured article{display:grid;grid-template-columns:1fr 1fr;column-gap:28px}.featured-photo{grid-row:1/5;height:330px}.featured article>.eyebrow{align-self:end}.featured article>p:last-child{align-self:start}.featured h3{font-size:28px}}
+@media(max-width:760px){header{height:92px}.nav{top:91px}.hero-layout{display:block}.hero{min-height:0;height:auto;max-height:none;padding:130px 0 65px}.hero-copy{max-width:600px}.hero h1{font-size:clamp(44px,8vw,62px);line-height:1.08}.hero-description{font-size:17px}.hero-visual{height:410px;margin:30px 0 0}.hero .badge-two{right:16px;bottom:78px}.hero .play-chip{left:auto;right:16px;bottom:16px;max-width:calc(100% - 32px);text-align:center}.hero-scroll{bottom:18px}.intro-grid,.contact-grid{display:grid;grid-template-columns:1fr}.about-photo{max-width:340px;margin:auto}.contact-grid{gap:30px}.form{margin-top:0;width:100%}.section-head{display:block}.section-head>p{max-width:100%;margin-top:22px}.scene-caption{gap:16px}.stages{gap:12px}.contact h2{font-size:clamp(44px,8vw,64px)}.video-pair{gap:22px}.video-info h3{font-size:26px}.featured article{display:block}.featured-photo{height:380px}.scene-heading h2{font-size:clamp(42px,7vw,62px)}}
+@media(max-width:600px){.wrap{width:calc(100% - 36px)}header .mark{width:56px;height:56px}header .wordmark{font-size:24px}header .brand{gap:10px}.brand small{font-size:9px}.header-inner{gap:10px}.menu-toggle{padding:9px 12px;font-size:13px}.hero h1{font-size:clamp(40px,10.8vw,55px);letter-spacing:-.05em}.hero-description{font-size:16px;line-height:1.65}.hero-actions .pill{font-size:13px}.hero-promises{font-size:11px;line-height:1.7}.hero-visual{height:360px}.hero .badge-two{max-width:200px}.hero .play-chip{font-size:12px;padding:13px 16px}.trust-strip .wrap{grid-template-columns:1fr 1fr;gap:24px 16px}.trust-strip strong{font-size:16px;line-height:1.3}.trust-strip span{font-size:12px;line-height:1.5}.section{padding:58px 0}.section-head h2{font-size:clamp(34px,9vw,44px);line-height:1.1}.section-head>p{font-size:15px}.intro{padding:58px 0}.intro h2{font-size:36px;line-height:1.15}.intro p{font-size:16px}.facts{gap:14px}.fact strong{font-size:26px}.fact p{font-size:12px}.service-cards,.project-grid,.video-pair{grid-template-columns:1fr}.card-photo{height:235px}.card-copy p{min-height:0}.service-cta{min-height:285px}.service summary{grid-template-columns:34px minmax(0,1fr) 22px;gap:12px;min-height:80px}.service h3{font-size:21px;line-height:1.25}.service-content{margin-left:0;display:block;padding:0 0 24px}.service-content p{font-size:15px}.service-content .text-link{margin-top:17px}.details-heading h3{font-size:26px;line-height:1.2}.video-project{padding:22px}.video-project .video-frame{max-width:290px}.video-info h3{font-size:27px;line-height:1.15}.video-info>p:not(.eyebrow){font-size:15px}.video-info button{font-size:14px;min-height:44px}.video-info>.eyebrow{font-size:10px}.featured-photo{height:330px}.featured h3{font-size:27px}.project-photo{height:300px}.project-copy h3{font-size:23px}.filters{gap:8px}.filters button{padding:10px 15px;font-size:13px;min-height:44px}.instagram-link{padding:22px;align-items:start;flex-direction:column;gap:12px}.form{padding:24px 20px}.contact-phone{font-size:29px}.contact-email{font-size:14px}.form .pill{gap:15px;font-size:14px;min-height:52px}.form small{font-size:12px}.steps{gap:30px 22px}.step h3{font-size:22px}.scene{min-height:620px}.van{width:108vw;top:51%}.scene-heading{top:17%}.scene-heading h2{font-size:44px}.scene-heading p{font-size:14px}.scene-caption{bottom:5%;display:block}.scene-caption p{font-size:13px}.stages{font-size:9px;gap:12px;justify-content:space-between;margin-top:24px}.road{top:73%}.scene-top{gap:15px}.scene-top .eyebrow{font-size:9px}.scene-count{font-size:10px;white-space:nowrap}.gallery-head h2{font-size:20px;line-height:1.2}#gallery-story{font-size:12px}.gallery-stage{height:43svh;min-height:220px}.gallery-controls{gap:10px}.gallery-controls p{font-size:12px;line-height:1.45}.gallery-controls button,#gallery-close{width:44px;height:44px}.whatsapp-float{font-size:12px;min-height:46px;padding:12px 16px}.cursor-option{display:none}}
+@media(max-width:360px){.wrap{width:calc(100% - 28px)}.brand small{letter-spacing:.1em}.hero h1{font-size:40px}.hero-actions{gap:12px}.hero-actions .pill{font-size:12px;padding:14px 16px}.hero-visual{height:330px}.facts{grid-template-columns:1fr;gap:20px}.fact{display:flex;align-items:center;gap:15px}.fact p{margin:0}.contact-channels button{min-width:110px;font-size:12px;padding:11px 8px}.contact-channels{gap:7px}.form{padding:22px 16px}.contact-phone{font-size:26px}.scene-heading h2{font-size:39px}.video-project{padding:18px}.stages{font-size:8px;gap:7px}.project-photo{height:270px}}
+@media(max-height:500px) and (orientation:landscape){.journey{height:auto}.scene{position:relative;height:680px;min-height:680px}.van{width:min(850px,85vw);transform:translate(-50%,0)!important;top:48%}.scene-heading{top:12%}.scene-heading h2{font-size:45px}.scene-caption{bottom:4%}.road{top:79%}.gallery-stage{height:65svh;min-height:160px}.video-project .video-frame{max-width:240px}dialog{max-height:94svh}}
+@media(hover:none){.pill:hover,.header-cta:hover,.whatsapp-float:hover,.form .whatsapp-action:hover,.contact-channels button:hover{transform:none;box-shadow:none}.service-card:hover,.project-card:hover{transform:none}.service-card:hover img,.project-card:hover img,.featured-photo:hover img{transform:none}.pill:active,.whatsapp-float:active{transform:scale(.98)}.hammer{display:none!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.journey{height:auto}.scene{position:relative;height:800px}.van{transform:translate(-50%,0)!important}*,*:before,*:after{animation:none!important;transition:none!important}}
+
+/* Hor-Maza brand interaction, without the fluorescent green. */
+.whatsapp-float{background:#c92c24;color:white}.form .whatsapp-action:hover,.form .whatsapp-action:focus-visible,.whatsapp-float:hover,.whatsapp-float:focus-visible{background:#e23c31;color:white;box-shadow:0 9px 25px #c92c242e;transform:translateY(-2px)}.contact-channels button[data-channel=whatsapp][aria-pressed=true]{background:#c92c24;border-color:#c92c24;color:white}.contact-channels button:hover{border-color:#e23c31}.tiktok-link{display:block;width:min(1260px,calc(100% - 80px));margin:20px auto 0;font-size:13px;color:#bbb}.tiktok-link strong{font-weight:500;color:white}.tiktok-link:hover strong{color:#ff8071}@media(max-width:900px){.tiktok-link{width:calc(100% - 48px)}}@media(max-width:600px){.tiktok-link{width:calc(100% - 36px)}}@media(hover:none){.form .whatsapp-action:hover,.whatsapp-float:hover{transform:none;box-shadow:none}}
+</style>
 </head>
-
 <body>
-  <div id="preloader">
-    <div class="preloader-content">
-      <img src="logo_small_icon_only.png" alt="Hor-Maza" />
-      <span>Hor-Maza</span>
-    </div>
-  </div>
-
-  <header>
-    <div class="container">
-      <div class="topbar">
-        <a class="brand" href="#inicio" aria-label="Hor-Maza">
-          <img src="logo_small_icon_only.png" alt="Logo Hor-Maza">
-          <strong>Hor-Maza</strong>
-        </a>
-
-        <div class="nav" aria-label="Principal">
-          <a href="#sobre-nosotros">Sobre Nosotros</a>
-          <a href="#servicios">Servicios</a>
-          <a href="#proyectos">Proyectos</a>
-          <a href="#testimonios">Testimonios</a>
-          <a href="#contacto">Contacto</a>
-        </div>
-      </div>
-
-      <div class="hero" id="inicio">
-        <h1>¿Cuál es tu próximo proyecto?</h1>
-        <p>Obras, reformas y hormigón impreso en Ontinyent y provincia de Valencia. Un trabajo serio, claro y bien terminado.</p>
-
-        <div class="cta-row">
-          <a class="btn btn-solid" href="#contacto"><i class="fa-regular fa-paper-plane" aria-hidden="true"></i>Cuéntanos</a>
-          <a class="btn" href="#proyectos"><i class="fa-regular fa-images" aria-hidden="true"></i>Proyectos</a>
-          <a class="btn" href="tel:+34629974287"><i class="fa-solid fa-phone" aria-hidden="true"></i>Llamar</a>
-        </div>
-
-        <div class="hero-kpis" aria-label="Datos clave">
-          <span class="kpi"><i class="fa-regular fa-circle-check" aria-hidden="true"></i>+15 años de experiencia</span>
-          <span class="kpi"><i class="fa-regular fa-map" aria-hidden="true"></i>Ontinyent · Vall d’Albaida</span>
-          <span class="kpi"><i class="fa-regular fa-handshake" aria-hidden="true"></i>Presupuesto sin compromiso</span>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main class="container">
-
-    <section class="section" id="sobre-nosotros">
-      <h2>Sobre nosotros</h2>
-      <p class="lead">Trabajamos con orden, limpieza y acabados de calidad. Queremos que el resultado dure y se note.</p>
-
-      <div class="about">
-        <img src="sobre-nosotros.jpg" alt="Equipo de Hor-Maza" loading="lazy" decoding="async">
-
-        <div class="card">
-          <p>Hacemos realidad proyectos con dedicación, calidad y confianza. Somos especialistas en <strong>obra, reformas, hormigón impreso, electricidad y fontanería.</strong></p>
-          <p>Cuidamos cada detalle, cumplimos plazos y ofrecemos soluciones prácticas y duraderas.</p>
-
-          <ul class="steps">
-            <li class="step"><i class="fa-solid fa-1" aria-hidden="true"></i><div><b>Visita y asesoramiento</b><br><span style="color:var(--muted)">Te orientamos según tu idea y tu presupuesto.</span></div></li>
-            <li class="step"><i class="fa-solid fa-2" aria-hidden="true"></i><div><b>Presupuesto claro</b><br><span style="color:var(--muted)">Sin sorpresas, todo por escrito.</span></div></li>
-            <li class="step"><i class="fa-solid fa-3" aria-hidden="true"></i><div><b>Ejecución con orden</b><br><span style="color:var(--muted)">Coordinación y limpieza durante la obra.</span></div></li>
-            <li class="step"><i class="fa-solid fa-4" aria-hidden="true"></i><div><b>Entrega y revisión</b><br><span style="color:var(--muted)">Revisamos contigo y dejamos todo perfecto.</span></div></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="servicios">
-      <h2>Servicios</h2>
-      <p class="lead">Lo que hacemos a diario, con acabados serios y duraderos.</p>
-
-      <div class="services">
-        <div class="service">
-          <div class="icon"><i class="fas fa-tools" aria-hidden="true"></i></div>
-          <h3>Obra</h3>
-          <p>Estructura, albañilería y acabados.</p>
-        </div>
-
-        <div class="service">
-          <div class="icon"><i class="fa-solid fa-house-crack" aria-hidden="true"></i></div>
-          <h3>Reformas</h3>
-          <p>Renovaciones integrales en vivienda y negocio.</p>
-        </div>
-
-        <div class="service">
-          <div class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 64 64" role="img" aria-label="Hormigón Impreso">
-              <title>Hormigón Impreso</title>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="scroll-meter" aria-hidden="true"></div>
+<header><div class="wrap header-inner"><a class="brand" href="#inicio" aria-label="Hor-Maza, inicio"><span class="mark"><img src="assets/b5065a45f07a2d.webp" alt="" width="64" height="64"></span><span class="wordmark">Hor-Maza<small>OBRA & REFORMAS</small></span></a><nav class="nav" id="navigation" aria-label="Navegación principal"><a href="#servicios">Qué hacemos</a><a href="#nosotros">Nosotros</a><a href="#proyectos">Proyectos</a><a href="#pelicula">En movimiento</a><a href="#contacto">Contacto</a></nav><a class="header-cta" href="#contacto">Hablemos de tu idea ↗</a><button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menú +</button></div></header>
+<main id="contenido">
+<section class="hero" id="inicio"><div class="wrap hero-layout"><div class="hero-copy"><p class="eyebrow location">Ontinyent · Vall d’Albaida · Valencia</p><h1>Reformas<br>integrales.<br><span>De las buenas.</span></h1><p class="hero-description">Obra, reformas y hormigón impreso en Ontinyent y Valencia. Tú pones la idea. Nosotros, el oficio para hacerla realidad.</p><div class="hero-actions"><a class="pill primary" href="#contacto">Pedir presupuesto <span>↗</span></a><a class="pill secondary" href="#destacados">Ver nuestros trabajos ↓</a></div><p class="hero-promises">✓ Presupuesto sin compromiso &nbsp; ✓ Trato directo</p></div><div class="hero-visual"><img src="assets/1645c10db253aa.webp" alt="Centro Deportivo Pegasus, reformado por Hor-Maza" fetchpriority="high"><div class="float-badge badge-two"><span>HECHO POR HOR-MAZA</span><strong>Proyecto<br>Pegasus.</strong><a href="#proyectos">Descubre el proyecto ↗</a></div><a class="play-chip" href="#pelicula"><span>▶</span> Ver el vídeo de Pegasus</a></div></div><a class="hero-scroll" href="#servicios" aria-label="Bajar a servicios">↓</a></section><div class="trust-strip"><div class="wrap"><div><strong>+15 años</strong><span>de experiencia</span></div><div><strong>Obra y reformas</strong><span>viviendas y negocios</span></div><div><strong>Hormigón impreso</strong><span>exteriores con carácter</span></div><div><strong>Ontinyent</strong><span>y provincia de Valencia</span></div></div></div><section class="section film-section video-showcase" id="pelicula"><div class="wrap"><div class="section-head"><div><p class="eyebrow">DOS PROYECTOS · DOS TRANSFORMACIONES</p><h2>Así queda.<br><span>Así lo hacemos.</span></h2></div><p>Un centro deportivo y una planta baja convertida en vivienda. Dale al play y recorre los resultados.</p></div><div class="video-pair"><article class="video-project" id="video-pegasus"><div class="video-frame"><video id="pegasus-video" controls playsinline preload="none" poster="assets/pegasus-10.jpg" aria-label="Vídeo del Centro Deportivo Pegasus"><source src="assets/pegasus.mp4" type="video/mp4"><a href="assets/pegasus.mp4">Abrir vídeo</a></video></div><div class="video-info"><p class="eyebrow">OBRA Y ACONDICIONAMIENTO · 1:21</p><h3>Centro Deportivo Pegasus</h3><p>Desde la distribución y las instalaciones hasta la sala deportiva, los baños y los últimos acabados.</p><button class="text-link" type="button" data-gallery="0">Ver las fotografías ↗</button></div></article><article class="video-project" id="video-vivienda"><div class="video-frame"><video id="vivienda-video" controls playsinline preload="none" poster="assets/vivienda-68.jpg" aria-label="Vídeo de una planta baja convertida en vivienda"><source src="assets/vivienda.mp4" type="video/mp4"><a href="assets/vivienda.mp4">Abrir vídeo</a></video></div><div class="video-info"><p class="eyebrow">REFORMA INTEGRAL · 1:15</p><h3>Reforma de Álex.<br>De planta baja a hogar.</h3><p>Una transformación completa: espacios para vivir, cocina, baño y nuevos acabados. Mira el antes y el resultado en el vídeo.</p><button class="text-link" type="button" data-gallery="9">Ver los fotogramas ↗</button></div></article></div></div></section><section class="intro" id="nosotros"><div class="wrap"><div class="intro-grid reveal"><div class="about-photo"><img src="assets/e29e6a1c6f9c50.webp" alt="Fotografía de presentación de Hor-Maza" loading="lazy"><span>HOR-MAZA · ONTINYENT</span></div><div><h2>Las buenas obras<br>se notan.<br><span>La tranquilidad, también.</span></h2><p>Somos Hor-Maza. Trabajamos en Ontinyent y provincia de Valencia, acompañándote desde la primera visita hasta la revisión final. Con orden, comunicación y cuidado por los acabados.</p></div></div><div class="facts reveal"><div class="fact"><strong>+15</strong><p>Años de experiencia</p></div><div class="fact"><strong>De aquí.</strong><p>Ontinyent · Vall d’Albaida</p></div><div class="fact"><strong>Contigo.</strong><p>De principio a fin</p></div></div></div></section>
+<section class="section" id="servicios"><div class="wrap"><div class="section-head reveal"><div><p class="eyebrow red">01 / Qué hacemos</p><h2>Un proyecto.<br>Todas las soluciones.</h2></div><p>Desde renovar una estancia hasta transformar todo un espacio. Encuentra lo que necesitas.</p></div>
+<div class="service-cards"><article class="service-card reveal"><div class="card-photo"><img src="assets/579c405c4a6025.webp" alt="Reformas integrales: trabajo de Hor-Maza" loading="lazy"><span>01</span></div><div class="card-copy"><h3>Reformas integrales</h3><p>De las buenas. De abrir la puerta y decir: ahora sí, esto es lo que quería.</p><a href="#det-service-0" class="text-link service-detail">Ver al detalle ↗</a></div></article><article class="service-card reveal"><div class="card-photo"><img src="assets/1b5af684853fc3.webp" alt="Hormigón impreso del bueno: trabajo de Hor-Maza" loading="lazy"><span>02</span></div><div class="card-copy"><h3>Hormigón impreso del bueno</h3><p>Del que aguanta. Pavimentos con carácter para patios, accesos y exteriores.</p><a href="#det-service-1" class="text-link service-detail">Ver al detalle ↗</a></div></article><article class="service-card reveal"><div class="card-photo"><img src="assets/bf66912ac0c91e.webp" alt="Obra y albañilería: trabajo de Hor-Maza" loading="lazy"><span>03</span></div><div class="card-copy"><h3>Obra y albañilería</h3><p>Desde la preparación del terreno hasta el último remate.</p><a href="#det-service-2" class="text-link service-detail">Ver al detalle ↗</a></div></article><article class="service-card reveal"><div class="card-photo"><img src="assets/efd2c8279a6de7.webp" alt="Pintura y acabados: trabajo de Hor-Maza" loading="lazy"><span>04</span></div><div class="card-copy"><h3>Pintura y acabados</h3><p>El cuidado está en los detalles. Paredes, techos y revestimientos.</p><a href="#det-service-3" class="text-link service-detail">Ver al detalle ↗</a></div></article><article class="service-card reveal"><div class="card-photo"><img src="assets/f49b3cd518e6e0.webp" alt="Electricidad y fontanería: trabajo de Hor-Maza" loading="lazy"><span>05</span></div><div class="card-copy"><h3>Electricidad y fontanería</h3><p>Todo lo que necesitas para que tu reforma funcione por dentro.</p><a href="#det-service-4" class="text-link service-detail">Ver al detalle ↗</a></div></article><a class="service-cta" href="#contacto"><span>¿POR DÓNDE EMPEZAMOS?</span><h3>Menos vueltas.<br>Más manos<br>a la obra.</h3><span>Hablemos de tu proyecto ↗</span></a></div><div class="details-heading"><p class="eyebrow red">AL DETALLE</p><h3>Todo empieza por entender qué necesitas.</h3></div><details class="service" id="det-service-0"><summary><span class="service-num" aria-hidden="true"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path fill="currentColor" d="M543.8 287.6c17 0 32-14 32-32.1c1-9-3-17-11-24L309.5 7c-6-5-14-7-21-7s-15 1-22 8L10 231.5c-7 7-10 15-10 24c0 18 14 32.1 32 32.1l32 0 0 160.4c0 35.3 28.7 64 64 64l102.3 0-31.3-52.2c-4.1-6.8-2.6-15.5 3.5-20.5L288 368l-60.2-82.8c-10.9-15 8.2-33.5 22.8-22l117.9 92.6c8 6.3 8.2 18.4 .4 24.9L288 448l38.4 64 122.1 0c35.5 0 64.2-28.8 64-64.3l-.7-160.2 32 0z"/></svg></span><h3>Reformas integrales</h3><span class="plus" aria-hidden="true">+</span></summary><div class="service-content"><p>Renovamos viviendas y locales. Distribución, albañilería e instalaciones: coordinamos los trabajos para dar forma al espacio que necesitas.</p><a href="#contacto" class="text-link" data-service="Reformas integrales">Cuéntanos tu reforma ↗</a></div></details>
+<details class="service" id="det-service-1"><summary><span class="service-num" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+              
               <rect x="4" y="8" width="16" height="10" rx="2" fill="currentColor" />
               <rect x="24" y="8" width="16" height="10" rx="2" fill="currentColor" />
               <rect x="44" y="8" width="16" height="10" rx="2" fill="currentColor" />
@@ -737,237 +80,53 @@
               <rect x="44" y="36" width="16" height="10" rx="2" fill="currentColor" />
               <rect x="14" y="50" width="16" height="10" rx="2" fill="currentColor" />
               <rect x="34" y="50" width="16" height="10" rx="2" fill="currentColor" />
-            </svg>
-          </div>
-          <h3>Hormigón impreso</h3>
-          <p>Patios, accesos y exteriores: resistente y elegante.</p>
-        </div>
-
-        <div class="service">
-          <div class="icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
-          <h3>Electricidad</h3>
-          <p>Instalaciones y mantenimiento certificados.</p>
-        </div>
-
-        <div class="service">
-          <div class="icon"><i class="fas fa-faucet" aria-hidden="true"></i></div>
-          <h3>Fontanería</h3>
-          <p>Instalaciones, reparaciones y eficiencia hídrica.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="proyectos">
-      <div class="projects-head">
-        <div>
-          <h2>Proyectos</h2>
-          <p class="lead" style="margin-bottom:0;">Una selección de trabajos reales. Entra a cada proyecto para ver detalles.</p>
-        </div>
-
-        <div class="filters" aria-label="Filtros de proyectos">
-          <button class="filter-btn active" data-filter="all" type="button">Todos</button>
-          <button class="filter-btn" data-filter="obra" type="button">Obra</button>
-          <button class="filter-btn" data-filter="hormigon" type="button">Hormigón</button>
-          <button class="filter-btn" data-filter="reformas" type="button">Reformas</button>
-          <button class="filter-btn" data-filter="exterior" type="button">Exterior</button>
-          <button class="filter-btn" data-filter="piscina" type="button">Piscina</button>
-        </div>
-      </div>
-
-      <div class="gallery" id="projectsGrid">
-
-        <a class="project-link project-item" data-tags="obra reformas exterior" href="projects/proyecto-pegasus-centro-deportivo.html">
-          <img src="peg5.JPG" alt="Proyecto Pegasus Centro Deportivo realizado por Hor-Maza" loading="lazy" decoding="async" />
-          <div class="cap"><b>Proyecto Pegasus Centro Deportivo</b><span>Reforma integral</span></div>
-        </a>
-
-        <a class="project-link project-item" data-tags="obra exterior" href="projects/paso-rio-ontinyent.html">
-          <img src="IMG_6578.JPG" alt="Hormigón impreso en pasarela del río Clariano en Ontinyent" loading="lazy" decoding="async" />
-          <div class="cap"><b>Hormigón impreso en pasarela del río Clariano</b><span>Exterior</span></div>
-        </a>
-
-        <a class="project-link project-item" data-tags="hormigon exterior" href="projects/hormigon-impreso-acabado-piedra.html">
-          <img src="d9ffa681-6cf7-4601-8d57-7ce1f99cb350.jpg" alt="Hormigón impreso acabado piedra" loading="lazy" decoding="async" />
-          <div class="cap"><b>Hormigón impreso acabado piedra</b><span>Pavimento exterior</span></div>
-        </a>
-
-        <a class="project-link project-item" data-tags="hormigon exterior" href="projects/hormigon-impreso-cesped-artificial.html">
-          <img src="6e49f6d1-fa4f-45a0-a787-476ce6431e88.jpg" alt="Camino de hormigón con césped artificial" loading="lazy" decoding="async" />
-          <div class="cap"><b>Camino de hormigón con césped artificial</b><span>Exterior</span></div>
-        </a>
-
-        <a class="project-link project-item" data-tags="exterior" href="projects/diseno-losas-cesped.html">
-          <img src="dis5.jpeg" alt="Jardín terminado con losas de hormigón y césped artificial" loading="lazy" decoding="async" />
-          <div class="cap"><b>Jardín con losas de hormigón y césped</b><span>Exterior</span></div>
-        </a>
-
-        <a class="project-link project-item" data-tags="hormigon exterior" href="projects/entrada-con-impreso.html">
-          <img src="499cc221-15c1-4ef0-81dc-2753b1248668.jpg" alt="Entrada de vivienda con hormigón impreso" loading="lazy" decoding="async" />
-          <div class="cap"><b>Entrada de vivienda con hormigón impreso</b><span>Exterior</span></div>
-        </a>
-
-        <a class="project-link project-item" data-tags="piscina exterior" href="projects/tarima-borde-piscina.html">
-          <img src="IMG_7580.JPG" alt="Zona de piscina con tarima exterior" loading="lazy" decoding="async" />
-          <div class="cap"><b>Zona de piscina con tarima exterior</b><span>Piscina</span></div>
-        </a>
-
-        <a class="project-link project-item" data-tags="hormigon exterior" href="projects/hormigon-impreso-imitacion-madera.html">
-          <img src="IMG_7600.JPG" alt="Hormigón impreso imitación madera" loading="lazy" decoding="async" />
-          <div class="cap"><b>Hormigón impreso imitación madera</b><span>Hormigón impreso</span></div>
-        </a>
-
-        <a class="project-link project-item" data-tags="reformas" href="projects/reforma-cocina-integral.html">
-          <img src="6abf1a62-9b65-4f28-97c6-632ddc5d8717.jpg" alt="Reforma integral de cocina moderna" loading="lazy" decoding="async" />
-          <div class="cap"><b>Reforma integral de cocina moderna</b><span>Reforma integral</span></div>
-        </a>
-
-      </div>
-
-      <div class="projects-cta" aria-label="Llamada a la acción de proyectos">
-        <div>
-          <b>¿Quieres un proyecto similar?</b>
-          <p>Deja tu contacto o envíanos fotos/medidas por WhatsApp y te orientamos.</p>
-        </div>
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn btn-dark" href="#contacto"><i class="fa-regular fa-paper-plane" aria-hidden="true"></i>Contactar</a>
-          <a class="btn btn-accent" target="_blank" rel="noopener"
-             href="https://wa.me/34629974287?text=Hola%20Gustavo,%20quiero%20un%20presupuesto%20parecido%20a%20uno%20de%20vuestros%20proyectos">
-             <i class="fab fa-whatsapp" aria-hidden="true"></i>WhatsApp
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="testimonios">
-      <h2>Testimonios</h2>
-      <p class="lead">Opiniones reales de clientes.</p>
-
-      <div class="testimonials">
-        <div class="testimonial">
-          <p>"Desde hace años solo confiamos en ellos, gente seria, trabajadora y muy agradable."</p>
-          <cite>- Antonio Molina</cite>
-        </div>
-        <div class="testimonial">
-          <p>"Magníficos profesionales, sin duda volvería a contratarlos."</p>
-          <cite>- Patricia Sanjurjo</cite>
-        </div>
-        <div class="testimonial">
-          <p>"Quedé muy satisfecho con la reforma de mi cocina realizada por Hor-Maza. Un equipo de confianza para cualquier proyecto."</p>
-          <cite>- Chema B.</cite>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contacto" style="border-bottom:none;">
-      <h2>Contacto</h2>
-      <p class="lead">Cuéntanos tu idea y te pasamos presupuesto sin compromiso.</p>
-
-      <div class="contact-wrap">
-        <div class="panel">
-          <div class="contact-form">
-            <form action="https://formspree.io/f/xvgweyrj" method="POST">
-              <input type="text" name="name" placeholder="Tu Nombre" required>
-              <input type="email" name="email" placeholder="Tu Email" required>
-              <input type="tel" name="phone" placeholder="Tu Teléfono">
-              <textarea name="message" rows="5" placeholder="Describe tu proyecto" required></textarea>
-              <button class="btn btn-accent send-btn" type="submit">
-                <i class="fa-regular fa-paper-plane" aria-hidden="true"></i> Enviar
-              </button>
-            </form>
-          </div>
-        </div>
-
-        <div class="panel contact-info">
-          <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Carrer d'Artal de Foces, 6 · 46870 · Ontinyent (Valencia)</p>
-          <p><i class="fas fa-phone" aria-hidden="true"></i>
-            <a href="tel:+34646944703">+34 646 944 703</a> — <a href="tel:+34629974287">+34 629 974 287</a>
-          </p>
-          <p><i class="fas fa-envelope" aria-hidden="true"></i>
-            <a href="mailto:hormaza.info1974@gmail.com">hormaza.info1974@gmail.com</a>
-          </p>
-          <p><i class="fas fa-clock" aria-hidden="true"></i> Lunes a Domingo, 08:30–20:00</p>
-
-          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
-            <a class="btn btn-dark" href="tel:+34629974287"><i class="fa-solid fa-phone" aria-hidden="true"></i>Llamar</a>
-            <a class="btn btn-accent" target="_blank" rel="noopener"
-               href="https://wa.me/34629974287?text=Hola%20Hor-Maza,%20me%20gustaría%20pedir%20un%20presupuesto">
-               <i class="fab fa-whatsapp" aria-hidden="true"></i>WhatsApp
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="social" aria-label="Redes sociales">
-          <a href="https://www.instagram.com/hor_maza/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.tiktok.com/@hormaza.ontinyent" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-        </div>
-        <div>&copy; <span id="year"></span> © All Rights Reserved.</div>
-      </div>
-    </div>
-  </footer>
-
-  <a href="https://wa.me/34629974287?text=Hola%20Hor-Maza,%20me%20gustaría%20pedir%20un%20presupuesto"
-    class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-    <i class="fab fa-whatsapp" aria-hidden="true"></i>
-  </a>
-
-  <script>
-    (function () {
-      var y = document.getElementById('year');
-      if (y) y.textContent = new Date().getFullYear();
-    })();
-  </script>
-
-  <script>
-    (function () {
-      const buttons = document.querySelectorAll('.filter-btn');
-      const items = document.querySelectorAll('.project-item');
-
-      function applyFilter(tag) {
-        items.forEach(el => {
-          const tags = (el.getAttribute('data-tags') || '').toLowerCase();
-          const show = (tag === 'all') || tags.includes(tag);
-          el.style.display = show ? '' : 'none';
-        });
-      }
-
-      buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          buttons.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          applyFilter(btn.getAttribute('data-filter'));
-        }, { passive: true });
-      });
-    })();
-  </script>
-
-  <script>
-    const form = document.querySelector("form");
-    if (form) {
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const data = new FormData(form);
-
-        const res = await fetch(form.action, {
-          method: form.method,
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (res.ok) {
-          alert("✅ Gracias, tu mensaje ha sido enviado correctamente. ¡Gracias por contactar con Hor-Maza!");
-          form.reset();
-        } else {
-          alert("❌ Hubo un error al enviar tu mensaje. Intenta de nuevo más tarde.");
-        }
-      });
-    }
-  </script>
-</body>
-</html>
+            </svg></span><h3>Hormigón impreso</h3><span class="plus" aria-hidden="true">+</span></summary><div class="service-content"><p>Pavimentos para patios, accesos y exteriores. Acabados con distintas texturas y colores para unir resistencia y diseño.</p><a href="#contacto" class="text-link" data-service="Hormigón impreso">Hablemos de tu exterior ↗</a></div></details>
+<details class="service" id="det-service-2"><summary><span class="service-num" aria-hidden="true"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path fill="currentColor" d="M78.6 5C69.1-2.4 55.6-1.5 47 7L7 47c-8.5 8.5-9.4 22-2.1 31.6l80 104c4.5 5.9 11.6 9.4 19 9.4l54.1 0 109 109c-14.7 29-10 65.4 14.3 89.6l112 112c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-112-112c-24.2-24.2-60.6-29-89.6-14.3l-109-109 0-54.1c0-7.5-3.5-14.5-9.4-19L78.6 5zM19.9 396.1C7.2 408.8 0 426.1 0 444.1C0 481.6 30.4 512 67.9 512c18 0 35.3-7.2 48-19.9L233.7 374.3c-7.8-20.9-9-43.6-3.6-65.1l-61.7-61.7L19.9 396.1zM512 144c0-10.5-1.1-20.7-3.2-30.5c-2.4-11.2-16.1-14.1-24.2-6l-63.9 63.9c-3 3-7.1 4.7-11.3 4.7L352 176c-8.8 0-16-7.2-16-16l0-57.4c0-4.2 1.7-8.3 4.7-11.3l63.9-63.9c8.1-8.1 5.2-21.8-6-24.2C388.7 1.1 378.5 0 368 0C288.5 0 224 64.5 224 144l0 .8 85.3 85.3c36-9.1 75.8 .5 104 28.7L429 274.5c49-23 83-72.8 83-130.5zM56 432a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg></span><h3>Obra y albañilería</h3><span class="plus" aria-hidden="true">+</span></summary><div class="service-content"><p>Construcción, estructura y acabados. Estudiamos el trabajo contigo para plantear una solución adaptada a tu espacio.</p><a href="#contacto" class="text-link" data-service="Obra y albañilería">Cuéntanos tu obra ↗</a></div></details>
+<details class="service" id="det-service-3"><summary><span class="service-num" aria-hidden="true"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path fill="currentColor" d="M0 64C0 28.7 28.7 0 64 0L352 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64L64 192c-35.3 0-64-28.7-64-64L0 64zM160 352c0-17.7 14.3-32 32-32l0-16c0-44.2 35.8-80 80-80l144 0c17.7 0 32-14.3 32-32l0-32 0-90.5c37.3 13.2 64 48.7 64 90.5l0 32c0 53-43 96-96 96l-144 0c-8.8 0-16 7.2-16 16l0 16c17.7 0 32 14.3 32 32l0 128c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32-14.3-32-32l0-128z"/></svg></span><h3>Pintura y acabados</h3><span class="plus" aria-hidden="true">+</span></summary><div class="service-content"><p>Preparamos las superficies y renovamos paredes y techos. El último detalle también forma parte de una obra bien hecha.</p><a href="#contacto" class="text-link" data-service="Pintura y acabados">Renovamos tu espacio ↗</a></div></details>
+<details class="service" id="det-service-4"><summary><span class="service-num" aria-hidden="true"><span class="paired-icons"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path fill="currentColor" d="M349.4 44.6c5.9-13.7 1.5-29.7-10.6-38.5s-28.6-8-39.9 1.8l-256 224c-10 8.8-13.6 22.9-8.9 35.3S50.7 288 64 288l111.5 0L98.6 467.4c-5.9 13.7-1.5 29.7 10.6 38.5s28.6 8 39.9-1.8l256-224c10-8.8 13.6-22.9 8.9-35.3s-16.6-20.7-30-20.7l-111.5 0L349.4 44.6z"/></svg><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path fill="currentColor" d="M192 96l0 12L96 96c-17.7 0-32 14.3-32 32s14.3 32 32 32l96-12 31-3.9 1-.1 1 .1 31 3.9 96 12c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 12 0-12c0-17.7-14.3-32-32-32s-32 14.3-32 32zM32 256c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l100.1 0c20.2 29 53.9 48 91.9 48s71.7-19 91.9-48l36.1 0c17.7 0 32 14.3 32 32s14.3 32 32 32l64 0c17.7 0 32-14.3 32-32c0-88.4-71.6-160-160-160l-32 0-22.6-22.6c-6-6-14.1-9.4-22.6-9.4L256 224l0-43.8-32-4-32 4 0 43.8-18.7 0c-8.5 0-16.6 3.4-22.6 9.4L128 256l-96 0z"/></svg></span></span><h3>Electricidad y fontanería</h3><span class="plus" aria-hidden="true">+</span></summary><div class="service-content"><p>Instalaciones, renovación y reparaciones. Atendemos lo que se ve y lo que queda detrás de las paredes.</p><a href="#contacto" class="text-link" data-service="Electricidad y fontanería">Dinos qué necesitas ↗</a></div></details>
+</div></section>
+<section class="journey" id="historia" aria-label="Nos ponemos en marcha para tu proyecto"><div class="scene"><div class="scene-top wrap"><span class="eyebrow">Hor-Maza · De la idea a la obra</span><span class="scene-count" aria-hidden="true">01 — 03</span></div><div class="scene-heading"><h2 id="story-title">Todo empieza<br>con una idea.</h2><p id="story-description">Tú nos cuentas. Nosotros te escuchamos.</p></div><div class="road" aria-hidden="true"></div><img class="van" loading="lazy" src="assets/5b38ba75ea88ff.png" width="2172" height="724" alt="Furgoneta blanca de Hor-Maza, con su logotipo y teléfono 646 944 703"><div class="scene-caption wrap"><p>Vamos a verlo. Medimos, te orientamos y damos forma a tu proyecto.</p><div class="stages" aria-hidden="true"><span class="stage active">01 / TU IDEA</span><span class="stage">02 / EN MARCHA</span><span class="stage">03 / MANOS A LA OBRA</span></div></div><div class="track" aria-hidden="true"></div></div></section>
+<section class="section featured" id="destacados"><div class="wrap"><div class="section-head"><div><p class="eyebrow red">TRES FORMAS DE CAMBIAR UN ESPACIO</p><h2>Obras que hablan<br>por nosotros.</h2></div><p>Un local, un paso sobre el río y un jardín. Distintos retos. El mismo cuidado.</p></div><div class="featured-grid"><article><button class="featured-photo" data-gallery="0" aria-label="Abrir proyecto Centro Deportivo Pegasus"><img src="assets/36fe8e9eb5d744.webp" alt="Centro Deportivo Pegasus" loading="lazy"><span>Ver el proyecto ↗</span></button><p class="eyebrow red">Reforma y acondicionamiento</p><h3>Un local. Otra energía.</h3><p>De acondicionar el interior a rematar la sala deportiva, los baños y los vestuarios.</p></article><article><button class="featured-photo" data-gallery="1" aria-label="Abrir proyecto Pasarela del río Clariano"><img src="assets/bf66912ac0c91e.webp" alt="Pasarela del río Clariano" loading="lazy"><span>Ver el proyecto ↗</span></button><p class="eyebrow red">Obra y hormigón impreso</p><h3>Un camino para conectar.</h3><p>Preparación, hormigonado y acabado impreso de la pasarela del río Clariano, en Ontinyent.</p></article><article><button class="featured-photo" data-gallery="4" aria-label="Abrir proyecto Jardín con losas y césped"><img src="assets/1645c10db253aa.webp" alt="Jardín con losas y césped" loading="lazy"><span>Ver el proyecto ↗</span></button><p class="eyebrow red">Pavimentos y exteriores</p><h3>Tu exterior, bien pensado.</h3><p>Losas de hormigón y césped para transformar el jardín y dar forma a sus recorridos.</p></article></div><a class="pill" href="#proyectos">Explorar los 10 proyectos ↓</a></div></section><section class="section project-section" id="proyectos"><div class="wrap"><div class="section-head reveal"><div><p class="eyebrow red">TRABAJOS REALES · FOTOS REALES</p><h2>Aquí hablamos<br><span>con obras.</span></h2></div><p>Recorre nuestros proyectos. Abre cada uno para ver sus fotos, desde la obra hasta los acabados.</p></div><div class="filters" role="group" aria-label="Filtrar proyectos"><button type="button" data-filter="Todos" aria-pressed="true">Todos</button><button type="button" data-filter="Reformas" aria-pressed="false">Reformas</button><button type="button" data-filter="Hormigón" aria-pressed="false">Hormigón</button><button type="button" data-filter="Obra" aria-pressed="false">Obra</button><button type="button" data-filter="Exteriores" aria-pressed="false">Exteriores</button></div><p class="project-count" aria-live="polite">10 proyectos</p><div class="project-grid"><button class="project-card" type="button" data-gallery="9" data-category="Reformas"><div class="project-photo"><img src="assets/vivienda-68.jpg" alt="Cocina de la planta baja convertida en vivienda" loading="lazy"><span class="photo-count">4 fotogramas ↗</span></div><div class="project-copy"><span>Reforma integral · Con vídeo</span><h3>De planta baja a vivienda</h3></div></button><button class="project-card" type="button" data-gallery="0" data-category="Reformas"><div class="project-photo"><img src="assets/36fe8e9eb5d744.webp" alt="Centro Deportivo Pegasus" loading="lazy"><span class="photo-count">7 fotos ↗</span></div><div class="project-copy"><span>Reformas</span><h3>Centro Deportivo Pegasus</h3></div></button><button class="project-card" type="button" data-gallery="1" data-category="Obra"><div class="project-photo"><img src="assets/bf66912ac0c91e.webp" alt="Pasarela del río Clariano" loading="lazy"><span class="photo-count">8 fotos ↗</span></div><div class="project-copy"><span>Obra</span><h3>Pasarela del río Clariano</h3></div></button><button class="project-card" type="button" data-gallery="2" data-category="Hormigón"><div class="project-photo"><img src="assets/1b5af684853fc3.webp" alt="Hormigón impreso acabado piedra" loading="lazy"><span class="photo-count">12 fotos ↗</span></div><div class="project-copy"><span>Hormigón</span><h3>Hormigón impreso acabado piedra</h3></div></button><button class="project-card" type="button" data-gallery="3" data-category="Hormigón"><div class="project-photo"><img src="assets/5bc2f8b9849f9b.webp" alt="Camino de hormigón y césped" loading="lazy"><span class="photo-count">17 fotos ↗</span></div><div class="project-copy"><span>Hormigón</span><h3>Camino de hormigón y césped</h3></div></button><button class="project-card" type="button" data-gallery="4" data-category="Exteriores"><div class="project-photo"><img src="assets/1645c10db253aa.webp" alt="Jardín con losas y césped" loading="lazy"><span class="photo-count">5 fotos ↗</span></div><div class="project-copy"><span>Exteriores</span><h3>Jardín con losas y césped</h3></div></button><button class="project-card" type="button" data-gallery="5" data-category="Hormigón"><div class="project-photo"><img src="assets/eb0db294b5701d.webp" alt="Entrada de vivienda" loading="lazy"><span class="photo-count">1 fotos ↗</span></div><div class="project-copy"><span>Hormigón</span><h3>Entrada de vivienda</h3></div></button><button class="project-card" type="button" data-gallery="6" data-category="Exteriores"><div class="project-photo"><img src="assets/fe137006114098.webp" alt="Tarima junto a la piscina" loading="lazy"><span class="photo-count">1 fotos ↗</span></div><div class="project-copy"><span>Exteriores</span><h3>Tarima junto a la piscina</h3></div></button><button class="project-card" type="button" data-gallery="7" data-category="Hormigón"><div class="project-photo"><img src="assets/8f291b830f51b6.webp" alt="Hormigón imitación madera" loading="lazy"><span class="photo-count">1 fotos ↗</span></div><div class="project-copy"><span>Hormigón</span><h3>Hormigón imitación madera</h3></div></button><button class="project-card" type="button" data-gallery="8" data-category="Reformas"><div class="project-photo"><img src="assets/f49b3cd518e6e0.webp" alt="Reforma integral de cocina" loading="lazy"><span class="photo-count">1 fotos ↗</span></div><div class="project-copy"><span>Reformas</span><h3>Reforma integral de cocina</h3></div></button></div><a class="instagram-link" href="https://www.instagram.com/hor_maza/" target="_blank" rel="noopener">Más de nuestro día a día en Instagram <strong>@hor_maza ↗</strong></a></div></section><section class="section method" id="metodo"><div class="wrap"><div class="section-head reveal"><div><p class="eyebrow red">02 / Sin complicarte la vida</p><h2>Las cosas claras.<br>Desde el primer día.</h2></div></div><div class="steps"><article class="step reveal"><span>01 / ESCUCHAMOS</span><h3>Tu idea, sobre la mesa.</h3><p>Visitamos el espacio y hablamos de lo que necesitas, tus prioridades y tu presupuesto.</p></article><article class="step reveal"><span>02 / PLANIFICAMOS</span><h3>Cada detalle cuenta.</h3><p>Definimos el alcance y los materiales. Te presentamos un presupuesto por escrito.</p></article><article class="step reveal"><span>03 / CONSTRUIMOS</span><h3>Manos a la obra.</h3><p>Organizamos los trabajos y mantenemos la comunicación contigo durante la ejecución.</p></article><article class="step reveal"><span>04 / REVISAMOS</span><h3>Listo para disfrutar.</h3><p>Repasamos juntos el resultado y comprobamos los acabados antes de la entrega.</p></article></div><div class="work-link"><p>¿Quieres ver lo que ya hemos hecho?</p><a class="pill" href="#proyectos">Ver nuestros proyectos <span aria-hidden="true">↗</span></a></div></div></section>
+<section class="section contact" id="contacto"><div class="wrap contact-grid"><div class="reveal"><p class="eyebrow">03 / El siguiente proyecto puede ser el tuyo</p><h2>¿Le damos<br>forma?</h2><p class="contact-copy">Cuéntanos qué tienes en mente. Te orientamos y preparamos un presupuesto sin compromiso.</p><a class="contact-phone" href="tel:+34646944703">646 944 703 ↗</a><br><a class="contact-email" href="mailto:hormaza.info1974@gmail.com">hormaza.info1974@gmail.com</a><p class="contact-address">Ontinyent · Valencia<br>Carrer d’Artal de Foces, 6</p></div><form class="form" id="contact-form" action="https://formspree.io/f/xvgweyrj" method="POST" data-channel="whatsapp"><div class="contact-channels" role="group" aria-label="Cómo quieres contactar"><button type="button" data-channel="whatsapp" aria-pressed="true"><svg class="wa-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg> WhatsApp</button><button type="button" data-channel="email" aria-pressed="false">Correo electrónico</button></div><label for="name">¿Cómo te llamas?</label><input id="name" name="name" placeholder="Tu nombre" autocomplete="given-name" required maxlength="100"><div id="email-fields" hidden><label for="email">Tu correo electrónico</label><input id="email" type="email" name="email" autocomplete="email" placeholder="tu@correo.com" disabled><label for="phone">Teléfono (opcional)</label><input id="phone" type="tel" name="phone" autocomplete="tel" placeholder="Tu teléfono" disabled></div><label for="service">¿Qué necesitas?</label><select id="service" name="service"><option>Reformas integrales</option><option>Hormigón impreso</option><option>Obra y albañilería</option><option>Pintura y acabados</option><option>Electricidad y fontanería</option><option>Quiero que me orientéis</option></select><label for="message">Cuéntanos tu idea</label><textarea id="message" name="message" placeholder="Qué quieres hacer y en qué localidad…" required maxlength="2000"></textarea><button class="pill whatsapp-action" id="contact-submit" type="submit"><span>Continuar por WhatsApp</span><svg class="wa-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></button><small id="contact-hint">Se abrirá WhatsApp con tu mensaje preparado. Tú decides cuándo enviarlo.</small><small>Usaremos los datos que envíes para responder a tu consulta.</small></form></div></section>
+</main>
+<a class="whatsapp-float" href="https://wa.me/34646944703" target="_blank" rel="noopener" aria-label="Hablar con Hor-Maza por WhatsApp">WhatsApp <svg class="wa-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></a><footer><div class="wrap"><a class="footer-brand" href="#inicio">Hor-Maza.</a><span>Obra bien hecha.<br>Ontinyent · Valencia</span><button class="cursor-option" type="button" aria-pressed="true">Desactivar martillo</button><a href="#inicio">Volver arriba ↑</a></div><a class="tiktok-link" href="https://www.tiktok.com/@hor_maza" target="_blank" rel="noopener" aria-label="Hor-Maza en TikTok">TikTok <strong>@hor_maza ↗</strong></a></footer>
+<dialog id="gallery-dialog" aria-labelledby="gallery-title"><div class="gallery-head"><div><p class="eyebrow" id="gallery-category"></p><h2 id="gallery-title"></h2><p id="gallery-story"></p></div><button type="button" id="gallery-close" aria-label="Cerrar galería">×</button></div><div class="gallery-stage"><img id="gallery-image" alt=""></div><div class="gallery-controls"><button type="button" id="gallery-prev" aria-label="Foto anterior">←</button><p id="gallery-caption" aria-live="polite"></p><button type="button" id="gallery-next" aria-label="Foto siguiente">→</button></div><div id="gallery-thumbs"></div><section id="gallery-video-panel" hidden><div><p class="eyebrow">EL PROYECTO EN VÍDEO</p><h3>De planta baja a vivienda.</h3><p>Recorre la reforma de Álex, el proceso y el resultado.</p></div><video id="gallery-video" controls playsinline preload="none" poster="assets/vivienda-68.jpg" aria-label="Vídeo de la reforma de Álex"><source type="video/mp4">Tu navegador no permite reproducir el vídeo. <a href="assets/vivienda.mp4">Abrir vídeo</a>.</video></section><a id="gallery-source" class="text-link" target="_blank" rel="noopener">Ver ficha original ↗</a></dialog><div class="hammer" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><path d="M12 15 28 34" stroke="#242722" stroke-width="8" stroke-linecap="round"/><path d="m13 16 15 18" stroke="#be6a39" stroke-width="5" stroke-linecap="round"/><path d="m6 10 8-7 10 8-7 7-5-4-4 4-5-4 3-4Z" fill="#e8e9e4" stroke="#252823" stroke-width="1.6"/><path d="m20 8 7 1 6 7-7-2-4 2" fill="#a9ada5" stroke="#252823" stroke-width="1.6"/></svg></div>
+<script>
+(()=>{'use strict';
+const $=s=>document.querySelector(s),all=s=>[...document.querySelectorAll(s)];
+const reduced=matchMedia('(prefers-reduced-motion: reduce)'),fine=matchMedia('(pointer:fine)');
+document.documentElement.classList.add('js');
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('seen');observer.unobserve(e.target)}}),{threshold:.12});all('.reveal').forEach(e=>observer.observe(e));}else all('.reveal').forEach(e=>e.classList.add('seen'));
+const menu=$('.menu-toggle'),nav=$('.nav');menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));nav.classList.toggle('open',open);menu.textContent=open?'Cerrar −':'Menú +'});all('.nav a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='Menú +'}));document.addEventListener('keydown',e=>{if(e.key==='Escape'){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='Menú +'}});
+const journey=$('.journey'),van=$('.van'),title=$('#story-title'),description=$('#story-description'),count=$('.scene-count'),track=$('.track'),meter=$('.scroll-meter'),stages=all('.stage');
+const texts=[['Todo empieza<br>con una idea.','Tú nos cuentas. Nosotros te escuchamos.'],['Nos ponemos<br>en marcha.','De Ontinyent a la puerta de tu proyecto.'],['Ahora sí.<br>Manos a la obra.','Lo que imaginabas empieza a tomar forma.']];
+let scheduled=false,last=-1;
+function draw(){scheduled=false;const r=journey.getBoundingClientRect(),vh=innerHeight,p=Math.max(0,Math.min(1,-r.top/(journey.offsetHeight-vh||1)));if(!reduced.matches){const enter=Math.min(1,p/.53),ease=1-Math.pow(1-enter,3),x=(1-ease)*92,scale=.91+.09*ease;van.style.transform=`translate(calc(-50% + ${x}vw),${(1-ease)*24}px) scale(${scale})`;const n=p<.27?0:p<.69?1:2;if(last!==n){last=n;title.innerHTML=texts[n][0];description.textContent=texts[n][1];count.textContent=`0${n+1} — 03`;stages.forEach((s,i)=>s.classList.toggle('active',i===n))}track.style.width=`${p*100}%`;}meter.style.width=`${100*scrollY/(document.documentElement.scrollHeight-vh||1)}%`;}
+function requestDraw(){if(!scheduled){scheduled=true;requestAnimationFrame(draw)}}window.addEventListener('scroll',requestDraw,{passive:true});window.addEventListener('resize',requestDraw);reduced.addEventListener('change',requestDraw);draw();
+const hammer=$('.hammer'),cursorButton=$('.cursor-option');let cursorOn=true;function cursorState(){document.body.classList.toggle('custom-cursor',cursorOn&&fine.matches&&!reduced.matches);cursorButton.setAttribute('aria-pressed',String(cursorOn));cursorButton.textContent=cursorOn?'Desactivar martillo':'Activar martillo'}cursorState();cursorButton.addEventListener('click',()=>{cursorOn=!cursorOn;cursorState()});fine.addEventListener('change',cursorState);reduced.addEventListener('change',cursorState);window.addEventListener('pointermove',e=>{if(e.pointerType==='mouse'){hammer.style.transform=`translate(${e.clientX-9}px,${e.clientY-8}px)`;hammer.style.visibility='visible'}},{passive:true});window.addEventListener('pointerdown',()=>hammer.classList.add('down'));window.addEventListener('pointerup',()=>hammer.classList.remove('down'));window.addEventListener('blur',()=>{hammer.style.visibility='hidden';hammer.classList.remove('down')});document.documentElement.addEventListener('pointerleave',()=>hammer.style.visibility='hidden');
+all('[data-service]').forEach(a=>a.addEventListener('click',()=>$('#service').value=a.dataset.service));
+$('#contact-form').addEventListener('submit',e=>{if(e.currentTarget.dataset.channel==='email')return;e.preventDefault();const name=$('#name').value.trim(),msg=$('#message').value.trim();if(!name||!msg){(!name?$('#name'):$('#message')).focus();return;}const text=`Hola, soy ${name}. Me interesa: ${$('#service').value}.\n\n${msg}`;window.open('https://wa.me/34646944703?text='+encodeURIComponent(text),'_blank','noopener,noreferrer')});
+})();
+</script>
+<script>const PHOTO_ASSETS={"sobre-nosotros.jpg": "assets/e29e6a1c6f9c50.webp", "dis4.jpeg": "assets/24adc33ad2aa7b.webp", "foto8.jpeg": "assets/de7c3714d5d4d0.webp", "foto1.jpg": "assets/33c9ef20d99b3c.webp", "6e49f6d1-fa4f-45a0-a787-476ce6431e88.jpg": "assets/5bc2f8b9849f9b.webp", "foto2.jpg": "assets/8f51c97e8e3e24.webp", "IMG_7580.JPG": "assets/fe137006114098.webp", "foto5.jpeg": "assets/10630836bdf4a6.webp", "dis1.jpg": "assets/ff0b95eb51d5b8.webp", "dis5.jpeg": "assets/1645c10db253aa.webp", "foto4.jpg": "assets/d204c0af8e2bd9.webp", "IMG_6406.JPG": "assets/305058b235aa1a.webp", "paco11.JPG": "assets/f3f786949510ec.webp", "paco10.JPG": "assets/841cf3d9240290.webp", "pasarela-detalle.png": "assets/594594c75c6e1e.webp", "paco12.jpg": "assets/6f7c2e3233d058.webp", "dis2.jpeg": "assets/df52256b7a6ea9.webp", "paco8.JPG": "assets/53ba72a595e688.webp", "paco9.JPG": "assets/3fe11aac221bcb.webp", "paco13.jpg": "assets/3fdbb0f48d7845.webp", "IMG_6404.JPG": "assets/543bc174eaf84b.webp", "dis3.jpeg": "assets/a54250e3a198c9.webp", "paco16.jpg": "assets/311402fd49ebb0.webp", "paco14.jpg": "assets/4d7b303e9bb864.webp", "IMG_6577.JPG": "assets/4320c816258735.webp", "foto3.jpeg": "assets/715f63bc2f28ba.webp", "paco15.jpg": "assets/feabe2833c1f85.webp", "IMG_6416.JPG": "assets/259fd6130e8875.webp", "logo_small_icon_only.png": "assets/b5065a45f07a2d.webp", "paco2.jpg": "assets/b6a4d12d07e18c.webp", "paco3.jpg": "assets/8151a5ee3302e3.webp", "paco1.jpg": "assets/e66f84656ebb9f.webp", "IMG_6578.JPG": "assets/bf66912ac0c91e.webp", "499cc221-15c1-4ef0-81dc-2753b1248668.jpg": "assets/eb0db294b5701d.webp", "IMG_6421.JPG": "assets/faa1f470671504.webp", "paco4.jpg": "assets/e4a910e024e1d1.webp", "paco5.JPG": "assets/df1dc288bf44fe.webp", "IMG_6583.JPG": "assets/2636691ca73e56.webp", "paco7.JPG": "assets/d2c853f440537a.webp", "paco6.JPG": "assets/47faaeb90b5e7a.webp", "foto9.jpg": "assets/85ab037c2fccdd.webp", "peg6.JPG": "assets/efd2c8279a6de7.webp", "peg7.JPG": "assets/9181c034a65ba3.webp", "peg2.jpeg": "assets/33e108127d78fa.webp", "peg5.JPG": "assets/36fe8e9eb5d744.webp", "foto6.jpeg": "assets/a844a467b1664d.webp", "peg4.png": "assets/579c405c4a6025.webp", "foto7.jpeg": "assets/60b8ad067c5dc6.webp", "IMG_7600.JPG": "assets/8f291b830f51b6.webp", "peg1.JPG": "assets/896c9573708b28.webp", "6abf1a62-9b65-4f28-97c6-632ddc5d8717.jpg": "assets/f49b3cd518e6e0.webp", "foto11.jpg": "assets/c2b5451bf3ca10.webp", "d9ffa681-6cf7-4601-8d57-7ce1f99cb350.jpg": "assets/1b5af684853fc3.webp", "peg3.JPG": "assets/b86cb189b094ba.webp", "foto10.jpg": "assets/6f1a95c0ff1ff5.webp", "vivienda-10.jpg": "assets/vivienda-10.jpg", "vivienda-25.jpg": "assets/vivienda-25.jpg", "vivienda-55.jpg": "assets/vivienda-55.jpg", "vivienda-68.jpg": "assets/vivienda-68.jpg"};const PROJECTS=[{"url": "https://www.hormazareformas.com/projects/proyecto-pegasus-centro-deportivo.html", "images": [{"file": "peg1.JPG", "alt": "Proceso del Proyecto Pegasus Centro Deportivo"}, {"file": "peg2.jpeg", "alt": "Trabajos de obra y reforma en Proyecto Pegasus"}, {"file": "peg3.JPG", "alt": "Avance del Proyecto Pegasus Centro Deportivo"}, {"file": "peg4.png", "alt": "Detalle del Proyecto Pegasus Centro Deportivo"}, {"file": "peg5.JPG", "alt": "Resultado del Proyecto Pegasus Centro Deportivo"}, {"file": "peg6.JPG", "alt": "Acabados del Proyecto Pegasus Centro Deportivo"}, {"file": "peg7.JPG", "alt": "Resultado final del Proyecto Pegasus Centro Deportivo"}], "videos": [], "title": "Centro Deportivo Pegasus", "category": "Reformas", "cover": "peg5.JPG"}, {"url": "https://www.hormazareformas.com/projects/paso-rio-ontinyent.html", "images": [{"file": "IMG_6406.JPG", "alt": "Vista general de la pasarela en obra"}, {"file": "IMG_6404.JPG", "alt": "Pasarela sobre el río Clariano durante la ejecución"}, {"file": "IMG_6421.JPG", "alt": "Equipos trabajando sobre el tablero de hormigón"}, {"file": "IMG_6416.JPG", "alt": "Acceso a la pasarela recién hormigonado"}, {"file": "IMG_6577.JPG", "alt": "Pasarela terminada con hormigón impreso"}, {"file": "IMG_6583.JPG", "alt": "Detalle del pavimento impreso de la pasarela"}, {"file": "pasarela-detalle.png", "alt": "Detalle en primer plano del hormigón impreso"}, {"file": "IMG_6578.JPG", "alt": "Pasarela del río Clariano"}], "videos": [], "title": "Pasarela del río Clariano", "category": "Obra", "cover": "IMG_6578.JPG"}, {"url": "https://www.hormazareformas.com/projects/hormigon-impreso-acabado-piedra.html", "images": [{"file": "foto1.jpg", "alt": "Inicio de los trabajos de hormigón impreso acabado piedra"}, {"file": "foto2.jpg", "alt": "Vista general del área preparada para hormigón impreso"}, {"file": "foto3.jpeg", "alt": "Colocación de mallazo para hormigón impreso"}, {"file": "foto4.jpg", "alt": "Hormigón fresco extendido antes del estampado"}, {"file": "foto5.jpeg", "alt": "Proceso de estampado del hormigón impreso piedra"}, {"file": "foto6.jpeg", "alt": "Detalle del acabado del hormigón impreso"}, {"file": "foto7.jpeg", "alt": "Vista lateral del pavimento de hormigón impreso"}, {"file": "foto8.jpeg", "alt": "Acceso de vivienda con hormigón impreso acabado piedra"}, {"file": "foto9.jpg", "alt": "Pavimento de hormigón impreso en color oscuro"}, {"file": "foto10.jpg", "alt": "Detalle de juntas y textura del hormigón impreso"}, {"file": "foto11.jpg", "alt": "Resultado final del hormigón impreso imitación piedra"}, {"file": "d9ffa681-6cf7-4601-8d57-7ce1f99cb350.jpg", "alt": "Hormigón impreso acabado piedra"}], "videos": [], "title": "Hormigón impreso acabado piedra", "category": "Hormigón", "cover": "d9ffa681-6cf7-4601-8d57-7ce1f99cb350.jpg"}, {"url": "https://www.hormazareformas.com/projects/hormigon-impreso-cesped-artificial.html", "images": [{"file": "paco1.jpg", "alt": "Hormigón impreso y césped artificial"}, {"file": "paco2.jpg", "alt": ""}, {"file": "paco3.jpg", "alt": ""}, {"file": "paco4.jpg", "alt": ""}, {"file": "paco5.JPG", "alt": ""}, {"file": "paco6.JPG", "alt": ""}, {"file": "paco7.JPG", "alt": ""}, {"file": "paco8.JPG", "alt": ""}, {"file": "paco9.JPG", "alt": ""}, {"file": "paco10.JPG", "alt": ""}, {"file": "paco11.JPG", "alt": ""}, {"file": "paco12.jpg", "alt": ""}, {"file": "paco13.jpg", "alt": ""}, {"file": "paco14.jpg", "alt": ""}, {"file": "paco15.jpg", "alt": ""}, {"file": "paco16.jpg", "alt": ""}, {"file": "6e49f6d1-fa4f-45a0-a787-476ce6431e88.jpg", "alt": "Camino de hormigón y césped"}], "videos": [], "title": "Camino de hormigón y césped", "category": "Hormigón", "cover": "6e49f6d1-fa4f-45a0-a787-476ce6431e88.jpg"}, {"url": "https://www.hormazareformas.com/projects/diseno-losas-cesped.html", "images": [{"file": "dis1.jpg", "alt": "Inicio del diseño de losas y distribución"}, {"file": "dis2.jpeg", "alt": "Detalle del hueco preparado para el césped artificial"}, {"file": "dis3.jpeg", "alt": "Colocación del césped artificial entre losas"}, {"file": "dis4.jpeg", "alt": "Vista general del diseño geométrico con losas y césped"}, {"file": "dis5.jpeg", "alt": "Resultado final de jardín con losas de hormigón y césped artificial"}], "videos": [], "title": "Jardín con losas y césped", "category": "Exteriores", "cover": "dis5.jpeg"}, {"url": "https://www.hormazareformas.com/projects/entrada-con-impreso.html", "images": [{"file": "499cc221-15c1-4ef0-81dc-2753b1248668.jpg", "alt": "Entrada de vivienda con hormigón impreso"}], "videos": [], "title": "Entrada de vivienda", "category": "Hormigón", "cover": "499cc221-15c1-4ef0-81dc-2753b1248668.jpg"}, {"url": "https://www.hormazareformas.com/projects/tarima-borde-piscina.html", "images": [{"file": "IMG_7580.JPG", "alt": "Vista general de la piscina reformada con tarima"}], "videos": [], "title": "Tarima junto a la piscina", "category": "Exteriores", "cover": "IMG_7580.JPG"}, {"url": "https://www.hormazareformas.com/projects/hormigon-impreso-imitacion-madera.html", "images": [{"file": "IMG_7600.JPG", "alt": "Vista general del pavimento de hormigón madera"}], "videos": [], "title": "Hormigón imitación madera", "category": "Hormigón", "cover": "IMG_7600.JPG"}, {"url": "https://www.hormazareformas.com/projects/reforma-cocina-integral.html", "images": [{"file": "6abf1a62-9b65-4f28-97c6-632ddc5d8717.jpg", "alt": "Vista general de la reforma de cocina"}], "videos": [], "title": "Reforma integral de cocina", "category": "Reformas", "cover": "6abf1a62-9b65-4f28-97c6-632ddc5d8717.jpg"}, {"title": "De planta baja a vivienda", "category": "Reformas", "cover": "vivienda-68.jpg", "url": "#video-vivienda", "images": [{"file": "vivienda-25.jpg", "alt": "Interior durante la reforma · Fotograma del vídeo de Hor-Maza"}, {"file": "vivienda-55.jpg", "alt": "Estancia terminada · Fotograma del vídeo de Hor-Maza"}, {"file": "vivienda-68.jpg", "alt": "Cocina y acabados · Fotograma del vídeo de Hor-Maza"}, {"file": "vivienda-10.jpg", "alt": "Baño terminado · Fotograma del vídeo de Hor-Maza"}]}];
+(()=>{'use strict';
+const $=s=>document.querySelector(s),all=s=>[...document.querySelectorAll(s)];
+all('.service-detail').forEach(a=>a.addEventListener('click',()=>{const d=$(a.getAttribute('href'));d.open=true}));
+all('[data-filter]').forEach(b=>b.addEventListener('click',()=>{all('[data-filter]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));let count=0;all('.project-card').forEach(c=>{c.hidden=b.dataset.filter!=='Todos'&&c.dataset.category!==b.dataset.filter;if(!c.hidden)count++});$('.project-count').textContent=count+' proyectos'}));
+const dialog=$('#gallery-dialog');let project=0,current=0,origin=null;
+function render(){const p=PROJECTS[project],photo=p.images[current];$('#gallery-image').src=PHOTO_ASSETS[photo.file];$('#gallery-image').alt=photo.alt;$('#gallery-caption').textContent=(current+1)+' / '+p.images.length+' · '+photo.alt;all('#gallery-thumbs button').forEach((b,i)=>b.setAttribute('aria-pressed',String(i===current)));}
+function step(n){current=(current+n+PROJECTS[project].images.length)%PROJECTS[project].images.length;render()}
+all('[data-gallery]').forEach(b=>b.addEventListener('click',()=>{stopFilm();origin=b;project=Number(b.dataset.gallery);current=0;const p=PROJECTS[project];$('#gallery-title').textContent=p.title;$('#gallery-category').textContent=p.category;$('#gallery-source').href=p.url;const thumbs=$('#gallery-thumbs');thumbs.replaceChildren();p.images.forEach((photo,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Ver foto '+(i+1));const im=document.createElement('img');im.src=PHOTO_ASSETS[photo.file];im.alt='';b.append(im);b.addEventListener('click',()=>{current=i;render()});thumbs.append(b)});render();dialog.showModal();document.body.style.overflow='hidden';$('#gallery-close').focus()}));
+$('#gallery-close').addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>{document.body.style.overflow='';origin?.focus()});dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}});$('#gallery-prev').addEventListener('click',()=>step(-1));$('#gallery-next').addEventListener('click',()=>step(1));dialog.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();step(1)}if(e.key==='ArrowLeft'){e.preventDefault();step(-1)}});
+function stopFilm(){document.querySelectorAll('video').forEach(v=>v.pause())}
+document.addEventListener('visibilitychange',()=>{if(document.hidden)stopFilm()});
+})();
+</script><script>
+const PROJECT_STORIES = {"0": "De acondicionar el interior a rematar la sala deportiva, los baños y los vestuarios.", "1": "Preparación, hormigonado y acabado impreso de la pasarela del río Clariano, en Ontinyent.", "4": "Losas de hormigón y césped para transformar el jardín y dar forma a sus recorridos."};
+document.querySelectorAll('[data-gallery]').forEach(b=>b.addEventListener('click',()=>{document.querySelector('#gallery-story').textContent=PROJECT_STORIES[b.dataset.gallery]||'Explora las imágenes de la obra y sus acabados.';}));
+</script><script>document.querySelectorAll('video').forEach(v=>v.addEventListener('play',()=>document.querySelectorAll('video').forEach(other=>{if(other!==v)other.pause()})));</script><script>document.querySelector('#gallery-source').addEventListener('click',e=>{const a=e.currentTarget;if(a.getAttribute('href').startsWith('#')){e.preventDefault();document.querySelector('#gallery-dialog').close();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});}});</script><script>
+(()=>{const form=document.querySelector('#contact-form'),submit=document.querySelector('#contact-submit'),hint=document.querySelector('#contact-hint'),emailFields=document.querySelector('#email-fields'),email=document.querySelector('#email'),phone=document.querySelector('#phone');const waMarkup=submit.innerHTML;
+document.querySelectorAll('.contact-channels button').forEach(b=>b.addEventListener('click',()=>{const isEmail=b.dataset.channel==='email';form.dataset.channel=b.dataset.channel;document.querySelectorAll('.contact-channels button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));emailFields.hidden=!isEmail;email.disabled=!isEmail;phone.disabled=!isEmail;email.required=isEmail;submit.classList.toggle('whatsapp-action',!isEmail);submit.innerHTML=isEmail?'<span>Enviar consulta por correo</span><span aria-hidden="true">↗</span>':waMarkup;hint.textContent=isEmail?'Al enviar, se abrirá la confirmación del formulario. Te responderemos al correo que indiques.':'Se abrirá WhatsApp con tu mensaje preparado. Tú decides cuándo enviarlo.'}));
+const dialog=document.querySelector('#gallery-dialog'),video=document.querySelector('#gallery-video'),panel=document.querySelector('#gallery-video-panel');document.querySelectorAll('[data-gallery]').forEach(b=>b.addEventListener('click',()=>{const alex=b.dataset.gallery==='9';panel.hidden=!alex;video.pause();if(alex&&!video.querySelector('source').getAttribute('src')){video.querySelector('source').src='assets/vivienda.mp4';video.load()}if(alex)document.querySelector('#gallery-title').textContent='Reforma de Álex · De planta baja a vivienda';}));dialog.addEventListener('close',()=>video.pause());video.addEventListener('play',()=>document.querySelectorAll('video').forEach(other=>{if(other!==video)other.pause()}));
+})();
+</script><script>(()=>{const nav=document.querySelector('.nav'),button=document.querySelector('.menu-toggle');const query=matchMedia('(min-width:901px)');query.addEventListener('change',()=>{nav.classList.remove('open');button.setAttribute('aria-expanded','false');button.textContent='Menú +'});})();</script></body></html>
